@@ -1,0 +1,3444 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE Ontology [
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY xml "http://www.w3.org/XML/1998/namespace" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.semanticweb.org/parallels/ontologies/2015/2/tracking-service-arch"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.semanticweb.org/parallels/ontologies/2015/2/tracking-service-arch">
+    <Prefix name="" IRI="http://www.semanticweb.org/parallels/ontologies/2015/2/largescalelocationtracking#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Prefix name="IndoorTracking" IRI="https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#"/>
+    <Prefix name="supertaglocation" IRI="https://raw.githubusercontent.com/ginipease/locationOntology/master/owlrdf/supertaglocation#"/>
+    <Declaration>
+        <Class IRI="#Devices"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SDS-TWR"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="supertaglocation:MovingTag"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="supertaglocation:SupertagLoc"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://raw.githubusercontent.com/ginipease/locationOntology/master/owlrdf/supertaglocation.owl#Location"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://raw.githubusercontent.com/ginipease/locationOntology/master/owlrdf/supertaglocation.owl#Supertag"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="IndoorTracking:Acceleration"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="IndoorTracking:Accelerometer"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="IndoorTracking:AccelerometerReading"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="IndoorTracking:ActiveDeviceCheck"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="IndoorTracking:Application"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="IndoorTracking:Attenuation"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="IndoorTracking:BetweenSixAndThree"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="IndoorTracking:BusinessDecisionSupport"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="IndoorTracking:CC2538EM"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="IndoorTracking:Cartesian"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="IndoorTracking:ClientPresentation"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="IndoorTracking:CommercialDeviceName"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="IndoorTracking:ComplimentaryFilter"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="IndoorTracking:Contiki"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="IndoorTracking:CurrentLocation"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="IndoorTracking:DeviceHealthGUI"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="IndoorTracking:DeviceNumber"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="IndoorTracking:Diffraction"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="IndoorTracking:DistanceMeasurement"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="IndoorTracking:DropDataSample"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="IndoorTracking:ExtendedKalmanFilter"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="IndoorTracking:FaultMonitor"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="IndoorTracking:Filters"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="IndoorTracking:GDOP"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="IndoorTracking:GDOPValuePartition"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="IndoorTracking:HistoricLocation"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="IndoorTracking:IgnoreDataSample"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="IndoorTracking:InSystemProgramming"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="IndoorTracking:IndoorTrackingDevices"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="IndoorTracking:Interference"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="IndoorTracking:Inventory"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="IndoorTracking:LessThanThree"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="IndoorTracking:LinearKalmanFilter"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="IndoorTracking:LocationGUI"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="IndoorTracking:ManufacturingApplication"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="IndoorTracking:Measurement"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="IndoorTracking:MeasurementNoise"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="IndoorTracking:Mediation"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="IndoorTracking:Messaging"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="IndoorTracking:MoreThanSix"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="IndoorTracking:MotionSensor"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="IndoorTracking:MovingAverageFilter"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="IndoorTracking:Multilateration"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="IndoorTracking:NLOSdata"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="IndoorTracking:Noise"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="IndoorTracking:OS"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="IndoorTracking:OWR"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="IndoorTracking:OnboardAnalytics"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="IndoorTracking:PacketRate"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="IndoorTracking:PacketsperSecond"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="IndoorTracking:ParticleFilter"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="IndoorTracking:PoorReferenceNodeLocation"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="IndoorTracking:Portal"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="IndoorTracking:Precision"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="IndoorTracking:PredictedErrorCovariance"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="IndoorTracking:PropagationEnvironment"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="IndoorTracking:RSSI"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="IndoorTracking:ReadRate"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="IndoorTracking:ReflashDevice"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="IndoorTracking:ReflashDeviceOS"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="IndoorTracking:Reflection"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="IndoorTracking:Refraction"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="IndoorTracking:Requirements"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="IndoorTracking:SDSTWR"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="IndoorTracking:SemanticBusServices"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="IndoorTracking:Setup"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="IndoorTracking:SmartRF06"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="IndoorTracking:Software"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="IndoorTracking:StateMeasurement"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="IndoorTracking:StateTransition"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="IndoorTracking:StateTransitionNoise"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="IndoorTracking:SystemModel"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="IndoorTracking:SystemNoiseVariable"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="IndoorTracking:SystemStateVariable"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="IndoorTracking:TimeofFlight"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="IndoorTracking:TrackingAnalytics"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="IndoorTracking:TrackingMaintenance"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="IndoorTracking:TrackingService"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="IndoorTracking:TrackingSystem"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="IndoorTracking:Tuning"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="IndoorTracking:TuningFunction"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="IndoorTracking:Unicast"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="IndoorTracking:ValuePartition"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="IndoorTracking:Velocity"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="IndoorTracking:ZigbeeModule"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="IndoorTracking:ZigbeePacket"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="supertaglocation:hasLoc"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="supertaglocation:isLocof"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasAdjustablePrecisionFactor"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasApplicationFunction"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasApplicationType"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasBusinessService"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasClientPresentationService"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasFaultMonitor"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasFeedback"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasFilter"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasFilterService"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasGDOPService"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasGDOPValue"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasHardwareName"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasHardwareSource"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasIgnoreDataFunction"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasIndoorTrackingService"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasInfluencingPrecisionFactor"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasInventoryService"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasKalmanInput"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasLoc"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasMaintenanceService"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasManufacturingApplicationService"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasMediationService"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasMonitoringFunction"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasMotionSensor"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasMotionSensorType"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasOnboardAnalytics"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasPropagationEnvironment"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasProperty"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasRequirementCapture"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasSemanticBusService"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasSensorReading"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasSignalType"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasSystemModel"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasTrackingAnalytics"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasTrackingHardware"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasTrackingMeasurement"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasTrackingOS"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasTrackingService"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasTrackingSetup"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasTrackingSoftware"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasTrackingSystemComponent"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasTuningFunction"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasTuningService"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isAdjustablePrecisionFactorof"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isApplicationFunctionof"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isApplicationTypeof"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isBusinessServiceof"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isClientPresentationServiceof"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isComponentofTrackingSystem"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isFaultMonitorfor"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isFeedbackfor"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isFilterServicefor"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isFilterfor"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isGDOPServicefor"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isGDOPValuefor"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isHardwareSourceof"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isIgnoreDataFunctionfor"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isIndoorTrackingServiceof"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isInfluencingPrecisionFactorof"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isInventoryServiceof"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isKalmanInput"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isLocof"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isMaintenanceServiceof"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isManufacturingApplicationServiceof"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isMediationServiceof"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isMonitoringFunctionof"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isMotionSensorTypeof"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isMotionSensorfor"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isOnboardAnalyticsfor"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isPrecisionRequirementof"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isPropagationEnvironmentof"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isPropertyof"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isRequirementCaptureof"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isSemanticBusService"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isSensorReadingof"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isSignalTypeof"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isSystemModelof"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isTrackingAnalyticsof"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isTrackingHardwareof"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isTrackingMeasurementof"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isTrackingOSof"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isTrackingServiceof"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isTrackingSetupof"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isTrackingSoftwareof"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isTuningFunctionof"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isTuningServiceof"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isTypeofHardware"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="supertaglocation:TimeValue"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="supertaglocation:UIDValue"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="supertaglocation:XValue"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="supertaglocation:YValue"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="supertaglocation:ZValue"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="IndoorTracking:hasSystemNoiseVariableValue"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="supertaglocation:Location1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="supertaglocation:Location2"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="supertaglocation:Location3"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="supertaglocation:Location4"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="supertaglocation:Location5"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="supertaglocation:Server1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="supertaglocation:Server2"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="supertaglocation:Server3"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="IndoorTracking:ExampleMeasurementNoiseVariable"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="IndoorTracking:Location1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="IndoorTracking:Location2"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="IndoorTracking:Location3"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="IndoorTracking:Location4"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="IndoorTracking:Server1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="IndoorTracking:Server2"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="IndoorTracking:Server3"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class IRI="#Devices"/>
+        <Class abbreviatedIRI="IndoorTracking:IndoorTrackingDevices"/>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class abbreviatedIRI="IndoorTracking:Acceleration"/>
+        <Class abbreviatedIRI="IndoorTracking:Cartesian"/>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class abbreviatedIRI="IndoorTracking:Accelerometer"/>
+        <Class abbreviatedIRI="IndoorTracking:SmartRF06"/>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class abbreviatedIRI="IndoorTracking:DropDataSample"/>
+        <Class abbreviatedIRI="IndoorTracking:IgnoreDataSample"/>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class abbreviatedIRI="IndoorTracking:GDOPValuePartition"/>
+        <ObjectUnionOf>
+            <Class abbreviatedIRI="IndoorTracking:BetweenSixAndThree"/>
+            <Class abbreviatedIRI="IndoorTracking:LessThanThree"/>
+            <Class abbreviatedIRI="IndoorTracking:MoreThanSix"/>
+        </ObjectUnionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class abbreviatedIRI="IndoorTracking:InSystemProgramming"/>
+        <Class abbreviatedIRI="IndoorTracking:ReflashDeviceOS"/>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class abbreviatedIRI="IndoorTracking:ZigbeePacket"/>
+        <ObjectUnionOf>
+            <Class abbreviatedIRI="IndoorTracking:RSSI"/>
+            <Class abbreviatedIRI="IndoorTracking:TimeofFlight"/>
+        </ObjectUnionOf>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class IRI="#Devices"/>
+        <Class abbreviatedIRI="IndoorTracking:TrackingSystem"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SDS-TWR"/>
+        <Class abbreviatedIRI="IndoorTracking:OnboardAnalytics"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="supertaglocation:MovingTag"/>
+        <Class IRI="https://raw.githubusercontent.com/ginipease/locationOntology/master/owlrdf/supertaglocation.owl#Supertag"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="supertaglocation:SupertagLoc"/>
+        <Class IRI="https://raw.githubusercontent.com/ginipease/locationOntology/master/owlrdf/supertaglocation.owl#Location"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://raw.githubusercontent.com/ginipease/locationOntology/master/owlrdf/supertaglocation.owl#Location"/>
+        <Class abbreviatedIRI="IndoorTracking:IndoorTrackingDevices"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://raw.githubusercontent.com/ginipease/locationOntology/master/owlrdf/supertaglocation.owl#Supertag"/>
+        <Class abbreviatedIRI="IndoorTracking:IndoorTrackingDevices"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="IndoorTracking:Acceleration"/>
+        <Class abbreviatedIRI="IndoorTracking:TrackingAnalytics"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="IndoorTracking:Accelerometer"/>
+        <Class abbreviatedIRI="IndoorTracking:MotionSensor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="IndoorTracking:AccelerometerReading"/>
+        <Class abbreviatedIRI="IndoorTracking:Accelerometer"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="IndoorTracking:AccelerometerReading"/>
+        <Class abbreviatedIRI="IndoorTracking:Measurement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="IndoorTracking:ActiveDeviceCheck"/>
+        <Class abbreviatedIRI="IndoorTracking:FaultMonitor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="IndoorTracking:Application"/>
+        <Class abbreviatedIRI="IndoorTracking:Software"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="IndoorTracking:Attenuation"/>
+        <Class abbreviatedIRI="IndoorTracking:Precision"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="IndoorTracking:BetweenSixAndThree"/>
+        <Class abbreviatedIRI="IndoorTracking:GDOPValuePartition"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="IndoorTracking:BusinessDecisionSupport"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="IndoorTracking:CC2538EM"/>
+        <Class abbreviatedIRI="IndoorTracking:CommercialDeviceName"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="IndoorTracking:Cartesian"/>
+        <Class abbreviatedIRI="IndoorTracking:AccelerometerReading"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="IndoorTracking:ClientPresentation"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="IndoorTracking:CommercialDeviceName"/>
+        <Class IRI="https://raw.githubusercontent.com/ginipease/locationOntology/master/owlrdf/supertaglocation.owl#Supertag"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="IndoorTracking:ComplimentaryFilter"/>
+        <Class abbreviatedIRI="IndoorTracking:Filters"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="IndoorTracking:Contiki"/>
+        <Class abbreviatedIRI="IndoorTracking:OS"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="IndoorTracking:CurrentLocation"/>
+        <Class abbreviatedIRI="IndoorTracking:TrackingService"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="IndoorTracking:DeviceHealthGUI"/>
+        <Class abbreviatedIRI="IndoorTracking:ClientPresentation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="IndoorTracking:DeviceNumber"/>
+        <Class abbreviatedIRI="IndoorTracking:ActiveDeviceCheck"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="IndoorTracking:Diffraction"/>
+        <Class abbreviatedIRI="IndoorTracking:Precision"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="IndoorTracking:DistanceMeasurement"/>
+        <Class IRI="#SDS-TWR"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="IndoorTracking:DistanceMeasurement"/>
+        <Class abbreviatedIRI="IndoorTracking:LinearKalmanFilter"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="IndoorTracking:DistanceMeasurement"/>
+        <Class abbreviatedIRI="IndoorTracking:MovingAverageFilter"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="IndoorTracking:DropDataSample"/>
+        <Class abbreviatedIRI="IndoorTracking:PoorReferenceNodeLocation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="IndoorTracking:ExtendedKalmanFilter"/>
+        <Class abbreviatedIRI="IndoorTracking:Filters"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="IndoorTracking:FaultMonitor"/>
+        <Class abbreviatedIRI="supertaglocation:MovingTag"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="IndoorTracking:Filters"/>
+        <Class abbreviatedIRI="IndoorTracking:SemanticBusServices"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="IndoorTracking:GDOP"/>
+        <Class abbreviatedIRI="IndoorTracking:SemanticBusServices"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="IndoorTracking:GDOPValuePartition"/>
+        <Class abbreviatedIRI="IndoorTracking:ValuePartition"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="IndoorTracking:HistoricLocation"/>
+        <Class abbreviatedIRI="IndoorTracking:TrackingService"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="IndoorTracking:IgnoreDataSample"/>
+        <Class abbreviatedIRI="IndoorTracking:NLOSdata"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="IndoorTracking:InSystemProgramming"/>
+        <Class abbreviatedIRI="IndoorTracking:SemanticBusServices"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="IndoorTracking:IndoorTrackingDevices"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="IndoorTracking:Interference"/>
+        <Class abbreviatedIRI="IndoorTracking:Precision"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="IndoorTracking:Inventory"/>
+        <Class abbreviatedIRI="IndoorTracking:ManufacturingApplication"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="IndoorTracking:LessThanThree"/>
+        <Class abbreviatedIRI="IndoorTracking:GDOPValuePartition"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="IndoorTracking:LinearKalmanFilter"/>
+        <Class abbreviatedIRI="IndoorTracking:OnboardAnalytics"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="IndoorTracking:LocationGUI"/>
+        <Class abbreviatedIRI="IndoorTracking:ClientPresentation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="IndoorTracking:ManufacturingApplication"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="IndoorTracking:Measurement"/>
+        <Class abbreviatedIRI="IndoorTracking:TrackingSystem"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="IndoorTracking:MeasurementNoise"/>
+        <Class abbreviatedIRI="IndoorTracking:SystemNoiseVariable"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="IndoorTracking:Mediation"/>
+        <Class abbreviatedIRI="IndoorTracking:ManufacturingApplication"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="IndoorTracking:Messaging"/>
+        <Class abbreviatedIRI="IndoorTracking:SemanticBusServices"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="IndoorTracking:MoreThanSix"/>
+        <Class abbreviatedIRI="IndoorTracking:GDOPValuePartition"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="IndoorTracking:MotionSensor"/>
+        <Class abbreviatedIRI="supertaglocation:MovingTag"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="IndoorTracking:MovingAverageFilter"/>
+        <Class abbreviatedIRI="IndoorTracking:OnboardAnalytics"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="IndoorTracking:Multilateration"/>
+        <Class abbreviatedIRI="IndoorTracking:TrackingAnalytics"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="IndoorTracking:NLOSdata"/>
+        <Class abbreviatedIRI="IndoorTracking:ComplimentaryFilter"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="IndoorTracking:Noise"/>
+        <Class abbreviatedIRI="IndoorTracking:PropagationEnvironment"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="IndoorTracking:OS"/>
+        <Class abbreviatedIRI="IndoorTracking:TrackingSystem"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="IndoorTracking:OWR"/>
+        <Class abbreviatedIRI="IndoorTracking:Unicast"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="IndoorTracking:OnboardAnalytics"/>
+        <Class IRI="https://raw.githubusercontent.com/ginipease/locationOntology/master/owlrdf/supertaglocation.owl#Supertag"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="IndoorTracking:PacketRate"/>
+        <Class abbreviatedIRI="IndoorTracking:TrackingMaintenance"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="IndoorTracking:PacketsperSecond"/>
+        <Class abbreviatedIRI="IndoorTracking:TuningFunction"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="IndoorTracking:ParticleFilter"/>
+        <Class abbreviatedIRI="IndoorTracking:Filters"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="IndoorTracking:PoorReferenceNodeLocation"/>
+        <Class abbreviatedIRI="IndoorTracking:GDOP"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="IndoorTracking:PoorReferenceNodeLocation"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty abbreviatedIRI="IndoorTracking:hasGDOPValue"/>
+            <Class abbreviatedIRI="IndoorTracking:MoreThanSix"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="IndoorTracking:Portal"/>
+        <Class abbreviatedIRI="IndoorTracking:IndoorTrackingDevices"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="IndoorTracking:Precision"/>
+        <Class abbreviatedIRI="IndoorTracking:Requirements"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="IndoorTracking:PredictedErrorCovariance"/>
+        <Class abbreviatedIRI="IndoorTracking:LinearKalmanFilter"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="IndoorTracking:PropagationEnvironment"/>
+        <Class abbreviatedIRI="IndoorTracking:IndoorTrackingDevices"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="IndoorTracking:RSSI"/>
+        <Class abbreviatedIRI="IndoorTracking:Measurement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="IndoorTracking:RSSI"/>
+        <Class abbreviatedIRI="IndoorTracking:ZigbeePacket"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="IndoorTracking:ReadRate"/>
+        <Class abbreviatedIRI="IndoorTracking:Precision"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="IndoorTracking:ReflashDevice"/>
+        <Class abbreviatedIRI="IndoorTracking:TrackingMaintenance"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="IndoorTracking:ReflashDeviceOS"/>
+        <Class abbreviatedIRI="IndoorTracking:TuningFunction"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="IndoorTracking:Reflection"/>
+        <Class abbreviatedIRI="IndoorTracking:Precision"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="IndoorTracking:Refraction"/>
+        <Class abbreviatedIRI="IndoorTracking:Precision"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="IndoorTracking:Requirements"/>
+        <Class abbreviatedIRI="IndoorTracking:BusinessDecisionSupport"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="IndoorTracking:SDSTWR"/>
+        <Class abbreviatedIRI="IndoorTracking:Unicast"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="IndoorTracking:SemanticBusServices"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="IndoorTracking:Setup"/>
+        <Class abbreviatedIRI="IndoorTracking:TrackingSystem"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="IndoorTracking:SmartRF06"/>
+        <Class abbreviatedIRI="IndoorTracking:CommercialDeviceName"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="IndoorTracking:Software"/>
+        <Class abbreviatedIRI="IndoorTracking:TrackingSystem"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="IndoorTracking:StateMeasurement"/>
+        <Class abbreviatedIRI="IndoorTracking:SystemStateVariable"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="IndoorTracking:StateTransition"/>
+        <Class abbreviatedIRI="IndoorTracking:SystemStateVariable"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="IndoorTracking:StateTransitionNoise"/>
+        <Class abbreviatedIRI="IndoorTracking:SystemNoiseVariable"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="IndoorTracking:SystemModel"/>
+        <Class abbreviatedIRI="IndoorTracking:BusinessDecisionSupport"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="IndoorTracking:SystemNoiseVariable"/>
+        <Class abbreviatedIRI="IndoorTracking:SystemModel"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="IndoorTracking:SystemStateVariable"/>
+        <Class abbreviatedIRI="IndoorTracking:SystemModel"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="IndoorTracking:TimeofFlight"/>
+        <Class abbreviatedIRI="IndoorTracking:Measurement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="IndoorTracking:TimeofFlight"/>
+        <Class abbreviatedIRI="IndoorTracking:ZigbeePacket"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="IndoorTracking:TrackingAnalytics"/>
+        <Class abbreviatedIRI="IndoorTracking:SemanticBusServices"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="IndoorTracking:TrackingMaintenance"/>
+        <Class abbreviatedIRI="IndoorTracking:ManufacturingApplication"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="IndoorTracking:TrackingService"/>
+        <Class abbreviatedIRI="IndoorTracking:ManufacturingApplication"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="IndoorTracking:TrackingSystem"/>
+        <Class abbreviatedIRI="IndoorTracking:BusinessDecisionSupport"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="IndoorTracking:Tuning"/>
+        <Class abbreviatedIRI="IndoorTracking:SemanticBusServices"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="IndoorTracking:TuningFunction"/>
+        <Class abbreviatedIRI="IndoorTracking:FaultMonitor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="IndoorTracking:Unicast"/>
+        <Class abbreviatedIRI="IndoorTracking:Application"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="IndoorTracking:Velocity"/>
+        <Class abbreviatedIRI="IndoorTracking:TrackingAnalytics"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="IndoorTracking:ZigbeeModule"/>
+        <Class IRI="https://raw.githubusercontent.com/ginipease/locationOntology/master/owlrdf/supertaglocation.owl#Supertag"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="IndoorTracking:ZigbeeModule"/>
+        <Class abbreviatedIRI="IndoorTracking:MotionSensor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="IndoorTracking:ZigbeePacket"/>
+        <Class abbreviatedIRI="IndoorTracking:ZigbeeModule"/>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="https://raw.githubusercontent.com/ginipease/locationOntology/master/owlrdf/supertaglocation.owl#Supertag"/>
+        <Class abbreviatedIRI="IndoorTracking:Portal"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class abbreviatedIRI="IndoorTracking:Acceleration"/>
+        <Class abbreviatedIRI="IndoorTracking:Multilateration"/>
+        <Class abbreviatedIRI="IndoorTracking:Velocity"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class abbreviatedIRI="IndoorTracking:Accelerometer"/>
+        <Class abbreviatedIRI="IndoorTracking:ZigbeeModule"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class abbreviatedIRI="IndoorTracking:AccelerometerReading"/>
+        <Class abbreviatedIRI="IndoorTracking:RSSI"/>
+        <Class abbreviatedIRI="IndoorTracking:TimeofFlight"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class abbreviatedIRI="IndoorTracking:ActiveDeviceCheck"/>
+        <Class abbreviatedIRI="IndoorTracking:TuningFunction"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class abbreviatedIRI="IndoorTracking:BetweenSixAndThree"/>
+        <Class abbreviatedIRI="IndoorTracking:LessThanThree"/>
+        <Class abbreviatedIRI="IndoorTracking:MoreThanSix"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class abbreviatedIRI="IndoorTracking:ComplimentaryFilter"/>
+        <Class abbreviatedIRI="IndoorTracking:ExtendedKalmanFilter"/>
+        <Class abbreviatedIRI="IndoorTracking:Messaging"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class abbreviatedIRI="IndoorTracking:CurrentLocation"/>
+        <Class abbreviatedIRI="IndoorTracking:HistoricLocation"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class abbreviatedIRI="IndoorTracking:DeviceHealthGUI"/>
+        <Class abbreviatedIRI="IndoorTracking:LocationGUI"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class abbreviatedIRI="IndoorTracking:DeviceNumber"/>
+        <Class abbreviatedIRI="IndoorTracking:PacketsperSecond"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class abbreviatedIRI="IndoorTracking:DistanceMeasurement"/>
+        <Class abbreviatedIRI="IndoorTracking:MovingAverageFilter"/>
+        <Class abbreviatedIRI="IndoorTracking:PredictedErrorCovariance"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class abbreviatedIRI="IndoorTracking:FaultMonitor"/>
+        <Class abbreviatedIRI="IndoorTracking:MotionSensor"/>
+        <Class abbreviatedIRI="IndoorTracking:OnboardAnalytics"/>
+        <Class abbreviatedIRI="IndoorTracking:PropagationEnvironment"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class abbreviatedIRI="IndoorTracking:Filters"/>
+        <Class abbreviatedIRI="IndoorTracking:TrackingAnalytics"/>
+        <Class abbreviatedIRI="IndoorTracking:Tuning"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class abbreviatedIRI="IndoorTracking:GDOP"/>
+        <Class abbreviatedIRI="IndoorTracking:TrackingAnalytics"/>
+        <Class abbreviatedIRI="IndoorTracking:Tuning"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class abbreviatedIRI="IndoorTracking:Inventory"/>
+        <Class abbreviatedIRI="IndoorTracking:Mediation"/>
+        <Class abbreviatedIRI="IndoorTracking:TrackingMaintenance"/>
+        <Class abbreviatedIRI="IndoorTracking:TrackingService"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class abbreviatedIRI="IndoorTracking:LinearKalmanFilter"/>
+        <Class abbreviatedIRI="IndoorTracking:MovingAverageFilter"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class abbreviatedIRI="IndoorTracking:MeasurementNoise"/>
+        <Class abbreviatedIRI="IndoorTracking:StateMeasurement"/>
+        <Class abbreviatedIRI="IndoorTracking:StateTransition"/>
+        <Class abbreviatedIRI="IndoorTracking:StateTransitionNoise"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class abbreviatedIRI="IndoorTracking:Messaging"/>
+        <Class abbreviatedIRI="IndoorTracking:TrackingAnalytics"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class abbreviatedIRI="IndoorTracking:OWR"/>
+        <Class abbreviatedIRI="IndoorTracking:SDSTWR"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class abbreviatedIRI="IndoorTracking:PacketsperSecond"/>
+        <Class abbreviatedIRI="IndoorTracking:RSSI"/>
+        <Class abbreviatedIRI="IndoorTracking:TimeofFlight"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class abbreviatedIRI="IndoorTracking:PacketsperSecond"/>
+        <Class abbreviatedIRI="IndoorTracking:ReflashDeviceOS"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class abbreviatedIRI="IndoorTracking:Requirements"/>
+        <Class abbreviatedIRI="IndoorTracking:SystemModel"/>
+        <Class abbreviatedIRI="IndoorTracking:TrackingSystem"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class abbreviatedIRI="IndoorTracking:SmartRF06"/>
+        <Class abbreviatedIRI="IndoorTracking:ZigbeePacket"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class abbreviatedIRI="IndoorTracking:SystemNoiseVariable"/>
+        <Class abbreviatedIRI="IndoorTracking:SystemStateVariable"/>
+    </DisjointClasses>
+    <ClassAssertion>
+        <Class abbreviatedIRI="supertaglocation:SupertagLoc"/>
+        <NamedIndividual abbreviatedIRI="supertaglocation:Location1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="supertaglocation:SupertagLoc"/>
+        <NamedIndividual abbreviatedIRI="supertaglocation:Location2"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="supertaglocation:SupertagLoc"/>
+        <NamedIndividual abbreviatedIRI="supertaglocation:Location3"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="supertaglocation:SupertagLoc"/>
+        <NamedIndividual abbreviatedIRI="supertaglocation:Location4"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="supertaglocation:SupertagLoc"/>
+        <NamedIndividual abbreviatedIRI="supertaglocation:Location5"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="supertaglocation:MovingTag"/>
+        <NamedIndividual abbreviatedIRI="supertaglocation:Server1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="supertaglocation:MovingTag"/>
+        <NamedIndividual abbreviatedIRI="supertaglocation:Server2"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="supertaglocation:MovingTag"/>
+        <NamedIndividual abbreviatedIRI="supertaglocation:Server3"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="IndoorTracking:MeasurementNoise"/>
+        <NamedIndividual abbreviatedIRI="IndoorTracking:ExampleMeasurementNoiseVariable"/>
+    </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="supertaglocation:isLocof"/>
+        <NamedIndividual abbreviatedIRI="supertaglocation:Location1"/>
+        <NamedIndividual abbreviatedIRI="supertaglocation:Server1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="supertaglocation:isLocof"/>
+        <NamedIndividual abbreviatedIRI="supertaglocation:Location2"/>
+        <NamedIndividual abbreviatedIRI="supertaglocation:Server1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="supertaglocation:isLocof"/>
+        <NamedIndividual abbreviatedIRI="supertaglocation:Location3"/>
+        <NamedIndividual abbreviatedIRI="supertaglocation:Server1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="supertaglocation:isLocof"/>
+        <NamedIndividual abbreviatedIRI="supertaglocation:Location4"/>
+        <NamedIndividual abbreviatedIRI="supertaglocation:Server1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="supertaglocation:isLocof"/>
+        <NamedIndividual abbreviatedIRI="supertaglocation:Location5"/>
+        <NamedIndividual abbreviatedIRI="supertaglocation:Server1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="supertaglocation:hasLoc"/>
+        <NamedIndividual abbreviatedIRI="supertaglocation:Server1"/>
+        <NamedIndividual abbreviatedIRI="supertaglocation:Location1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="supertaglocation:hasLoc"/>
+        <NamedIndividual abbreviatedIRI="supertaglocation:Server1"/>
+        <NamedIndividual abbreviatedIRI="supertaglocation:Location2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="supertaglocation:hasLoc"/>
+        <NamedIndividual abbreviatedIRI="supertaglocation:Server1"/>
+        <NamedIndividual abbreviatedIRI="supertaglocation:Location3"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="supertaglocation:hasLoc"/>
+        <NamedIndividual abbreviatedIRI="supertaglocation:Server1"/>
+        <NamedIndividual abbreviatedIRI="supertaglocation:Location4"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="supertaglocation:hasLoc"/>
+        <NamedIndividual abbreviatedIRI="supertaglocation:Server1"/>
+        <NamedIndividual abbreviatedIRI="supertaglocation:Location5"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isLocof"/>
+        <NamedIndividual abbreviatedIRI="IndoorTracking:Location1"/>
+        <NamedIndividual abbreviatedIRI="IndoorTracking:Server1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isLocof"/>
+        <NamedIndividual abbreviatedIRI="IndoorTracking:Location2"/>
+        <NamedIndividual abbreviatedIRI="IndoorTracking:Server1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isLocof"/>
+        <NamedIndividual abbreviatedIRI="IndoorTracking:Location3"/>
+        <NamedIndividual abbreviatedIRI="IndoorTracking:Server1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isLocof"/>
+        <NamedIndividual abbreviatedIRI="IndoorTracking:Location4"/>
+        <NamedIndividual abbreviatedIRI="IndoorTracking:Server1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasLoc"/>
+        <NamedIndividual abbreviatedIRI="IndoorTracking:Server1"/>
+        <NamedIndividual abbreviatedIRI="IndoorTracking:Location2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasLoc"/>
+        <NamedIndividual abbreviatedIRI="IndoorTracking:Server1"/>
+        <NamedIndividual abbreviatedIRI="IndoorTracking:Location3"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasLoc"/>
+        <NamedIndividual abbreviatedIRI="IndoorTracking:Server1"/>
+        <NamedIndividual abbreviatedIRI="IndoorTracking:Location4"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasLoc"/>
+        <NamedIndividual abbreviatedIRI="IndoorTracking:Server1"/>
+        <NamedIndividual abbreviatedIRI="IndoorTracking:Location1"/>
+    </ObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty abbreviatedIRI="supertaglocation:TimeValue"/>
+        <NamedIndividual abbreviatedIRI="supertaglocation:Location1"/>
+        <Literal datatypeIRI="&xsd;dateTime">2014-11-06T13:22:06</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty abbreviatedIRI="supertaglocation:XValue"/>
+        <NamedIndividual abbreviatedIRI="supertaglocation:Location1"/>
+        <Literal datatypeIRI="&xsd;float">-1.0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty abbreviatedIRI="supertaglocation:YValue"/>
+        <NamedIndividual abbreviatedIRI="supertaglocation:Location1"/>
+        <Literal datatypeIRI="&xsd;float">-1.8</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty abbreviatedIRI="supertaglocation:ZValue"/>
+        <NamedIndividual abbreviatedIRI="supertaglocation:Location1"/>
+        <Literal datatypeIRI="&xsd;float">4.9</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty abbreviatedIRI="supertaglocation:TimeValue"/>
+        <NamedIndividual abbreviatedIRI="supertaglocation:Location2"/>
+        <Literal datatypeIRI="&xsd;dateTime">2014-11-06T13:23:33</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty abbreviatedIRI="supertaglocation:XValue"/>
+        <NamedIndividual abbreviatedIRI="supertaglocation:Location2"/>
+        <Literal datatypeIRI="&xsd;float">16.5</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty abbreviatedIRI="supertaglocation:YValue"/>
+        <NamedIndividual abbreviatedIRI="supertaglocation:Location2"/>
+        <Literal datatypeIRI="&xsd;float">20.4</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty abbreviatedIRI="supertaglocation:ZValue"/>
+        <NamedIndividual abbreviatedIRI="supertaglocation:Location2"/>
+        <Literal datatypeIRI="&xsd;float">6.8</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty abbreviatedIRI="supertaglocation:TimeValue"/>
+        <NamedIndividual abbreviatedIRI="supertaglocation:Location3"/>
+        <Literal datatypeIRI="&xsd;dateTime">2014-11-06T13:24:59</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty abbreviatedIRI="supertaglocation:XValue"/>
+        <NamedIndividual abbreviatedIRI="supertaglocation:Location3"/>
+        <Literal datatypeIRI="&xsd;float">13.0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty abbreviatedIRI="supertaglocation:YValue"/>
+        <NamedIndividual abbreviatedIRI="supertaglocation:Location3"/>
+        <Literal datatypeIRI="&xsd;float">13.8</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty abbreviatedIRI="supertaglocation:ZValue"/>
+        <NamedIndividual abbreviatedIRI="supertaglocation:Location3"/>
+        <Literal datatypeIRI="&xsd;float">7.5</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty abbreviatedIRI="supertaglocation:TimeValue"/>
+        <NamedIndividual abbreviatedIRI="supertaglocation:Location4"/>
+        <Literal datatypeIRI="&xsd;dateTime">2014-11-06T13:27:52</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty abbreviatedIRI="supertaglocation:XValue"/>
+        <NamedIndividual abbreviatedIRI="supertaglocation:Location4"/>
+        <Literal datatypeIRI="&xsd;float">10.3</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty abbreviatedIRI="supertaglocation:YValue"/>
+        <NamedIndividual abbreviatedIRI="supertaglocation:Location4"/>
+        <Literal datatypeIRI="&xsd;float">6.8</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty abbreviatedIRI="supertaglocation:ZValue"/>
+        <NamedIndividual abbreviatedIRI="supertaglocation:Location4"/>
+        <Literal datatypeIRI="&xsd;float">14.6</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty abbreviatedIRI="supertaglocation:TimeValue"/>
+        <NamedIndividual abbreviatedIRI="supertaglocation:Location5"/>
+        <Literal datatypeIRI="&xsd;dateTime">2014-11-06T13:26:25</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty abbreviatedIRI="supertaglocation:XValue"/>
+        <NamedIndividual abbreviatedIRI="supertaglocation:Location5"/>
+        <Literal datatypeIRI="&xsd;float">15.9</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty abbreviatedIRI="supertaglocation:YValue"/>
+        <NamedIndividual abbreviatedIRI="supertaglocation:Location5"/>
+        <Literal datatypeIRI="&xsd;float">21.1</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty abbreviatedIRI="supertaglocation:ZValue"/>
+        <NamedIndividual abbreviatedIRI="supertaglocation:Location5"/>
+        <Literal datatypeIRI="&xsd;float">6.2</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty abbreviatedIRI="supertaglocation:UIDValue"/>
+        <NamedIndividual abbreviatedIRI="supertaglocation:Server1"/>
+        <Literal datatypeIRI="&xsd;integer">1</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty abbreviatedIRI="supertaglocation:UIDValue"/>
+        <NamedIndividual abbreviatedIRI="supertaglocation:Server2"/>
+        <Literal datatypeIRI="&xsd;integer">2</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty abbreviatedIRI="supertaglocation:UIDValue"/>
+        <NamedIndividual abbreviatedIRI="supertaglocation:Server3"/>
+        <Literal datatypeIRI="&xsd;integer">3</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty abbreviatedIRI="IndoorTracking:hasSystemNoiseVariableValue"/>
+        <NamedIndividual abbreviatedIRI="IndoorTracking:ExampleMeasurementNoiseVariable"/>
+        <Literal datatypeIRI="&xsd;integer">1</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty abbreviatedIRI="IndoorTracking:hasSystemNoiseVariableValue"/>
+        <NamedIndividual abbreviatedIRI="IndoorTracking:ExampleMeasurementNoiseVariable"/>
+        <Literal datatypeIRI="&xsd;integer">2</Literal>
+    </DataPropertyAssertion>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasAdjustablePrecisionFactor"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasRequirementCapture"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasApplicationFunction"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasApplicationType"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasApplicationType"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasTrackingSoftware"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasBusinessService"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasClientPresentationService"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasFaultMonitor"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasIndoorTrackingService"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasFeedback"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasFilterService"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasFeedback"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasGDOPService"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasFilter"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasOnboardAnalytics"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasFilterService"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasSemanticBusService"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasGDOPService"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasSemanticBusService"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasGDOPValue"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasHardwareName"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasHardwareSource"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasHardwareSource"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasTrackingHardware"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasIgnoreDataFunction"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasFeedback"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasIndoorTrackingService"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasInfluencingPrecisionFactor"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasRequirementCapture"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasInventoryService"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasManufacturingApplicationService"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasKalmanInput"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasFilter"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasLoc"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasTrackingSetup"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasMaintenanceService"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasManufacturingApplicationService"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasManufacturingApplicationService"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasMediationService"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasManufacturingApplicationService"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasMonitoringFunction"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasFaultMonitor"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasMotionSensor"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasIndoorTrackingService"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasMotionSensorType"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasMotionSensor"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasOnboardAnalytics"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasIndoorTrackingService"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasPropagationEnvironment"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasIndoorTrackingService"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasProperty"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasPropagationEnvironment"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasRequirementCapture"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasBusinessService"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasSemanticBusService"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasSensorReading"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasMotionSensorType"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasSignalType"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasMotionSensorType"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasSystemModel"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasBusinessService"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasTrackingAnalytics"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasSemanticBusService"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasTrackingHardware"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasTrackingSystemComponent"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasTrackingMeasurement"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasTrackingSystemComponent"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasTrackingOS"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasTrackingSystemComponent"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasTrackingService"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasManufacturingApplicationService"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasTrackingSetup"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasTrackingSystemComponent"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasTrackingSoftware"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasTrackingSystemComponent"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasTrackingSystemComponent"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasBusinessService"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasTuningFunction"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasFaultMonitor"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasTuningService"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasSemanticBusService"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isAdjustablePrecisionFactorof"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isPrecisionRequirementof"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isApplicationFunctionof"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isApplicationTypeof"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isApplicationTypeof"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isTrackingSoftwareof"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isBusinessServiceof"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isClientPresentationServiceof"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isComponentofTrackingSystem"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isBusinessServiceof"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isFaultMonitorfor"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isIndoorTrackingServiceof"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isFeedbackfor"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isFilterServicefor"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isFeedbackfor"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isGDOPServicefor"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isFilterServicefor"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isSemanticBusService"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isFilterfor"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isOnboardAnalyticsfor"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isGDOPServicefor"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isSemanticBusService"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isGDOPValuefor"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isHardwareSourceof"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isTrackingHardwareof"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isIgnoreDataFunctionfor"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isFeedbackfor"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isIndoorTrackingServiceof"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isInfluencingPrecisionFactorof"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isPrecisionRequirementof"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isInventoryServiceof"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isManufacturingApplicationServiceof"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isKalmanInput"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isFilterfor"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isLocof"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isTrackingSetupof"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isMaintenanceServiceof"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isManufacturingApplicationServiceof"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isManufacturingApplicationServiceof"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isMediationServiceof"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isManufacturingApplicationServiceof"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isMonitoringFunctionof"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isFaultMonitorfor"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isMotionSensorTypeof"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isMotionSensorfor"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isMotionSensorfor"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isIndoorTrackingServiceof"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isOnboardAnalyticsfor"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isIndoorTrackingServiceof"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isPrecisionRequirementof"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isRequirementCaptureof"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isPropagationEnvironmentof"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isIndoorTrackingServiceof"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isPropertyof"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isPropagationEnvironmentof"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isRequirementCaptureof"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isBusinessServiceof"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isSemanticBusService"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isSensorReadingof"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isMotionSensorTypeof"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isSignalTypeof"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isMotionSensorTypeof"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isSystemModelof"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isBusinessServiceof"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isTrackingAnalyticsof"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isSemanticBusService"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isTrackingHardwareof"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isComponentofTrackingSystem"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isTrackingMeasurementof"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isComponentofTrackingSystem"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isTrackingOSof"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isComponentofTrackingSystem"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isTrackingServiceof"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isManufacturingApplicationServiceof"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isTrackingSetupof"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isComponentofTrackingSystem"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isTrackingSoftwareof"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isComponentofTrackingSystem"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isTuningFunctionof"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isFaultMonitorfor"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isTuningServiceof"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isSemanticBusService"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isTypeofHardware"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isHardwareSourceof"/>
+    </SubObjectPropertyOf>
+    <InverseObjectProperties>
+        <ObjectProperty abbreviatedIRI="supertaglocation:isLocof"/>
+        <ObjectProperty abbreviatedIRI="supertaglocation:hasLoc"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasAdjustablePrecisionFactor"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isAdjustablePrecisionFactorof"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isApplicationFunctionof"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasApplicationFunction"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasApplicationType"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isApplicationTypeof"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasBusinessService"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isBusinessServiceof"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasClientPresentationService"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isClientPresentationServiceof"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasFaultMonitor"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isFaultMonitorfor"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasFeedback"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isFeedbackfor"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isFilterfor"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasFilter"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isFilterServicefor"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasFilterService"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isGDOPServicefor"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasGDOPService"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isTypeofHardware"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasHardwareName"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isHardwareSourceof"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasHardwareSource"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasIgnoreDataFunction"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isIgnoreDataFunctionfor"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isIndoorTrackingServiceof"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasIndoorTrackingService"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isInfluencingPrecisionFactorof"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasInfluencingPrecisionFactor"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasInventoryService"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isInventoryServiceof"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isKalmanInput"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasKalmanInput"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasMaintenanceService"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isMaintenanceServiceof"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isManufacturingApplicationServiceof"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasManufacturingApplicationService"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasMediationService"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isMediationServiceof"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasMonitoringFunction"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isMonitoringFunctionof"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasMotionSensor"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isMotionSensorfor"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isMotionSensorTypeof"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasMotionSensorType"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasOnboardAnalytics"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isOnboardAnalyticsfor"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasPropagationEnvironment"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isPropagationEnvironmentof"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isPropertyof"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasProperty"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasRequirementCapture"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isRequirementCaptureof"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isSemanticBusService"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasSemanticBusService"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasSensorReading"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isSensorReadingof"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isSignalTypeof"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasSignalType"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasSystemModel"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isSystemModelof"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isTrackingAnalyticsof"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasTrackingAnalytics"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasTrackingHardware"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isTrackingHardwareof"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isTrackingMeasurementof"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasTrackingMeasurement"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasTrackingOS"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isTrackingOSof"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasTrackingService"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isTrackingServiceof"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasTrackingSetup"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isTrackingSetupof"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasTrackingSoftware"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isTrackingSoftwareof"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasTrackingSystemComponent"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isComponentofTrackingSystem"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasTuningFunction"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isTuningFunctionof"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isTuningServiceof"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasTuningService"/>
+    </InverseObjectProperties>
+    <FunctionalObjectProperty>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasGDOPValue"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasIndoorTrackingService"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasRequirementCapture"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasSystemModel"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isClientPresentationServiceof"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isGDOPServicefor"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isGDOPValuefor"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isIndoorTrackingServiceof"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isManufacturingApplicationServiceof"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isRequirementCaptureof"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isSemanticBusService"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isSystemModelof"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isTuningServiceof"/>
+    </FunctionalObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasApplicationFunction"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasApplicationType"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasClientPresentationService"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasFaultMonitor"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasFeedback"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasFilter"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasFilterService"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasGDOPService"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasHardwareName"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasHardwareSource"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasIgnoreDataFunction"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasIndoorTrackingService"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasInventoryService"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasKalmanInput"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasMaintenanceService"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasMediationService"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasMonitoringFunction"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasMotionSensor"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasMotionSensorType"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasOnboardAnalytics"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasPropagationEnvironment"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasProperty"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasSensorReading"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasSignalType"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasTrackingAnalytics"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasTrackingHardware"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasTrackingMeasurement"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasTrackingOS"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasTrackingService"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasTrackingSetup"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasTrackingSoftware"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasTuningFunction"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasTuningService"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isFilterfor"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isKalmanInput"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isTrackingMeasurementof"/>
+    </AsymmetricObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="supertaglocation:hasLoc"/>
+        <Class abbreviatedIRI="supertaglocation:MovingTag"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="supertaglocation:isLocof"/>
+        <Class IRI="https://raw.githubusercontent.com/ginipease/locationOntology/master/owlrdf/supertaglocation.owl#Location"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasAdjustablePrecisionFactor"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="IndoorTracking:hasInfluencingPrecisionFactor"/>
+            <Class abbreviatedIRI="IndoorTracking:Precision"/>
+        </ObjectAllValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasApplicationFunction"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty abbreviatedIRI="IndoorTracking:hasApplicationFunction"/>
+            <Class abbreviatedIRI="IndoorTracking:Unicast"/>
+        </ObjectExactCardinality>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasApplicationType"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty abbreviatedIRI="IndoorTracking:hasApplicationType"/>
+            <Class abbreviatedIRI="IndoorTracking:Application"/>
+        </ObjectExactCardinality>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasFaultMonitor"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty abbreviatedIRI="IndoorTracking:hasFaultMonitor"/>
+            <Class abbreviatedIRI="IndoorTracking:IndoorTrackingDevices"/>
+        </ObjectExactCardinality>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasFeedback"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="IndoorTracking:hasFeedback"/>
+            <ObjectUnionOf>
+                <Class abbreviatedIRI="IndoorTracking:ComplimentaryFilter"/>
+                <Class abbreviatedIRI="IndoorTracking:GDOP"/>
+            </ObjectUnionOf>
+        </ObjectAllValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasFilter"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="IndoorTracking:hasFilter"/>
+            <Class abbreviatedIRI="IndoorTracking:OnboardAnalytics"/>
+        </ObjectAllValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasFilterService"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="IndoorTracking:hasFilterService"/>
+            <Class abbreviatedIRI="IndoorTracking:Filters"/>
+        </ObjectAllValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasGDOPService"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty abbreviatedIRI="IndoorTracking:hasGDOPService"/>
+            <Class abbreviatedIRI="IndoorTracking:GDOP"/>
+        </ObjectExactCardinality>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasHardwareName"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="IndoorTracking:hasHardwareName"/>
+            <Class abbreviatedIRI="IndoorTracking:CommercialDeviceName"/>
+        </ObjectAllValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasIgnoreDataFunction"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="IndoorTracking:hasIgnoreDataFunction"/>
+            <ObjectUnionOf>
+                <Class abbreviatedIRI="IndoorTracking:NLOSdata"/>
+                <Class abbreviatedIRI="IndoorTracking:PoorReferenceNodeLocation"/>
+            </ObjectUnionOf>
+        </ObjectAllValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasInfluencingPrecisionFactor"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty abbreviatedIRI="IndoorTracking:hasInfluencingPrecisionFactor"/>
+            <Class abbreviatedIRI="IndoorTracking:Precision"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasInventoryService"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty abbreviatedIRI="IndoorTracking:hasInventoryService"/>
+            <Class abbreviatedIRI="IndoorTracking:Inventory"/>
+        </ObjectExactCardinality>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasKalmanInput"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="IndoorTracking:hasKalmanInput"/>
+            <Class abbreviatedIRI="IndoorTracking:LinearKalmanFilter"/>
+        </ObjectAllValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasMaintenanceService"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty abbreviatedIRI="IndoorTracking:hasMaintenanceService"/>
+            <Class abbreviatedIRI="IndoorTracking:TrackingMaintenance"/>
+        </ObjectExactCardinality>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasMediationService"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty abbreviatedIRI="IndoorTracking:hasMediationService"/>
+            <Class abbreviatedIRI="IndoorTracking:Mediation"/>
+        </ObjectExactCardinality>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasMonitoringFunction"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty abbreviatedIRI="IndoorTracking:isMonitoringFunctionof"/>
+            <Class abbreviatedIRI="IndoorTracking:FaultMonitor"/>
+        </ObjectExactCardinality>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasMotionSensor"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty abbreviatedIRI="IndoorTracking:hasMotionSensor"/>
+            <Class abbreviatedIRI="IndoorTracking:IndoorTrackingDevices"/>
+        </ObjectExactCardinality>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasMotionSensorType"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="IndoorTracking:hasMotionSensorType"/>
+            <Class abbreviatedIRI="IndoorTracking:MotionSensor"/>
+        </ObjectAllValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasOnboardAnalytics"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty abbreviatedIRI="IndoorTracking:hasOnboardAnalytics"/>
+            <Class abbreviatedIRI="IndoorTracking:IndoorTrackingDevices"/>
+        </ObjectExactCardinality>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasPropagationEnvironment"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty abbreviatedIRI="IndoorTracking:hasPropagationEnvironment"/>
+            <Class abbreviatedIRI="IndoorTracking:IndoorTrackingDevices"/>
+        </ObjectExactCardinality>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasProperty"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty abbreviatedIRI="IndoorTracking:hasProperty"/>
+            <Class abbreviatedIRI="IndoorTracking:PropagationEnvironment"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasRequirementCapture"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="IndoorTracking:hasRequirementCapture"/>
+            <Class abbreviatedIRI="IndoorTracking:Requirements"/>
+        </ObjectAllValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasSensorReading"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="IndoorTracking:hasSensorReading"/>
+            <Class abbreviatedIRI="IndoorTracking:Accelerometer"/>
+        </ObjectAllValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasSignalType"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="IndoorTracking:hasSignalType"/>
+            <Class abbreviatedIRI="IndoorTracking:ZigbeeModule"/>
+        </ObjectAllValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasSystemModel"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="IndoorTracking:isSystemModelof"/>
+            <Class abbreviatedIRI="IndoorTracking:SystemModel"/>
+        </ObjectAllValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasTrackingMeasurement"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="IndoorTracking:isTrackingMeasurementof"/>
+            <Class abbreviatedIRI="IndoorTracking:Measurement"/>
+        </ObjectAllValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasTrackingOS"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty abbreviatedIRI="IndoorTracking:hasTrackingOS"/>
+            <Class abbreviatedIRI="IndoorTracking:OS"/>
+        </ObjectExactCardinality>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasTrackingService"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty abbreviatedIRI="IndoorTracking:hasTrackingService"/>
+            <Class abbreviatedIRI="IndoorTracking:TrackingService"/>
+        </ObjectExactCardinality>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasTrackingSetup"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty abbreviatedIRI="IndoorTracking:isTrackingSetupof"/>
+            <Class abbreviatedIRI="IndoorTracking:Setup"/>
+        </ObjectExactCardinality>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasTrackingSoftware"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty abbreviatedIRI="IndoorTracking:hasTrackingSoftware"/>
+            <Class abbreviatedIRI="IndoorTracking:Software"/>
+        </ObjectExactCardinality>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasTrackingSystemComponent"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="IndoorTracking:hasTrackingSystemComponent"/>
+            <Class abbreviatedIRI="IndoorTracking:TrackingSystem"/>
+        </ObjectAllValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasTuningFunction"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty abbreviatedIRI="IndoorTracking:isTuningFunctionof"/>
+            <Class abbreviatedIRI="IndoorTracking:FaultMonitor"/>
+        </ObjectExactCardinality>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasTuningService"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="IndoorTracking:isTuningServiceof"/>
+            <Class abbreviatedIRI="IndoorTracking:Tuning"/>
+        </ObjectAllValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isAdjustablePrecisionFactorof"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty abbreviatedIRI="IndoorTracking:isAdjustablePrecisionFactorof"/>
+            <Class abbreviatedIRI="IndoorTracking:ReadRate"/>
+        </ObjectExactCardinality>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isApplicationFunctionof"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="IndoorTracking:isApplicationFunctionof"/>
+            <ObjectUnionOf>
+                <Class abbreviatedIRI="IndoorTracking:OWR"/>
+                <Class abbreviatedIRI="IndoorTracking:SDSTWR"/>
+            </ObjectUnionOf>
+        </ObjectAllValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isApplicationTypeof"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="IndoorTracking:isApplicationTypeof"/>
+            <Class abbreviatedIRI="IndoorTracking:Unicast"/>
+        </ObjectAllValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isBusinessServiceof"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="IndoorTracking:isBusinessServiceof"/>
+            <ObjectUnionOf>
+                <Class abbreviatedIRI="IndoorTracking:Requirements"/>
+                <Class abbreviatedIRI="IndoorTracking:SystemModel"/>
+                <Class abbreviatedIRI="IndoorTracking:TrackingSystem"/>
+            </ObjectUnionOf>
+        </ObjectAllValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isClientPresentationServiceof"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="IndoorTracking:isClientPresentationServiceof"/>
+            <ObjectUnionOf>
+                <Class abbreviatedIRI="IndoorTracking:DeviceHealthGUI"/>
+                <Class abbreviatedIRI="IndoorTracking:LocationGUI"/>
+            </ObjectUnionOf>
+        </ObjectAllValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isFaultMonitorfor"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty abbreviatedIRI="IndoorTracking:isFaultMonitorfor"/>
+            <Class abbreviatedIRI="IndoorTracking:FaultMonitor"/>
+        </ObjectExactCardinality>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isFeedbackfor"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="IndoorTracking:isFeedbackfor"/>
+            <ObjectUnionOf>
+                <Class abbreviatedIRI="IndoorTracking:NLOSdata"/>
+                <Class abbreviatedIRI="IndoorTracking:PoorReferenceNodeLocation"/>
+            </ObjectUnionOf>
+        </ObjectAllValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isFilterServicefor"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="IndoorTracking:isFilterServicefor"/>
+            <ObjectUnionOf>
+                <Class abbreviatedIRI="IndoorTracking:ComplimentaryFilter"/>
+                <Class abbreviatedIRI="IndoorTracking:ExtendedKalmanFilter"/>
+                <Class abbreviatedIRI="IndoorTracking:ParticleFilter"/>
+            </ObjectUnionOf>
+        </ObjectAllValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isFilterfor"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="IndoorTracking:isFilterfor"/>
+            <ObjectUnionOf>
+                <Class abbreviatedIRI="IndoorTracking:LinearKalmanFilter"/>
+                <Class abbreviatedIRI="IndoorTracking:MovingAverageFilter"/>
+            </ObjectUnionOf>
+        </ObjectAllValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isGDOPServicefor"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty abbreviatedIRI="IndoorTracking:isGDOPServicefor"/>
+            <Class abbreviatedIRI="IndoorTracking:PoorReferenceNodeLocation"/>
+        </ObjectExactCardinality>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isGDOPValuefor"/>
+        <Class abbreviatedIRI="IndoorTracking:GDOPValuePartition"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isHardwareSourceof"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="IndoorTracking:isHardwareSourceof"/>
+            <Class abbreviatedIRI="IndoorTracking:CommercialDeviceName"/>
+        </ObjectAllValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isIgnoreDataFunctionfor"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty abbreviatedIRI="IndoorTracking:isIgnoreDataFunctionfor"/>
+            <Class abbreviatedIRI="IndoorTracking:IgnoreDataSample"/>
+        </ObjectExactCardinality>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isIndoorTrackingServiceof"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="IndoorTracking:hasIndoorTrackingService"/>
+            <ObjectUnionOf>
+                <Class abbreviatedIRI="IndoorTracking:FaultMonitor"/>
+                <Class abbreviatedIRI="IndoorTracking:MotionSensor"/>
+                <Class abbreviatedIRI="IndoorTracking:OnboardAnalytics"/>
+                <Class abbreviatedIRI="IndoorTracking:PropagationEnvironment"/>
+            </ObjectUnionOf>
+        </ObjectAllValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isInfluencingPrecisionFactorof"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty abbreviatedIRI="IndoorTracking:isInfluencingPrecisionFactorof"/>
+            <Class abbreviatedIRI="IndoorTracking:Attenuation"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isInfluencingPrecisionFactorof"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty abbreviatedIRI="IndoorTracking:isInfluencingPrecisionFactorof"/>
+            <Class abbreviatedIRI="IndoorTracking:Diffraction"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isInfluencingPrecisionFactorof"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty abbreviatedIRI="IndoorTracking:isInfluencingPrecisionFactorof"/>
+            <Class abbreviatedIRI="IndoorTracking:Interference"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isInfluencingPrecisionFactorof"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty abbreviatedIRI="IndoorTracking:isInfluencingPrecisionFactorof"/>
+            <Class abbreviatedIRI="IndoorTracking:Reflection"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isInfluencingPrecisionFactorof"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty abbreviatedIRI="IndoorTracking:isInfluencingPrecisionFactorof"/>
+            <Class abbreviatedIRI="IndoorTracking:Refraction"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isInfluencingPrecisionFactorof"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty abbreviatedIRI="IndoorTracking:isInfluencingPrecisionFactorof"/>
+            <Class abbreviatedIRI="IndoorTracking:ReadRate"/>
+        </ObjectExactCardinality>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isKalmanInput"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty abbreviatedIRI="IndoorTracking:isKalmanInput"/>
+            <Class abbreviatedIRI="IndoorTracking:PredictedErrorCovariance"/>
+        </ObjectExactCardinality>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isMaintenanceServiceof"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty abbreviatedIRI="IndoorTracking:hasMaintenanceService"/>
+            <Class abbreviatedIRI="IndoorTracking:PacketRate"/>
+        </ObjectExactCardinality>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isMaintenanceServiceof"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty abbreviatedIRI="IndoorTracking:hasMaintenanceService"/>
+            <Class abbreviatedIRI="IndoorTracking:ReflashDevice"/>
+        </ObjectExactCardinality>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isManufacturingApplicationServiceof"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="IndoorTracking:isManufacturingApplicationServiceof"/>
+            <ObjectUnionOf>
+                <Class abbreviatedIRI="IndoorTracking:Inventory"/>
+                <Class abbreviatedIRI="IndoorTracking:Mediation"/>
+                <Class abbreviatedIRI="IndoorTracking:TrackingMaintenance"/>
+                <Class abbreviatedIRI="IndoorTracking:TrackingService"/>
+            </ObjectUnionOf>
+        </ObjectAllValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isMonitoringFunctionof"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty abbreviatedIRI="IndoorTracking:hasMonitoringFunction"/>
+            <Class abbreviatedIRI="IndoorTracking:ActiveDeviceCheck"/>
+        </ObjectExactCardinality>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isMotionSensorTypeof"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="IndoorTracking:isMotionSensorTypeof"/>
+            <ObjectUnionOf>
+                <Class abbreviatedIRI="IndoorTracking:Accelerometer"/>
+                <Class abbreviatedIRI="IndoorTracking:ZigbeeModule"/>
+            </ObjectUnionOf>
+        </ObjectAllValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isMotionSensorfor"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="IndoorTracking:isMotionSensorfor"/>
+            <Class abbreviatedIRI="IndoorTracking:MotionSensor"/>
+        </ObjectAllValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isOnboardAnalyticsfor"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="IndoorTracking:isOnboardAnalyticsfor"/>
+            <Class abbreviatedIRI="IndoorTracking:OnboardAnalytics"/>
+        </ObjectAllValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isPrecisionRequirementof"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="IndoorTracking:isPrecisionRequirementof"/>
+            <Class abbreviatedIRI="IndoorTracking:Precision"/>
+        </ObjectAllValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isPropagationEnvironmentof"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty abbreviatedIRI="IndoorTracking:isPropagationEnvironmentof"/>
+            <Class abbreviatedIRI="IndoorTracking:PropagationEnvironment"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isPropertyof"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty abbreviatedIRI="IndoorTracking:isPropertyof"/>
+            <Class abbreviatedIRI="IndoorTracking:Noise"/>
+        </ObjectExactCardinality>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isRequirementCaptureof"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty abbreviatedIRI="IndoorTracking:hasRequirementCapture"/>
+            <Class abbreviatedIRI="IndoorTracking:Requirements"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isSemanticBusService"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="IndoorTracking:isSemanticBusService"/>
+            <ObjectUnionOf>
+                <Class abbreviatedIRI="IndoorTracking:Filters"/>
+                <Class abbreviatedIRI="IndoorTracking:GDOP"/>
+                <Class abbreviatedIRI="IndoorTracking:InSystemProgramming"/>
+                <Class abbreviatedIRI="IndoorTracking:Messaging"/>
+                <Class abbreviatedIRI="IndoorTracking:TrackingAnalytics"/>
+                <Class abbreviatedIRI="IndoorTracking:Tuning"/>
+            </ObjectUnionOf>
+        </ObjectAllValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isSensorReadingof"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="IndoorTracking:isSensorReadingof"/>
+            <Class abbreviatedIRI="IndoorTracking:AccelerometerReading"/>
+        </ObjectAllValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isSignalTypeof"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="IndoorTracking:isSignalTypeof"/>
+            <Class abbreviatedIRI="IndoorTracking:ZigbeePacket"/>
+        </ObjectAllValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isSystemModelof"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="IndoorTracking:hasSystemModel"/>
+            <ObjectUnionOf>
+                <Class abbreviatedIRI="IndoorTracking:SystemNoiseVariable"/>
+                <Class abbreviatedIRI="IndoorTracking:SystemStateVariable"/>
+            </ObjectUnionOf>
+        </ObjectAllValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isTrackingAnalyticsof"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="IndoorTracking:isTrackingAnalyticsof"/>
+            <ObjectUnionOf>
+                <Class abbreviatedIRI="IndoorTracking:Acceleration"/>
+                <Class abbreviatedIRI="IndoorTracking:Multilateration"/>
+                <Class abbreviatedIRI="IndoorTracking:Velocity"/>
+            </ObjectUnionOf>
+        </ObjectAllValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isTrackingMeasurementof"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="IndoorTracking:hasTrackingMeasurement"/>
+            <ObjectUnionOf>
+                <Class abbreviatedIRI="IndoorTracking:AccelerometerReading"/>
+                <Class abbreviatedIRI="IndoorTracking:ZigbeePacket"/>
+            </ObjectUnionOf>
+        </ObjectAllValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isTrackingOSof"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="IndoorTracking:isTrackingOSof"/>
+            <Class abbreviatedIRI="IndoorTracking:Contiki"/>
+        </ObjectAllValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isTrackingServiceof"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty abbreviatedIRI="IndoorTracking:isTrackingServiceof"/>
+            <Class abbreviatedIRI="IndoorTracking:CurrentLocation"/>
+        </ObjectExactCardinality>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isTrackingServiceof"/>
+        <ObjectMaxCardinality cardinality="100">
+            <ObjectProperty abbreviatedIRI="IndoorTracking:isTrackingServiceof"/>
+            <Class abbreviatedIRI="IndoorTracking:HistoricLocation"/>
+        </ObjectMaxCardinality>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isTrackingSoftwareof"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty abbreviatedIRI="IndoorTracking:isTrackingSoftwareof"/>
+            <Class abbreviatedIRI="IndoorTracking:Application"/>
+        </ObjectExactCardinality>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isTuningFunctionof"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty abbreviatedIRI="IndoorTracking:hasTuningFunction"/>
+            <Class abbreviatedIRI="IndoorTracking:TuningFunction"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isTuningServiceof"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="IndoorTracking:hasTuningService"/>
+            <Class abbreviatedIRI="IndoorTracking:IgnoreDataSample"/>
+        </ObjectAllValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isTypeofHardware"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="IndoorTracking:isTypeofHardware"/>
+            <Class abbreviatedIRI="IndoorTracking:CC2538EM"/>
+        </ObjectAllValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isTypeofHardware"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty abbreviatedIRI="IndoorTracking:isTypeofHardware"/>
+            <Class abbreviatedIRI="IndoorTracking:SmartRF06"/>
+        </ObjectExactCardinality>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="supertaglocation:hasLoc"/>
+        <Class IRI="https://raw.githubusercontent.com/ginipease/locationOntology/master/owlrdf/supertaglocation.owl#Location"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="supertaglocation:isLocof"/>
+        <Class abbreviatedIRI="supertaglocation:MovingTag"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasAdjustablePrecisionFactor"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty abbreviatedIRI="IndoorTracking:hasAdjustablePrecisionFactor"/>
+            <Class abbreviatedIRI="IndoorTracking:ReadRate"/>
+        </ObjectExactCardinality>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasApplicationFunction"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="IndoorTracking:hasApplicationFunction"/>
+            <ObjectUnionOf>
+                <Class abbreviatedIRI="IndoorTracking:OWR"/>
+                <Class abbreviatedIRI="IndoorTracking:SDSTWR"/>
+            </ObjectUnionOf>
+        </ObjectAllValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasApplicationType"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="IndoorTracking:hasApplicationType"/>
+            <Class abbreviatedIRI="IndoorTracking:Unicast"/>
+        </ObjectAllValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasBusinessService"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="IndoorTracking:hasBusinessService"/>
+            <ObjectUnionOf>
+                <Class abbreviatedIRI="IndoorTracking:Requirements"/>
+                <Class abbreviatedIRI="IndoorTracking:SystemModel"/>
+                <Class abbreviatedIRI="IndoorTracking:TrackingSystem"/>
+            </ObjectUnionOf>
+        </ObjectAllValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasClientPresentationService"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="IndoorTracking:hasClientPresentationService"/>
+            <ObjectUnionOf>
+                <Class abbreviatedIRI="IndoorTracking:DeviceHealthGUI"/>
+                <Class abbreviatedIRI="IndoorTracking:LocationGUI"/>
+            </ObjectUnionOf>
+        </ObjectAllValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasFaultMonitor"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty abbreviatedIRI="IndoorTracking:hasFaultMonitor"/>
+            <Class abbreviatedIRI="IndoorTracking:FaultMonitor"/>
+        </ObjectExactCardinality>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasFeedback"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="IndoorTracking:hasFeedback"/>
+            <ObjectUnionOf>
+                <Class abbreviatedIRI="IndoorTracking:NLOSdata"/>
+                <Class abbreviatedIRI="IndoorTracking:PoorReferenceNodeLocation"/>
+            </ObjectUnionOf>
+        </ObjectAllValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasFilter"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="IndoorTracking:hasFilter"/>
+            <ObjectUnionOf>
+                <Class abbreviatedIRI="IndoorTracking:LinearKalmanFilter"/>
+                <Class abbreviatedIRI="IndoorTracking:MovingAverageFilter"/>
+            </ObjectUnionOf>
+        </ObjectAllValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasFilterService"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="IndoorTracking:hasFilterService"/>
+            <ObjectUnionOf>
+                <Class abbreviatedIRI="IndoorTracking:ComplimentaryFilter"/>
+                <Class abbreviatedIRI="IndoorTracking:ExtendedKalmanFilter"/>
+                <Class abbreviatedIRI="IndoorTracking:ParticleFilter"/>
+            </ObjectUnionOf>
+        </ObjectAllValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasGDOPService"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty abbreviatedIRI="IndoorTracking:hasGDOPService"/>
+            <Class abbreviatedIRI="IndoorTracking:PoorReferenceNodeLocation"/>
+        </ObjectExactCardinality>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasGDOPValue"/>
+        <Class abbreviatedIRI="IndoorTracking:GDOPValuePartition"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasHardwareName"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty abbreviatedIRI="IndoorTracking:hasHardwareName"/>
+            <Class abbreviatedIRI="IndoorTracking:CC2538EM"/>
+        </ObjectExactCardinality>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasHardwareName"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty abbreviatedIRI="IndoorTracking:hasHardwareName"/>
+            <Class abbreviatedIRI="IndoorTracking:SmartRF06"/>
+        </ObjectExactCardinality>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasHardwareSource"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty abbreviatedIRI="IndoorTracking:hasHardwareSource"/>
+            <Class abbreviatedIRI="IndoorTracking:CommercialDeviceName"/>
+        </ObjectExactCardinality>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasIgnoreDataFunction"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty abbreviatedIRI="IndoorTracking:hasIgnoreDataFunction"/>
+            <Class abbreviatedIRI="IndoorTracking:IgnoreDataSample"/>
+        </ObjectExactCardinality>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasIndoorTrackingService"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="IndoorTracking:hasIndoorTrackingService"/>
+            <ObjectUnionOf>
+                <Class abbreviatedIRI="IndoorTracking:FaultMonitor"/>
+                <Class abbreviatedIRI="IndoorTracking:MotionSensor"/>
+                <Class abbreviatedIRI="IndoorTracking:OnboardAnalytics"/>
+                <Class abbreviatedIRI="IndoorTracking:PropagationEnvironment"/>
+            </ObjectUnionOf>
+        </ObjectAllValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasInfluencingPrecisionFactor"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty abbreviatedIRI="IndoorTracking:hasInfluencingPrecisionFactor"/>
+            <Class abbreviatedIRI="IndoorTracking:Attenuation"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasInfluencingPrecisionFactor"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty abbreviatedIRI="IndoorTracking:hasInfluencingPrecisionFactor"/>
+            <Class abbreviatedIRI="IndoorTracking:Diffraction"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasInfluencingPrecisionFactor"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty abbreviatedIRI="IndoorTracking:hasInfluencingPrecisionFactor"/>
+            <Class abbreviatedIRI="IndoorTracking:Interference"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasInfluencingPrecisionFactor"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty abbreviatedIRI="IndoorTracking:hasInfluencingPrecisionFactor"/>
+            <Class abbreviatedIRI="IndoorTracking:Reflection"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasInfluencingPrecisionFactor"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty abbreviatedIRI="IndoorTracking:hasInfluencingPrecisionFactor"/>
+            <Class abbreviatedIRI="IndoorTracking:Refraction"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasKalmanInput"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty abbreviatedIRI="IndoorTracking:hasKalmanInput"/>
+            <Class abbreviatedIRI="IndoorTracking:PredictedErrorCovariance"/>
+        </ObjectExactCardinality>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasMaintenanceService"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty abbreviatedIRI="IndoorTracking:hasMaintenanceService"/>
+            <Class abbreviatedIRI="IndoorTracking:PacketRate"/>
+        </ObjectExactCardinality>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasMaintenanceService"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty abbreviatedIRI="IndoorTracking:hasMaintenanceService"/>
+            <Class abbreviatedIRI="IndoorTracking:ReflashDevice"/>
+        </ObjectExactCardinality>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasManufacturingApplicationService"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="IndoorTracking:hasManufacturingApplicationService"/>
+            <ObjectUnionOf>
+                <Class abbreviatedIRI="IndoorTracking:Inventory"/>
+                <Class abbreviatedIRI="IndoorTracking:Mediation"/>
+                <Class abbreviatedIRI="IndoorTracking:TrackingMaintenance"/>
+                <Class abbreviatedIRI="IndoorTracking:TrackingService"/>
+            </ObjectUnionOf>
+        </ObjectAllValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasMonitoringFunction"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty abbreviatedIRI="IndoorTracking:hasMonitoringFunction"/>
+            <Class abbreviatedIRI="IndoorTracking:ActiveDeviceCheck"/>
+        </ObjectExactCardinality>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasMotionSensor"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="IndoorTracking:hasMotionSensor"/>
+            <Class abbreviatedIRI="IndoorTracking:MotionSensor"/>
+        </ObjectAllValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasMotionSensorType"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="IndoorTracking:hasMotionSensorType"/>
+            <ObjectUnionOf>
+                <Class abbreviatedIRI="IndoorTracking:Accelerometer"/>
+                <Class abbreviatedIRI="IndoorTracking:ZigbeeModule"/>
+            </ObjectUnionOf>
+        </ObjectAllValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasOnboardAnalytics"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="IndoorTracking:hasOnboardAnalytics"/>
+            <Class abbreviatedIRI="IndoorTracking:OnboardAnalytics"/>
+        </ObjectAllValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasPropagationEnvironment"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty abbreviatedIRI="IndoorTracking:hasPropagationEnvironment"/>
+            <Class abbreviatedIRI="IndoorTracking:PropagationEnvironment"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasProperty"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty abbreviatedIRI="IndoorTracking:hasProperty"/>
+            <Class abbreviatedIRI="IndoorTracking:Noise"/>
+        </ObjectExactCardinality>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasRequirementCapture"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="IndoorTracking:hasRequirementCapture"/>
+            <Class abbreviatedIRI="IndoorTracking:Precision"/>
+        </ObjectAllValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasSemanticBusService"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="IndoorTracking:hasSemanticBusService"/>
+            <ObjectUnionOf>
+                <Class abbreviatedIRI="IndoorTracking:Filters"/>
+                <Class abbreviatedIRI="IndoorTracking:GDOP"/>
+                <Class abbreviatedIRI="IndoorTracking:InSystemProgramming"/>
+                <Class abbreviatedIRI="IndoorTracking:Messaging"/>
+                <Class abbreviatedIRI="IndoorTracking:TrackingAnalytics"/>
+                <Class abbreviatedIRI="IndoorTracking:Tuning"/>
+            </ObjectUnionOf>
+        </ObjectAllValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasSensorReading"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="IndoorTracking:hasSensorReading"/>
+            <Class abbreviatedIRI="IndoorTracking:AccelerometerReading"/>
+        </ObjectAllValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasSignalType"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="IndoorTracking:hasSignalType"/>
+            <Class abbreviatedIRI="IndoorTracking:ZigbeePacket"/>
+        </ObjectAllValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasSystemModel"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="IndoorTracking:hasSystemModel"/>
+            <ObjectUnionOf>
+                <Class abbreviatedIRI="IndoorTracking:SystemNoiseVariable"/>
+                <Class abbreviatedIRI="IndoorTracking:SystemStateVariable"/>
+            </ObjectUnionOf>
+        </ObjectAllValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasTrackingAnalytics"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="IndoorTracking:hasTrackingAnalytics"/>
+            <ObjectUnionOf>
+                <Class abbreviatedIRI="IndoorTracking:Acceleration"/>
+                <Class abbreviatedIRI="IndoorTracking:Multilateration"/>
+                <Class abbreviatedIRI="IndoorTracking:Velocity"/>
+            </ObjectUnionOf>
+        </ObjectAllValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasTrackingMeasurement"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="IndoorTracking:hasTrackingMeasurement"/>
+            <ObjectUnionOf>
+                <Class abbreviatedIRI="IndoorTracking:AccelerometerReading"/>
+                <Class abbreviatedIRI="IndoorTracking:ZigbeePacket"/>
+            </ObjectUnionOf>
+        </ObjectAllValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasTrackingOS"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="IndoorTracking:hasTrackingOS"/>
+            <Class abbreviatedIRI="IndoorTracking:Contiki"/>
+        </ObjectAllValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasTrackingService"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty abbreviatedIRI="IndoorTracking:hasTrackingService"/>
+            <Class abbreviatedIRI="IndoorTracking:CurrentLocation"/>
+        </ObjectExactCardinality>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasTrackingService"/>
+        <ObjectMaxCardinality cardinality="100">
+            <ObjectProperty abbreviatedIRI="IndoorTracking:hasTrackingService"/>
+            <Class abbreviatedIRI="IndoorTracking:HistoricLocation"/>
+        </ObjectMaxCardinality>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasTrackingSoftware"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="IndoorTracking:hasTrackingSoftware"/>
+            <Class abbreviatedIRI="IndoorTracking:Application"/>
+        </ObjectAllValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasTuningFunction"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty abbreviatedIRI="IndoorTracking:hasTuningFunction"/>
+            <Class abbreviatedIRI="IndoorTracking:TuningFunction"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasTuningService"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="IndoorTracking:hasTuningService"/>
+            <Class abbreviatedIRI="IndoorTracking:IgnoreDataSample"/>
+        </ObjectAllValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isAdjustablePrecisionFactorof"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="IndoorTracking:isAdjustablePrecisionFactorof"/>
+            <Class abbreviatedIRI="IndoorTracking:Precision"/>
+        </ObjectAllValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isApplicationFunctionof"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty abbreviatedIRI="IndoorTracking:isApplicationTypeof"/>
+            <Class abbreviatedIRI="IndoorTracking:Unicast"/>
+        </ObjectExactCardinality>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isApplicationTypeof"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty abbreviatedIRI="IndoorTracking:isApplicationTypeof"/>
+            <Class abbreviatedIRI="IndoorTracking:Application"/>
+        </ObjectExactCardinality>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isClientPresentationServiceof"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="IndoorTracking:isClientPresentationServiceof"/>
+            <Class abbreviatedIRI="IndoorTracking:ClientPresentation"/>
+        </ObjectAllValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isComponentofTrackingSystem"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="IndoorTracking:hasTrackingSystemComponent"/>
+            <Class abbreviatedIRI="IndoorTracking:TrackingSystem"/>
+        </ObjectAllValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isFaultMonitorfor"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty abbreviatedIRI="IndoorTracking:isFaultMonitorfor"/>
+            <Class abbreviatedIRI="IndoorTracking:IndoorTrackingDevices"/>
+        </ObjectExactCardinality>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isFeedbackfor"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="IndoorTracking:isFeedbackfor"/>
+            <ObjectUnionOf>
+                <Class abbreviatedIRI="IndoorTracking:ComplimentaryFilter"/>
+                <Class abbreviatedIRI="IndoorTracking:GDOP"/>
+            </ObjectUnionOf>
+        </ObjectAllValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isFilterServicefor"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="IndoorTracking:isFilterServicefor"/>
+            <Class abbreviatedIRI="IndoorTracking:Filters"/>
+        </ObjectAllValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isFilterfor"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="IndoorTracking:isFilterfor"/>
+            <Class abbreviatedIRI="IndoorTracking:OnboardAnalytics"/>
+        </ObjectAllValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isGDOPServicefor"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty abbreviatedIRI="IndoorTracking:isGDOPServicefor"/>
+            <Class abbreviatedIRI="IndoorTracking:GDOP"/>
+        </ObjectExactCardinality>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isIgnoreDataFunctionfor"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="IndoorTracking:isIgnoreDataFunctionfor"/>
+            <ObjectUnionOf>
+                <Class abbreviatedIRI="IndoorTracking:NLOSdata"/>
+                <Class abbreviatedIRI="IndoorTracking:PoorReferenceNodeLocation"/>
+            </ObjectUnionOf>
+        </ObjectAllValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isInfluencingPrecisionFactorof"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty abbreviatedIRI="IndoorTracking:isInfluencingPrecisionFactorof"/>
+            <Class abbreviatedIRI="IndoorTracking:Precision"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isInventoryServiceof"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty abbreviatedIRI="IndoorTracking:isInventoryServiceof"/>
+            <Class abbreviatedIRI="IndoorTracking:Inventory"/>
+        </ObjectExactCardinality>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isKalmanInput"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="IndoorTracking:isKalmanInput"/>
+            <Class abbreviatedIRI="IndoorTracking:LinearKalmanFilter"/>
+        </ObjectAllValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isMaintenanceServiceof"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty abbreviatedIRI="IndoorTracking:hasMaintenanceService"/>
+            <Class abbreviatedIRI="IndoorTracking:TrackingMaintenance"/>
+        </ObjectExactCardinality>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isMediationServiceof"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty abbreviatedIRI="IndoorTracking:isMediationServiceof"/>
+            <Class abbreviatedIRI="IndoorTracking:Mediation"/>
+        </ObjectExactCardinality>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isMonitoringFunctionof"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty abbreviatedIRI="IndoorTracking:isMonitoringFunctionof"/>
+            <Class abbreviatedIRI="IndoorTracking:FaultMonitor"/>
+        </ObjectExactCardinality>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isMotionSensorTypeof"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="IndoorTracking:isMotionSensorTypeof"/>
+            <Class abbreviatedIRI="IndoorTracking:MotionSensor"/>
+        </ObjectAllValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isMotionSensorfor"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty abbreviatedIRI="IndoorTracking:isMotionSensorfor"/>
+            <Class abbreviatedIRI="IndoorTracking:IndoorTrackingDevices"/>
+        </ObjectExactCardinality>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isOnboardAnalyticsfor"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty abbreviatedIRI="IndoorTracking:isOnboardAnalyticsfor"/>
+            <Class abbreviatedIRI="IndoorTracking:IndoorTrackingDevices"/>
+        </ObjectExactCardinality>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isPrecisionRequirementof"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="IndoorTracking:isPrecisionRequirementof"/>
+            <Class abbreviatedIRI="IndoorTracking:Requirements"/>
+        </ObjectAllValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isPropagationEnvironmentof"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty abbreviatedIRI="IndoorTracking:isPropagationEnvironmentof"/>
+            <Class abbreviatedIRI="IndoorTracking:IndoorTrackingDevices"/>
+        </ObjectExactCardinality>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isPropertyof"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty abbreviatedIRI="IndoorTracking:isPropertyof"/>
+            <Class abbreviatedIRI="IndoorTracking:PropagationEnvironment"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isRequirementCaptureof"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty abbreviatedIRI="IndoorTracking:hasRequirementCapture"/>
+            <Class abbreviatedIRI="IndoorTracking:Requirements"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isSensorReadingof"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="IndoorTracking:isSensorReadingof"/>
+            <Class abbreviatedIRI="IndoorTracking:Accelerometer"/>
+        </ObjectAllValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isSignalTypeof"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="IndoorTracking:isSignalTypeof"/>
+            <Class abbreviatedIRI="IndoorTracking:ZigbeeModule"/>
+        </ObjectAllValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isSystemModelof"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="IndoorTracking:isSystemModelof"/>
+            <Class abbreviatedIRI="IndoorTracking:SystemModel"/>
+        </ObjectAllValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isTrackingAnalyticsof"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="IndoorTracking:isTrackingAnalyticsof"/>
+            <Class abbreviatedIRI="IndoorTracking:TrackingAnalytics"/>
+        </ObjectAllValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isTrackingMeasurementof"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="IndoorTracking:isTrackingMeasurementof"/>
+            <Class abbreviatedIRI="IndoorTracking:Measurement"/>
+        </ObjectAllValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isTrackingOSof"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty abbreviatedIRI="IndoorTracking:isTrackingOSof"/>
+            <Class abbreviatedIRI="IndoorTracking:OS"/>
+        </ObjectExactCardinality>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isTrackingServiceof"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty abbreviatedIRI="IndoorTracking:isTrackingServiceof"/>
+            <Class abbreviatedIRI="IndoorTracking:TrackingService"/>
+        </ObjectExactCardinality>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isTrackingSetupof"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty abbreviatedIRI="IndoorTracking:isTrackingSetupof"/>
+            <Class abbreviatedIRI="IndoorTracking:Setup"/>
+        </ObjectExactCardinality>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isTrackingSoftwareof"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty abbreviatedIRI="IndoorTracking:isTrackingSoftwareof"/>
+            <Class abbreviatedIRI="IndoorTracking:Software"/>
+        </ObjectExactCardinality>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isTuningFunctionof"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty abbreviatedIRI="IndoorTracking:isTuningFunctionof"/>
+            <Class abbreviatedIRI="IndoorTracking:FaultMonitor"/>
+        </ObjectExactCardinality>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isTuningServiceof"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="IndoorTracking:isTuningServiceof"/>
+            <Class abbreviatedIRI="IndoorTracking:Tuning"/>
+        </ObjectAllValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isTypeofHardware"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="IndoorTracking:isTypeofHardware"/>
+            <Class abbreviatedIRI="IndoorTracking:CommercialDeviceName"/>
+        </ObjectAllValuesFrom>
+    </ObjectPropertyRange>
+    <DisjointObjectProperties>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasAdjustablePrecisionFactor"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasInfluencingPrecisionFactor"/>
+    </DisjointObjectProperties>
+    <DisjointObjectProperties>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasFaultMonitor"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasMotionSensor"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasOnboardAnalytics"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasPropagationEnvironment"/>
+    </DisjointObjectProperties>
+    <DisjointObjectProperties>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasMonitoringFunction"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasTuningFunction"/>
+    </DisjointObjectProperties>
+    <DisjointObjectProperties>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasRequirementCapture"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasSystemModel"/>
+    </DisjointObjectProperties>
+    <DisjointObjectProperties>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasSensorReading"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasSignalType"/>
+    </DisjointObjectProperties>
+    <DisjointObjectProperties>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasTrackingAnalytics"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasTuningService"/>
+    </DisjointObjectProperties>
+    <DisjointObjectProperties>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasTrackingHardware"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasTrackingMeasurement"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasTrackingOS"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasTrackingSetup"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:hasTrackingSoftware"/>
+    </DisjointObjectProperties>
+    <DisjointObjectProperties>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isAdjustablePrecisionFactorof"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isInfluencingPrecisionFactorof"/>
+    </DisjointObjectProperties>
+    <DisjointObjectProperties>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isFaultMonitorfor"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isMotionSensorfor"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isOnboardAnalyticsfor"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isPropagationEnvironmentof"/>
+    </DisjointObjectProperties>
+    <DisjointObjectProperties>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isMonitoringFunctionof"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isTuningFunctionof"/>
+    </DisjointObjectProperties>
+    <DisjointObjectProperties>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isRequirementCaptureof"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isSystemModelof"/>
+    </DisjointObjectProperties>
+    <DisjointObjectProperties>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isSensorReadingof"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isSignalTypeof"/>
+    </DisjointObjectProperties>
+    <DisjointObjectProperties>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isTrackingAnalyticsof"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isTuningServiceof"/>
+    </DisjointObjectProperties>
+    <DisjointObjectProperties>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isTrackingHardwareof"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isTrackingMeasurementof"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isTrackingOSof"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isTrackingSetupof"/>
+        <ObjectProperty abbreviatedIRI="IndoorTracking:isTrackingSoftwareof"/>
+    </DisjointObjectProperties>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI="supertaglocation:TimeValue"/>
+        <Class abbreviatedIRI="supertaglocation:SupertagLoc"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI="supertaglocation:UIDValue"/>
+        <Class IRI="https://raw.githubusercontent.com/ginipease/locationOntology/master/owlrdf/supertaglocation.owl#Supertag"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI="supertaglocation:XValue"/>
+        <Class abbreviatedIRI="supertaglocation:SupertagLoc"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI="supertaglocation:YValue"/>
+        <Class abbreviatedIRI="supertaglocation:SupertagLoc"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI="supertaglocation:ZValue"/>
+        <Class abbreviatedIRI="supertaglocation:SupertagLoc"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI="supertaglocation:TimeValue"/>
+        <Datatype abbreviatedIRI="xsd:dateTime"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI="supertaglocation:UIDValue"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI="supertaglocation:XValue"/>
+        <Datatype abbreviatedIRI="xsd:float"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI="supertaglocation:YValue"/>
+        <Datatype abbreviatedIRI="xsd:float"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI="supertaglocation:ZValue"/>
+        <Datatype abbreviatedIRI="xsd:float"/>
+    </DataPropertyRange>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 3.5.1) http://owlapi.sourceforge.net -->
+

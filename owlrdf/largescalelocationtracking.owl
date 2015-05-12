@@ -1,0 +1,3266 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY IndoorTracking "https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#" >
+    <!ENTITY supertaglocation "https://raw.githubusercontent.com/ginipease/locationOntology/master/owlrdf/supertaglocation#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.semanticweb.org/parallels/ontologies/2015/2/largescalelocationtracking#"
+     xml:base="http://www.semanticweb.org/parallels/ontologies/2015/2/largescalelocationtracking"
+     xmlns:supertaglocation="https://raw.githubusercontent.com/ginipease/locationOntology/master/owlrdf/supertaglocation#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:IndoorTracking="https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/parallels/ontologies/2015/2/tracking-service-arch"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/locationOntology/master/owlrdf/supertaglocation#hasLoc -->
+
+    <owl:ObjectProperty rdf:about="&supertaglocation;hasLoc">
+        <rdfs:domain rdf:resource="&supertaglocation;MovingTag"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ginipease/locationOntology/master/owlrdf/supertaglocation.owl#Location"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/locationOntology/master/owlrdf/supertaglocation#isLocof -->
+
+    <owl:ObjectProperty rdf:about="&supertaglocation;isLocof">
+        <rdfs:range rdf:resource="&supertaglocation;MovingTag"/>
+        <owl:inverseOf rdf:resource="&supertaglocation;hasLoc"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ginipease/locationOntology/master/owlrdf/supertaglocation.owl#Location"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#hasAdjustablePrecisionFactor -->
+
+    <owl:ObjectProperty rdf:about="&IndoorTracking;hasAdjustablePrecisionFactor">
+        <owl:propertyDisjointWith rdf:resource="&IndoorTracking;hasInfluencingPrecisionFactor"/>
+        <rdfs:subPropertyOf rdf:resource="&IndoorTracking;hasRequirementCapture"/>
+        <owl:inverseOf rdf:resource="&IndoorTracking;isAdjustablePrecisionFactorof"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;hasInfluencingPrecisionFactor"/>
+                <owl:allValuesFrom rdf:resource="&IndoorTracking;Precision"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;hasAdjustablePrecisionFactor"/>
+                <owl:onClass rdf:resource="&IndoorTracking;ReadRate"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#hasApplicationFunction -->
+
+    <owl:ObjectProperty rdf:about="&IndoorTracking;hasApplicationFunction">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&IndoorTracking;hasApplicationType"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;hasApplicationFunction"/>
+                <owl:onClass rdf:resource="&IndoorTracking;Unicast"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;hasApplicationFunction"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="&IndoorTracking;OWR"/>
+                            <rdf:Description rdf:about="&IndoorTracking;SDSTWR"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#hasApplicationType -->
+
+    <owl:ObjectProperty rdf:about="&IndoorTracking;hasApplicationType">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&IndoorTracking;hasTrackingSoftware"/>
+        <owl:inverseOf rdf:resource="&IndoorTracking;isApplicationTypeof"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;hasApplicationType"/>
+                <owl:allValuesFrom rdf:resource="&IndoorTracking;Unicast"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;hasApplicationType"/>
+                <owl:onClass rdf:resource="&IndoorTracking;Application"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#hasBusinessService -->
+
+    <owl:ObjectProperty rdf:about="&IndoorTracking;hasBusinessService">
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+        <owl:inverseOf rdf:resource="&IndoorTracking;isBusinessServiceof"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;hasBusinessService"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="&IndoorTracking;Requirements"/>
+                            <rdf:Description rdf:about="&IndoorTracking;SystemModel"/>
+                            <rdf:Description rdf:about="&IndoorTracking;TrackingSystem"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#hasClientPresentationService -->
+
+    <owl:ObjectProperty rdf:about="&IndoorTracking;hasClientPresentationService">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+        <owl:inverseOf rdf:resource="&IndoorTracking;isClientPresentationServiceof"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;hasClientPresentationService"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="&IndoorTracking;DeviceHealthGUI"/>
+                            <rdf:Description rdf:about="&IndoorTracking;LocationGUI"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#hasFaultMonitor -->
+
+    <owl:ObjectProperty rdf:about="&IndoorTracking;hasFaultMonitor">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&IndoorTracking;hasIndoorTrackingService"/>
+        <owl:inverseOf rdf:resource="&IndoorTracking;isFaultMonitorfor"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;hasFaultMonitor"/>
+                <owl:onClass rdf:resource="&IndoorTracking;IndoorTrackingDevices"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;hasFaultMonitor"/>
+                <owl:onClass rdf:resource="&IndoorTracking;FaultMonitor"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#hasFeedback -->
+
+    <owl:ObjectProperty rdf:about="&IndoorTracking;hasFeedback">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&IndoorTracking;hasFilterService"/>
+        <rdfs:subPropertyOf rdf:resource="&IndoorTracking;hasGDOPService"/>
+        <owl:inverseOf rdf:resource="&IndoorTracking;isFeedbackfor"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;hasFeedback"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="&IndoorTracking;NLOSdata"/>
+                            <rdf:Description rdf:about="&IndoorTracking;PoorReferenceNodeLocation"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;hasFeedback"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="&IndoorTracking;ComplimentaryFilter"/>
+                            <rdf:Description rdf:about="&IndoorTracking;GDOP"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#hasFilter -->
+
+    <owl:ObjectProperty rdf:about="&IndoorTracking;hasFilter">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&IndoorTracking;hasOnboardAnalytics"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;hasFilter"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="&IndoorTracking;LinearKalmanFilter"/>
+                            <rdf:Description rdf:about="&IndoorTracking;MovingAverageFilter"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;hasFilter"/>
+                <owl:allValuesFrom rdf:resource="&IndoorTracking;OnboardAnalytics"/>
+            </owl:Restriction>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#hasFilterService -->
+
+    <owl:ObjectProperty rdf:about="&IndoorTracking;hasFilterService">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&IndoorTracking;hasSemanticBusService"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;hasFilterService"/>
+                <owl:allValuesFrom rdf:resource="&IndoorTracking;Filters"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;hasFilterService"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="&IndoorTracking;ComplimentaryFilter"/>
+                            <rdf:Description rdf:about="&IndoorTracking;ExtendedKalmanFilter"/>
+                            <rdf:Description rdf:about="&IndoorTracking;ParticleFilter"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#hasGDOPService -->
+
+    <owl:ObjectProperty rdf:about="&IndoorTracking;hasGDOPService">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&IndoorTracking;hasSemanticBusService"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;hasGDOPService"/>
+                <owl:onClass rdf:resource="&IndoorTracking;GDOP"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;hasGDOPService"/>
+                <owl:onClass rdf:resource="&IndoorTracking;PoorReferenceNodeLocation"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#hasGDOPValue -->
+
+    <owl:ObjectProperty rdf:about="&IndoorTracking;hasGDOPValue">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+        <rdfs:range rdf:resource="&IndoorTracking;GDOPValuePartition"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#hasHardwareName -->
+
+    <owl:ObjectProperty rdf:about="&IndoorTracking;hasHardwareName">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&IndoorTracking;hasHardwareSource"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;hasHardwareName"/>
+                <owl:allValuesFrom rdf:resource="&IndoorTracking;CommercialDeviceName"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;hasHardwareName"/>
+                <owl:onClass rdf:resource="&IndoorTracking;SmartRF06"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;hasHardwareName"/>
+                <owl:onClass rdf:resource="&IndoorTracking;CC2538EM"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#hasHardwareSource -->
+
+    <owl:ObjectProperty rdf:about="&IndoorTracking;hasHardwareSource">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&IndoorTracking;hasTrackingHardware"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;hasHardwareSource"/>
+                <owl:onClass rdf:resource="&IndoorTracking;CommercialDeviceName"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#hasIgnoreDataFunction -->
+
+    <owl:ObjectProperty rdf:about="&IndoorTracking;hasIgnoreDataFunction">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&IndoorTracking;hasFeedback"/>
+        <owl:inverseOf rdf:resource="&IndoorTracking;isIgnoreDataFunctionfor"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;hasIgnoreDataFunction"/>
+                <owl:onClass rdf:resource="&IndoorTracking;IgnoreDataSample"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;hasIgnoreDataFunction"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="&IndoorTracking;NLOSdata"/>
+                            <rdf:Description rdf:about="&IndoorTracking;PoorReferenceNodeLocation"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#hasIndoorTrackingService -->
+
+    <owl:ObjectProperty rdf:about="&IndoorTracking;hasIndoorTrackingService">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;hasIndoorTrackingService"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="&IndoorTracking;FaultMonitor"/>
+                            <rdf:Description rdf:about="&IndoorTracking;MotionSensor"/>
+                            <rdf:Description rdf:about="&IndoorTracking;OnboardAnalytics"/>
+                            <rdf:Description rdf:about="&IndoorTracking;PropagationEnvironment"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#hasInfluencingPrecisionFactor -->
+
+    <owl:ObjectProperty rdf:about="&IndoorTracking;hasInfluencingPrecisionFactor">
+        <rdfs:subPropertyOf rdf:resource="&IndoorTracking;hasRequirementCapture"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;hasInfluencingPrecisionFactor"/>
+                <owl:someValuesFrom rdf:resource="&IndoorTracking;Interference"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;hasInfluencingPrecisionFactor"/>
+                <owl:someValuesFrom rdf:resource="&IndoorTracking;Precision"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;hasInfluencingPrecisionFactor"/>
+                <owl:someValuesFrom rdf:resource="&IndoorTracking;Diffraction"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;hasInfluencingPrecisionFactor"/>
+                <owl:someValuesFrom rdf:resource="&IndoorTracking;Attenuation"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;hasInfluencingPrecisionFactor"/>
+                <owl:someValuesFrom rdf:resource="&IndoorTracking;Refraction"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;hasInfluencingPrecisionFactor"/>
+                <owl:someValuesFrom rdf:resource="&IndoorTracking;Reflection"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#hasInventoryService -->
+
+    <owl:ObjectProperty rdf:about="&IndoorTracking;hasInventoryService">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&IndoorTracking;hasManufacturingApplicationService"/>
+        <owl:inverseOf rdf:resource="&IndoorTracking;isInventoryServiceof"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;hasInventoryService"/>
+                <owl:onClass rdf:resource="&IndoorTracking;Inventory"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#hasKalmanInput -->
+
+    <owl:ObjectProperty rdf:about="&IndoorTracking;hasKalmanInput">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&IndoorTracking;hasFilter"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;hasKalmanInput"/>
+                <owl:onClass rdf:resource="&IndoorTracking;PredictedErrorCovariance"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;hasKalmanInput"/>
+                <owl:allValuesFrom rdf:resource="&IndoorTracking;LinearKalmanFilter"/>
+            </owl:Restriction>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#hasLoc -->
+
+    <owl:ObjectProperty rdf:about="&IndoorTracking;hasLoc">
+        <rdfs:subPropertyOf rdf:resource="&IndoorTracking;hasTrackingSetup"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#hasMaintenanceService -->
+
+    <owl:ObjectProperty rdf:about="&IndoorTracking;hasMaintenanceService">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&IndoorTracking;hasManufacturingApplicationService"/>
+        <owl:inverseOf rdf:resource="&IndoorTracking;isMaintenanceServiceof"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;hasMaintenanceService"/>
+                <owl:onClass rdf:resource="&IndoorTracking;PacketRate"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;hasMaintenanceService"/>
+                <owl:onClass rdf:resource="&IndoorTracking;TrackingMaintenance"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;hasMaintenanceService"/>
+                <owl:onClass rdf:resource="&IndoorTracking;ReflashDevice"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#hasManufacturingApplicationService -->
+
+    <owl:ObjectProperty rdf:about="&IndoorTracking;hasManufacturingApplicationService">
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;hasManufacturingApplicationService"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="&IndoorTracking;Inventory"/>
+                            <rdf:Description rdf:about="&IndoorTracking;Mediation"/>
+                            <rdf:Description rdf:about="&IndoorTracking;TrackingMaintenance"/>
+                            <rdf:Description rdf:about="&IndoorTracking;TrackingService"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#hasMediationService -->
+
+    <owl:ObjectProperty rdf:about="&IndoorTracking;hasMediationService">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&IndoorTracking;hasManufacturingApplicationService"/>
+        <owl:inverseOf rdf:resource="&IndoorTracking;isMediationServiceof"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;hasMediationService"/>
+                <owl:onClass rdf:resource="&IndoorTracking;Mediation"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#hasMonitoringFunction -->
+
+    <owl:ObjectProperty rdf:about="&IndoorTracking;hasMonitoringFunction">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&IndoorTracking;hasFaultMonitor"/>
+        <owl:propertyDisjointWith rdf:resource="&IndoorTracking;hasTuningFunction"/>
+        <owl:inverseOf rdf:resource="&IndoorTracking;isMonitoringFunctionof"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;hasMonitoringFunction"/>
+                <owl:onClass rdf:resource="&IndoorTracking;ActiveDeviceCheck"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;isMonitoringFunctionof"/>
+                <owl:onClass rdf:resource="&IndoorTracking;FaultMonitor"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#hasMotionSensor -->
+
+    <owl:ObjectProperty rdf:about="&IndoorTracking;hasMotionSensor">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&IndoorTracking;hasIndoorTrackingService"/>
+        <owl:inverseOf rdf:resource="&IndoorTracking;isMotionSensorfor"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;hasMotionSensor"/>
+                <owl:allValuesFrom rdf:resource="&IndoorTracking;MotionSensor"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;hasMotionSensor"/>
+                <owl:onClass rdf:resource="&IndoorTracking;IndoorTrackingDevices"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#hasMotionSensorType -->
+
+    <owl:ObjectProperty rdf:about="&IndoorTracking;hasMotionSensorType">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&IndoorTracking;hasMotionSensor"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;hasMotionSensorType"/>
+                <owl:allValuesFrom rdf:resource="&IndoorTracking;MotionSensor"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;hasMotionSensorType"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="&IndoorTracking;Accelerometer"/>
+                            <rdf:Description rdf:about="&IndoorTracking;ZigbeeModule"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#hasOnboardAnalytics -->
+
+    <owl:ObjectProperty rdf:about="&IndoorTracking;hasOnboardAnalytics">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&IndoorTracking;hasIndoorTrackingService"/>
+        <owl:inverseOf rdf:resource="&IndoorTracking;isOnboardAnalyticsfor"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;hasOnboardAnalytics"/>
+                <owl:onClass rdf:resource="&IndoorTracking;IndoorTrackingDevices"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;hasOnboardAnalytics"/>
+                <owl:allValuesFrom rdf:resource="&IndoorTracking;OnboardAnalytics"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#hasPropagationEnvironment -->
+
+    <owl:ObjectProperty rdf:about="&IndoorTracking;hasPropagationEnvironment">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&IndoorTracking;hasIndoorTrackingService"/>
+        <owl:inverseOf rdf:resource="&IndoorTracking;isPropagationEnvironmentof"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;hasPropagationEnvironment"/>
+                <owl:someValuesFrom rdf:resource="&IndoorTracking;PropagationEnvironment"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;hasPropagationEnvironment"/>
+                <owl:onClass rdf:resource="&IndoorTracking;IndoorTrackingDevices"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#hasProperty -->
+
+    <owl:ObjectProperty rdf:about="&IndoorTracking;hasProperty">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&IndoorTracking;hasPropagationEnvironment"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;hasProperty"/>
+                <owl:onClass rdf:resource="&IndoorTracking;Noise"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;hasProperty"/>
+                <owl:someValuesFrom rdf:resource="&IndoorTracking;PropagationEnvironment"/>
+            </owl:Restriction>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#hasRequirementCapture -->
+
+    <owl:ObjectProperty rdf:about="&IndoorTracking;hasRequirementCapture">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&IndoorTracking;hasBusinessService"/>
+        <owl:propertyDisjointWith rdf:resource="&IndoorTracking;hasSystemModel"/>
+        <owl:inverseOf rdf:resource="&IndoorTracking;isRequirementCaptureof"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;hasRequirementCapture"/>
+                <owl:allValuesFrom rdf:resource="&IndoorTracking;Precision"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;hasRequirementCapture"/>
+                <owl:allValuesFrom rdf:resource="&IndoorTracking;Requirements"/>
+            </owl:Restriction>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#hasSemanticBusService -->
+
+    <owl:ObjectProperty rdf:about="&IndoorTracking;hasSemanticBusService">
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;hasSemanticBusService"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="&IndoorTracking;Filters"/>
+                            <rdf:Description rdf:about="&IndoorTracking;GDOP"/>
+                            <rdf:Description rdf:about="&IndoorTracking;InSystemProgramming"/>
+                            <rdf:Description rdf:about="&IndoorTracking;Messaging"/>
+                            <rdf:Description rdf:about="&IndoorTracking;TrackingAnalytics"/>
+                            <rdf:Description rdf:about="&IndoorTracking;Tuning"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#hasSensorReading -->
+
+    <owl:ObjectProperty rdf:about="&IndoorTracking;hasSensorReading">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&IndoorTracking;hasMotionSensorType"/>
+        <owl:propertyDisjointWith rdf:resource="&IndoorTracking;hasSignalType"/>
+        <owl:inverseOf rdf:resource="&IndoorTracking;isSensorReadingof"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;hasSensorReading"/>
+                <owl:allValuesFrom rdf:resource="&IndoorTracking;Accelerometer"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;hasSensorReading"/>
+                <owl:allValuesFrom rdf:resource="&IndoorTracking;AccelerometerReading"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#hasSignalType -->
+
+    <owl:ObjectProperty rdf:about="&IndoorTracking;hasSignalType">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&IndoorTracking;hasMotionSensorType"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;hasSignalType"/>
+                <owl:allValuesFrom rdf:resource="&IndoorTracking;ZigbeePacket"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;hasSignalType"/>
+                <owl:allValuesFrom rdf:resource="&IndoorTracking;ZigbeeModule"/>
+            </owl:Restriction>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#hasSystemModel -->
+
+    <owl:ObjectProperty rdf:about="&IndoorTracking;hasSystemModel">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&IndoorTracking;hasBusinessService"/>
+        <owl:inverseOf rdf:resource="&IndoorTracking;isSystemModelof"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;hasSystemModel"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="&IndoorTracking;SystemNoiseVariable"/>
+                            <rdf:Description rdf:about="&IndoorTracking;SystemStateVariable"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;isSystemModelof"/>
+                <owl:allValuesFrom rdf:resource="&IndoorTracking;SystemModel"/>
+            </owl:Restriction>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#hasTrackingAnalytics -->
+
+    <owl:ObjectProperty rdf:about="&IndoorTracking;hasTrackingAnalytics">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&IndoorTracking;hasSemanticBusService"/>
+        <owl:propertyDisjointWith rdf:resource="&IndoorTracking;hasTuningService"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;hasTrackingAnalytics"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="&IndoorTracking;Acceleration"/>
+                            <rdf:Description rdf:about="&IndoorTracking;Multilateration"/>
+                            <rdf:Description rdf:about="&IndoorTracking;Velocity"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#hasTrackingHardware -->
+
+    <owl:ObjectProperty rdf:about="&IndoorTracking;hasTrackingHardware">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&IndoorTracking;hasTrackingSystemComponent"/>
+        <owl:inverseOf rdf:resource="&IndoorTracking;isTrackingHardwareof"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#hasTrackingMeasurement -->
+
+    <owl:ObjectProperty rdf:about="&IndoorTracking;hasTrackingMeasurement">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&IndoorTracking;hasTrackingSystemComponent"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;isTrackingMeasurementof"/>
+                <owl:allValuesFrom rdf:resource="&IndoorTracking;Measurement"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;hasTrackingMeasurement"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="&IndoorTracking;AccelerometerReading"/>
+                            <rdf:Description rdf:about="&IndoorTracking;ZigbeePacket"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#hasTrackingOS -->
+
+    <owl:ObjectProperty rdf:about="&IndoorTracking;hasTrackingOS">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&IndoorTracking;hasTrackingSystemComponent"/>
+        <owl:inverseOf rdf:resource="&IndoorTracking;isTrackingOSof"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;hasTrackingOS"/>
+                <owl:allValuesFrom rdf:resource="&IndoorTracking;Contiki"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;hasTrackingOS"/>
+                <owl:onClass rdf:resource="&IndoorTracking;OS"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#hasTrackingService -->
+
+    <owl:ObjectProperty rdf:about="&IndoorTracking;hasTrackingService">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&IndoorTracking;hasManufacturingApplicationService"/>
+        <owl:inverseOf rdf:resource="&IndoorTracking;isTrackingServiceof"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;hasTrackingService"/>
+                <owl:onClass rdf:resource="&IndoorTracking;CurrentLocation"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;hasTrackingService"/>
+                <owl:onClass rdf:resource="&IndoorTracking;TrackingService"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;hasTrackingService"/>
+                <owl:onClass rdf:resource="&IndoorTracking;HistoricLocation"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">100</owl:maxQualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#hasTrackingSetup -->
+
+    <owl:ObjectProperty rdf:about="&IndoorTracking;hasTrackingSetup">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&IndoorTracking;hasTrackingSystemComponent"/>
+        <owl:inverseOf rdf:resource="&IndoorTracking;isTrackingSetupof"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;isTrackingSetupof"/>
+                <owl:onClass rdf:resource="&IndoorTracking;Setup"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#hasTrackingSoftware -->
+
+    <owl:ObjectProperty rdf:about="&IndoorTracking;hasTrackingSoftware">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&IndoorTracking;hasTrackingSystemComponent"/>
+        <owl:inverseOf rdf:resource="&IndoorTracking;isTrackingSoftwareof"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;hasTrackingSoftware"/>
+                <owl:allValuesFrom rdf:resource="&IndoorTracking;Application"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;hasTrackingSoftware"/>
+                <owl:onClass rdf:resource="&IndoorTracking;Software"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#hasTrackingSystemComponent -->
+
+    <owl:ObjectProperty rdf:about="&IndoorTracking;hasTrackingSystemComponent">
+        <rdfs:subPropertyOf rdf:resource="&IndoorTracking;hasBusinessService"/>
+        <owl:inverseOf rdf:resource="&IndoorTracking;isComponentofTrackingSystem"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;hasTrackingSystemComponent"/>
+                <owl:allValuesFrom rdf:resource="&IndoorTracking;TrackingSystem"/>
+            </owl:Restriction>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#hasTuningFunction -->
+
+    <owl:ObjectProperty rdf:about="&IndoorTracking;hasTuningFunction">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&IndoorTracking;hasFaultMonitor"/>
+        <owl:inverseOf rdf:resource="&IndoorTracking;isTuningFunctionof"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;isTuningFunctionof"/>
+                <owl:onClass rdf:resource="&IndoorTracking;FaultMonitor"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;hasTuningFunction"/>
+                <owl:someValuesFrom rdf:resource="&IndoorTracking;TuningFunction"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#hasTuningService -->
+
+    <owl:ObjectProperty rdf:about="&IndoorTracking;hasTuningService">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&IndoorTracking;hasSemanticBusService"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;isTuningServiceof"/>
+                <owl:allValuesFrom rdf:resource="&IndoorTracking;Tuning"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;hasTuningService"/>
+                <owl:allValuesFrom rdf:resource="&IndoorTracking;IgnoreDataSample"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#isAdjustablePrecisionFactorof -->
+
+    <owl:ObjectProperty rdf:about="&IndoorTracking;isAdjustablePrecisionFactorof">
+        <owl:propertyDisjointWith rdf:resource="&IndoorTracking;isInfluencingPrecisionFactorof"/>
+        <rdfs:subPropertyOf rdf:resource="&IndoorTracking;isPrecisionRequirementof"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;isAdjustablePrecisionFactorof"/>
+                <owl:onClass rdf:resource="&IndoorTracking;ReadRate"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;isAdjustablePrecisionFactorof"/>
+                <owl:allValuesFrom rdf:resource="&IndoorTracking;Precision"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#isApplicationFunctionof -->
+
+    <owl:ObjectProperty rdf:about="&IndoorTracking;isApplicationFunctionof">
+        <owl:inverseOf rdf:resource="&IndoorTracking;hasApplicationFunction"/>
+        <rdfs:subPropertyOf rdf:resource="&IndoorTracking;isApplicationTypeof"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;isApplicationFunctionof"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="&IndoorTracking;OWR"/>
+                            <rdf:Description rdf:about="&IndoorTracking;SDSTWR"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;isApplicationTypeof"/>
+                <owl:onClass rdf:resource="&IndoorTracking;Unicast"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#isApplicationTypeof -->
+
+    <owl:ObjectProperty rdf:about="&IndoorTracking;isApplicationTypeof">
+        <rdfs:subPropertyOf rdf:resource="&IndoorTracking;isTrackingSoftwareof"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;isApplicationTypeof"/>
+                <owl:onClass rdf:resource="&IndoorTracking;Application"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;isApplicationTypeof"/>
+                <owl:allValuesFrom rdf:resource="&IndoorTracking;Unicast"/>
+            </owl:Restriction>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#isBusinessServiceof -->
+
+    <owl:ObjectProperty rdf:about="&IndoorTracking;isBusinessServiceof">
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;isBusinessServiceof"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="&IndoorTracking;Requirements"/>
+                            <rdf:Description rdf:about="&IndoorTracking;SystemModel"/>
+                            <rdf:Description rdf:about="&IndoorTracking;TrackingSystem"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#isClientPresentationServiceof -->
+
+    <owl:ObjectProperty rdf:about="&IndoorTracking;isClientPresentationServiceof">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;isClientPresentationServiceof"/>
+                <owl:allValuesFrom rdf:resource="&IndoorTracking;ClientPresentation"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;isClientPresentationServiceof"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="&IndoorTracking;DeviceHealthGUI"/>
+                            <rdf:Description rdf:about="&IndoorTracking;LocationGUI"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#isComponentofTrackingSystem -->
+
+    <owl:ObjectProperty rdf:about="&IndoorTracking;isComponentofTrackingSystem">
+        <rdfs:subPropertyOf rdf:resource="&IndoorTracking;isBusinessServiceof"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;hasTrackingSystemComponent"/>
+                <owl:allValuesFrom rdf:resource="&IndoorTracking;TrackingSystem"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#isFaultMonitorfor -->
+
+    <owl:ObjectProperty rdf:about="&IndoorTracking;isFaultMonitorfor">
+        <rdfs:subPropertyOf rdf:resource="&IndoorTracking;isIndoorTrackingServiceof"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;isFaultMonitorfor"/>
+                <owl:onClass rdf:resource="&IndoorTracking;IndoorTrackingDevices"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;isFaultMonitorfor"/>
+                <owl:onClass rdf:resource="&IndoorTracking;FaultMonitor"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#isFeedbackfor -->
+
+    <owl:ObjectProperty rdf:about="&IndoorTracking;isFeedbackfor">
+        <rdfs:subPropertyOf rdf:resource="&IndoorTracking;isFilterServicefor"/>
+        <rdfs:subPropertyOf rdf:resource="&IndoorTracking;isGDOPServicefor"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;isFeedbackfor"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="&IndoorTracking;NLOSdata"/>
+                            <rdf:Description rdf:about="&IndoorTracking;PoorReferenceNodeLocation"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;isFeedbackfor"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="&IndoorTracking;ComplimentaryFilter"/>
+                            <rdf:Description rdf:about="&IndoorTracking;GDOP"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#isFilterServicefor -->
+
+    <owl:ObjectProperty rdf:about="&IndoorTracking;isFilterServicefor">
+        <owl:inverseOf rdf:resource="&IndoorTracking;hasFilterService"/>
+        <rdfs:subPropertyOf rdf:resource="&IndoorTracking;isSemanticBusService"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;isFilterServicefor"/>
+                <owl:allValuesFrom rdf:resource="&IndoorTracking;Filters"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;isFilterServicefor"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="&IndoorTracking;ComplimentaryFilter"/>
+                            <rdf:Description rdf:about="&IndoorTracking;ExtendedKalmanFilter"/>
+                            <rdf:Description rdf:about="&IndoorTracking;ParticleFilter"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#isFilterfor -->
+
+    <owl:ObjectProperty rdf:about="&IndoorTracking;isFilterfor">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <owl:inverseOf rdf:resource="&IndoorTracking;hasFilter"/>
+        <rdfs:subPropertyOf rdf:resource="&IndoorTracking;isOnboardAnalyticsfor"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;isFilterfor"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="&IndoorTracking;LinearKalmanFilter"/>
+                            <rdf:Description rdf:about="&IndoorTracking;MovingAverageFilter"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;isFilterfor"/>
+                <owl:allValuesFrom rdf:resource="&IndoorTracking;OnboardAnalytics"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#isGDOPServicefor -->
+
+    <owl:ObjectProperty rdf:about="&IndoorTracking;isGDOPServicefor">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <owl:inverseOf rdf:resource="&IndoorTracking;hasGDOPService"/>
+        <rdfs:subPropertyOf rdf:resource="&IndoorTracking;isSemanticBusService"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;isGDOPServicefor"/>
+                <owl:onClass rdf:resource="&IndoorTracking;PoorReferenceNodeLocation"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;isGDOPServicefor"/>
+                <owl:onClass rdf:resource="&IndoorTracking;GDOP"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#isGDOPValuefor -->
+
+    <owl:ObjectProperty rdf:about="&IndoorTracking;isGDOPValuefor">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+        <rdfs:domain rdf:resource="&IndoorTracking;GDOPValuePartition"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#isHardwareSourceof -->
+
+    <owl:ObjectProperty rdf:about="&IndoorTracking;isHardwareSourceof">
+        <owl:inverseOf rdf:resource="&IndoorTracking;hasHardwareSource"/>
+        <rdfs:subPropertyOf rdf:resource="&IndoorTracking;isTrackingHardwareof"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;isHardwareSourceof"/>
+                <owl:allValuesFrom rdf:resource="&IndoorTracking;CommercialDeviceName"/>
+            </owl:Restriction>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#isIgnoreDataFunctionfor -->
+
+    <owl:ObjectProperty rdf:about="&IndoorTracking;isIgnoreDataFunctionfor">
+        <rdfs:subPropertyOf rdf:resource="&IndoorTracking;isFeedbackfor"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;isIgnoreDataFunctionfor"/>
+                <owl:onClass rdf:resource="&IndoorTracking;IgnoreDataSample"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;isIgnoreDataFunctionfor"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="&IndoorTracking;NLOSdata"/>
+                            <rdf:Description rdf:about="&IndoorTracking;PoorReferenceNodeLocation"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#isIndoorTrackingServiceof -->
+
+    <owl:ObjectProperty rdf:about="&IndoorTracking;isIndoorTrackingServiceof">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+        <owl:inverseOf rdf:resource="&IndoorTracking;hasIndoorTrackingService"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;hasIndoorTrackingService"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="&IndoorTracking;FaultMonitor"/>
+                            <rdf:Description rdf:about="&IndoorTracking;MotionSensor"/>
+                            <rdf:Description rdf:about="&IndoorTracking;OnboardAnalytics"/>
+                            <rdf:Description rdf:about="&IndoorTracking;PropagationEnvironment"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#isInfluencingPrecisionFactorof -->
+
+    <owl:ObjectProperty rdf:about="&IndoorTracking;isInfluencingPrecisionFactorof">
+        <owl:inverseOf rdf:resource="&IndoorTracking;hasInfluencingPrecisionFactor"/>
+        <rdfs:subPropertyOf rdf:resource="&IndoorTracking;isPrecisionRequirementof"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;isInfluencingPrecisionFactorof"/>
+                <owl:someValuesFrom rdf:resource="&IndoorTracking;Interference"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;isInfluencingPrecisionFactorof"/>
+                <owl:someValuesFrom rdf:resource="&IndoorTracking;Attenuation"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;isInfluencingPrecisionFactorof"/>
+                <owl:someValuesFrom rdf:resource="&IndoorTracking;Reflection"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;isInfluencingPrecisionFactorof"/>
+                <owl:someValuesFrom rdf:resource="&IndoorTracking;Precision"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;isInfluencingPrecisionFactorof"/>
+                <owl:onClass rdf:resource="&IndoorTracking;ReadRate"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;isInfluencingPrecisionFactorof"/>
+                <owl:someValuesFrom rdf:resource="&IndoorTracking;Refraction"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;isInfluencingPrecisionFactorof"/>
+                <owl:someValuesFrom rdf:resource="&IndoorTracking;Diffraction"/>
+            </owl:Restriction>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#isInventoryServiceof -->
+
+    <owl:ObjectProperty rdf:about="&IndoorTracking;isInventoryServiceof">
+        <rdfs:subPropertyOf rdf:resource="&IndoorTracking;isManufacturingApplicationServiceof"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;isInventoryServiceof"/>
+                <owl:onClass rdf:resource="&IndoorTracking;Inventory"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#isKalmanInput -->
+
+    <owl:ObjectProperty rdf:about="&IndoorTracking;isKalmanInput">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <owl:inverseOf rdf:resource="&IndoorTracking;hasKalmanInput"/>
+        <rdfs:subPropertyOf rdf:resource="&IndoorTracking;isFilterfor"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;isKalmanInput"/>
+                <owl:onClass rdf:resource="&IndoorTracking;PredictedErrorCovariance"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;isKalmanInput"/>
+                <owl:allValuesFrom rdf:resource="&IndoorTracking;LinearKalmanFilter"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#isLocof -->
+
+    <owl:ObjectProperty rdf:about="&IndoorTracking;isLocof">
+        <rdfs:subPropertyOf rdf:resource="&IndoorTracking;isTrackingSetupof"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#isMaintenanceServiceof -->
+
+    <owl:ObjectProperty rdf:about="&IndoorTracking;isMaintenanceServiceof">
+        <rdfs:subPropertyOf rdf:resource="&IndoorTracking;isManufacturingApplicationServiceof"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;hasMaintenanceService"/>
+                <owl:onClass rdf:resource="&IndoorTracking;PacketRate"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;hasMaintenanceService"/>
+                <owl:onClass rdf:resource="&IndoorTracking;ReflashDevice"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;hasMaintenanceService"/>
+                <owl:onClass rdf:resource="&IndoorTracking;TrackingMaintenance"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#isManufacturingApplicationServiceof -->
+
+    <owl:ObjectProperty rdf:about="&IndoorTracking;isManufacturingApplicationServiceof">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+        <owl:inverseOf rdf:resource="&IndoorTracking;hasManufacturingApplicationService"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;isManufacturingApplicationServiceof"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="&IndoorTracking;Inventory"/>
+                            <rdf:Description rdf:about="&IndoorTracking;Mediation"/>
+                            <rdf:Description rdf:about="&IndoorTracking;TrackingMaintenance"/>
+                            <rdf:Description rdf:about="&IndoorTracking;TrackingService"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#isMediationServiceof -->
+
+    <owl:ObjectProperty rdf:about="&IndoorTracking;isMediationServiceof">
+        <rdfs:subPropertyOf rdf:resource="&IndoorTracking;isManufacturingApplicationServiceof"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;isMediationServiceof"/>
+                <owl:onClass rdf:resource="&IndoorTracking;Mediation"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#isMonitoringFunctionof -->
+
+    <owl:ObjectProperty rdf:about="&IndoorTracking;isMonitoringFunctionof">
+        <rdfs:subPropertyOf rdf:resource="&IndoorTracking;isFaultMonitorfor"/>
+        <owl:propertyDisjointWith rdf:resource="&IndoorTracking;isTuningFunctionof"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;isMonitoringFunctionof"/>
+                <owl:onClass rdf:resource="&IndoorTracking;FaultMonitor"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;hasMonitoringFunction"/>
+                <owl:onClass rdf:resource="&IndoorTracking;ActiveDeviceCheck"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#isMotionSensorTypeof -->
+
+    <owl:ObjectProperty rdf:about="&IndoorTracking;isMotionSensorTypeof">
+        <owl:inverseOf rdf:resource="&IndoorTracking;hasMotionSensorType"/>
+        <rdfs:subPropertyOf rdf:resource="&IndoorTracking;isMotionSensorfor"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;isMotionSensorTypeof"/>
+                <owl:allValuesFrom rdf:resource="&IndoorTracking;MotionSensor"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;isMotionSensorTypeof"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="&IndoorTracking;Accelerometer"/>
+                            <rdf:Description rdf:about="&IndoorTracking;ZigbeeModule"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#isMotionSensorfor -->
+
+    <owl:ObjectProperty rdf:about="&IndoorTracking;isMotionSensorfor">
+        <rdfs:subPropertyOf rdf:resource="&IndoorTracking;isIndoorTrackingServiceof"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;isMotionSensorfor"/>
+                <owl:allValuesFrom rdf:resource="&IndoorTracking;MotionSensor"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;isMotionSensorfor"/>
+                <owl:onClass rdf:resource="&IndoorTracking;IndoorTrackingDevices"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#isOnboardAnalyticsfor -->
+
+    <owl:ObjectProperty rdf:about="&IndoorTracking;isOnboardAnalyticsfor">
+        <rdfs:subPropertyOf rdf:resource="&IndoorTracking;isIndoorTrackingServiceof"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;isOnboardAnalyticsfor"/>
+                <owl:allValuesFrom rdf:resource="&IndoorTracking;OnboardAnalytics"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;isOnboardAnalyticsfor"/>
+                <owl:onClass rdf:resource="&IndoorTracking;IndoorTrackingDevices"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#isPrecisionRequirementof -->
+
+    <owl:ObjectProperty rdf:about="&IndoorTracking;isPrecisionRequirementof">
+        <rdfs:subPropertyOf rdf:resource="&IndoorTracking;isRequirementCaptureof"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;isPrecisionRequirementof"/>
+                <owl:allValuesFrom rdf:resource="&IndoorTracking;Precision"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;isPrecisionRequirementof"/>
+                <owl:allValuesFrom rdf:resource="&IndoorTracking;Requirements"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#isPropagationEnvironmentof -->
+
+    <owl:ObjectProperty rdf:about="&IndoorTracking;isPropagationEnvironmentof">
+        <rdfs:subPropertyOf rdf:resource="&IndoorTracking;isIndoorTrackingServiceof"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;isPropagationEnvironmentof"/>
+                <owl:onClass rdf:resource="&IndoorTracking;IndoorTrackingDevices"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;isPropagationEnvironmentof"/>
+                <owl:someValuesFrom rdf:resource="&IndoorTracking;PropagationEnvironment"/>
+            </owl:Restriction>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#isPropertyof -->
+
+    <owl:ObjectProperty rdf:about="&IndoorTracking;isPropertyof">
+        <owl:inverseOf rdf:resource="&IndoorTracking;hasProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&IndoorTracking;isPropagationEnvironmentof"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;isPropertyof"/>
+                <owl:onClass rdf:resource="&IndoorTracking;Noise"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;isPropertyof"/>
+                <owl:someValuesFrom rdf:resource="&IndoorTracking;PropagationEnvironment"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#isRequirementCaptureof -->
+
+    <owl:ObjectProperty rdf:about="&IndoorTracking;isRequirementCaptureof">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&IndoorTracking;isBusinessServiceof"/>
+        <owl:propertyDisjointWith rdf:resource="&IndoorTracking;isSystemModelof"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;hasRequirementCapture"/>
+                <owl:someValuesFrom rdf:resource="&IndoorTracking;Requirements"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;hasRequirementCapture"/>
+                <owl:someValuesFrom rdf:resource="&IndoorTracking;Requirements"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#isSemanticBusService -->
+
+    <owl:ObjectProperty rdf:about="&IndoorTracking;isSemanticBusService">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+        <owl:inverseOf rdf:resource="&IndoorTracking;hasSemanticBusService"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;isSemanticBusService"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="&IndoorTracking;Filters"/>
+                            <rdf:Description rdf:about="&IndoorTracking;GDOP"/>
+                            <rdf:Description rdf:about="&IndoorTracking;InSystemProgramming"/>
+                            <rdf:Description rdf:about="&IndoorTracking;Messaging"/>
+                            <rdf:Description rdf:about="&IndoorTracking;TrackingAnalytics"/>
+                            <rdf:Description rdf:about="&IndoorTracking;Tuning"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#isSensorReadingof -->
+
+    <owl:ObjectProperty rdf:about="&IndoorTracking;isSensorReadingof">
+        <rdfs:subPropertyOf rdf:resource="&IndoorTracking;isMotionSensorTypeof"/>
+        <owl:propertyDisjointWith rdf:resource="&IndoorTracking;isSignalTypeof"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;isSensorReadingof"/>
+                <owl:allValuesFrom rdf:resource="&IndoorTracking;AccelerometerReading"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;isSensorReadingof"/>
+                <owl:allValuesFrom rdf:resource="&IndoorTracking;Accelerometer"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#isSignalTypeof -->
+
+    <owl:ObjectProperty rdf:about="&IndoorTracking;isSignalTypeof">
+        <owl:inverseOf rdf:resource="&IndoorTracking;hasSignalType"/>
+        <rdfs:subPropertyOf rdf:resource="&IndoorTracking;isMotionSensorTypeof"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;isSignalTypeof"/>
+                <owl:allValuesFrom rdf:resource="&IndoorTracking;ZigbeePacket"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;isSignalTypeof"/>
+                <owl:allValuesFrom rdf:resource="&IndoorTracking;ZigbeeModule"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#isSystemModelof -->
+
+    <owl:ObjectProperty rdf:about="&IndoorTracking;isSystemModelof">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&IndoorTracking;isBusinessServiceof"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;isSystemModelof"/>
+                <owl:allValuesFrom rdf:resource="&IndoorTracking;SystemModel"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;hasSystemModel"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="&IndoorTracking;SystemNoiseVariable"/>
+                            <rdf:Description rdf:about="&IndoorTracking;SystemStateVariable"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#isTrackingAnalyticsof -->
+
+    <owl:ObjectProperty rdf:about="&IndoorTracking;isTrackingAnalyticsof">
+        <owl:inverseOf rdf:resource="&IndoorTracking;hasTrackingAnalytics"/>
+        <rdfs:subPropertyOf rdf:resource="&IndoorTracking;isSemanticBusService"/>
+        <owl:propertyDisjointWith rdf:resource="&IndoorTracking;isTuningServiceof"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;isTrackingAnalyticsof"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="&IndoorTracking;Acceleration"/>
+                            <rdf:Description rdf:about="&IndoorTracking;Multilateration"/>
+                            <rdf:Description rdf:about="&IndoorTracking;Velocity"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;isTrackingAnalyticsof"/>
+                <owl:allValuesFrom rdf:resource="&IndoorTracking;TrackingAnalytics"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#isTrackingHardwareof -->
+
+    <owl:ObjectProperty rdf:about="&IndoorTracking;isTrackingHardwareof">
+        <rdfs:subPropertyOf rdf:resource="&IndoorTracking;isComponentofTrackingSystem"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#isTrackingMeasurementof -->
+
+    <owl:ObjectProperty rdf:about="&IndoorTracking;isTrackingMeasurementof">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <owl:inverseOf rdf:resource="&IndoorTracking;hasTrackingMeasurement"/>
+        <rdfs:subPropertyOf rdf:resource="&IndoorTracking;isComponentofTrackingSystem"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;hasTrackingMeasurement"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="&IndoorTracking;AccelerometerReading"/>
+                            <rdf:Description rdf:about="&IndoorTracking;ZigbeePacket"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;isTrackingMeasurementof"/>
+                <owl:allValuesFrom rdf:resource="&IndoorTracking;Measurement"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#isTrackingOSof -->
+
+    <owl:ObjectProperty rdf:about="&IndoorTracking;isTrackingOSof">
+        <rdfs:subPropertyOf rdf:resource="&IndoorTracking;isComponentofTrackingSystem"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;isTrackingOSof"/>
+                <owl:allValuesFrom rdf:resource="&IndoorTracking;Contiki"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;isTrackingOSof"/>
+                <owl:onClass rdf:resource="&IndoorTracking;OS"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#isTrackingServiceof -->
+
+    <owl:ObjectProperty rdf:about="&IndoorTracking;isTrackingServiceof">
+        <rdfs:subPropertyOf rdf:resource="&IndoorTracking;isManufacturingApplicationServiceof"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;isTrackingServiceof"/>
+                <owl:onClass rdf:resource="&IndoorTracking;CurrentLocation"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;isTrackingServiceof"/>
+                <owl:onClass rdf:resource="&IndoorTracking;TrackingService"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;isTrackingServiceof"/>
+                <owl:onClass rdf:resource="&IndoorTracking;HistoricLocation"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">100</owl:maxQualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#isTrackingSetupof -->
+
+    <owl:ObjectProperty rdf:about="&IndoorTracking;isTrackingSetupof">
+        <rdfs:subPropertyOf rdf:resource="&IndoorTracking;isComponentofTrackingSystem"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;isTrackingSetupof"/>
+                <owl:onClass rdf:resource="&IndoorTracking;Setup"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#isTrackingSoftwareof -->
+
+    <owl:ObjectProperty rdf:about="&IndoorTracking;isTrackingSoftwareof">
+        <rdfs:subPropertyOf rdf:resource="&IndoorTracking;isComponentofTrackingSystem"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;isTrackingSoftwareof"/>
+                <owl:onClass rdf:resource="&IndoorTracking;Software"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;isTrackingSoftwareof"/>
+                <owl:onClass rdf:resource="&IndoorTracking;Application"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#isTuningFunctionof -->
+
+    <owl:ObjectProperty rdf:about="&IndoorTracking;isTuningFunctionof">
+        <rdfs:subPropertyOf rdf:resource="&IndoorTracking;isFaultMonitorfor"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;isTuningFunctionof"/>
+                <owl:onClass rdf:resource="&IndoorTracking;FaultMonitor"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;hasTuningFunction"/>
+                <owl:someValuesFrom rdf:resource="&IndoorTracking;TuningFunction"/>
+            </owl:Restriction>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#isTuningServiceof -->
+
+    <owl:ObjectProperty rdf:about="&IndoorTracking;isTuningServiceof">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <owl:inverseOf rdf:resource="&IndoorTracking;hasTuningService"/>
+        <rdfs:subPropertyOf rdf:resource="&IndoorTracking;isSemanticBusService"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;hasTuningService"/>
+                <owl:allValuesFrom rdf:resource="&IndoorTracking;IgnoreDataSample"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;isTuningServiceof"/>
+                <owl:allValuesFrom rdf:resource="&IndoorTracking;Tuning"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#isTypeofHardware -->
+
+    <owl:ObjectProperty rdf:about="&IndoorTracking;isTypeofHardware">
+        <owl:inverseOf rdf:resource="&IndoorTracking;hasHardwareName"/>
+        <rdfs:subPropertyOf rdf:resource="&IndoorTracking;isHardwareSourceof"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;isTypeofHardware"/>
+                <owl:allValuesFrom rdf:resource="&IndoorTracking;CC2538EM"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;isTypeofHardware"/>
+                <owl:onClass rdf:resource="&IndoorTracking;SmartRF06"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;isTypeofHardware"/>
+                <owl:allValuesFrom rdf:resource="&IndoorTracking;CommercialDeviceName"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/locationOntology/master/owlrdf/supertaglocation#TimeValue -->
+
+    <owl:DatatypeProperty rdf:about="&supertaglocation;TimeValue">
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
+        <rdfs:domain rdf:resource="&supertaglocation;SupertagLoc"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/locationOntology/master/owlrdf/supertaglocation#UIDValue -->
+
+    <owl:DatatypeProperty rdf:about="&supertaglocation;UIDValue">
+        <rdfs:range rdf:resource="&xsd;integer"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ginipease/locationOntology/master/owlrdf/supertaglocation.owl#Supertag"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/locationOntology/master/owlrdf/supertaglocation#XValue -->
+
+    <owl:DatatypeProperty rdf:about="&supertaglocation;XValue">
+        <rdfs:range rdf:resource="&xsd;float"/>
+        <rdfs:domain rdf:resource="&supertaglocation;SupertagLoc"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/locationOntology/master/owlrdf/supertaglocation#YValue -->
+
+    <owl:DatatypeProperty rdf:about="&supertaglocation;YValue">
+        <rdfs:range rdf:resource="&xsd;float"/>
+        <rdfs:domain rdf:resource="&supertaglocation;SupertagLoc"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/locationOntology/master/owlrdf/supertaglocation#ZValue -->
+
+    <owl:DatatypeProperty rdf:about="&supertaglocation;ZValue">
+        <rdfs:range rdf:resource="&xsd;float"/>
+        <rdfs:domain rdf:resource="&supertaglocation;SupertagLoc"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#hasSystemNoiseVariableValue -->
+
+    <owl:DatatypeProperty rdf:about="&IndoorTracking;hasSystemNoiseVariableValue"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/parallels/ontologies/2015/2/tracking-service-arch#Devices -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/parallels/ontologies/2015/2/tracking-service-arch#Devices">
+        <owl:equivalentClass rdf:resource="&IndoorTracking;IndoorTrackingDevices"/>
+        <rdfs:subClassOf rdf:resource="&IndoorTracking;TrackingSystem"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/parallels/ontologies/2015/2/tracking-service-arch#SDS-TWR -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/parallels/ontologies/2015/2/tracking-service-arch#SDS-TWR">
+        <rdfs:subClassOf rdf:resource="&IndoorTracking;OnboardAnalytics"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/locationOntology/master/owlrdf/supertaglocation#MovingTag -->
+
+    <owl:Class rdf:about="&supertaglocation;MovingTag">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/ginipease/locationOntology/master/owlrdf/supertaglocation.owl#Supertag"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/locationOntology/master/owlrdf/supertaglocation#SupertagLoc -->
+
+    <owl:Class rdf:about="&supertaglocation;SupertagLoc">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/ginipease/locationOntology/master/owlrdf/supertaglocation.owl#Location"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/locationOntology/master/owlrdf/supertaglocation.owl#Location -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/ginipease/locationOntology/master/owlrdf/supertaglocation.owl#Location">
+        <rdfs:subClassOf rdf:resource="&IndoorTracking;IndoorTrackingDevices"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/locationOntology/master/owlrdf/supertaglocation.owl#Supertag -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/ginipease/locationOntology/master/owlrdf/supertaglocation.owl#Supertag">
+        <rdfs:subClassOf rdf:resource="&IndoorTracking;IndoorTrackingDevices"/>
+        <owl:disjointWith rdf:resource="&IndoorTracking;Portal"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#Acceleration -->
+
+    <owl:Class rdf:about="&IndoorTracking;Acceleration">
+        <owl:equivalentClass rdf:resource="&IndoorTracking;Cartesian"/>
+        <rdfs:subClassOf rdf:resource="&IndoorTracking;TrackingAnalytics"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#Accelerometer -->
+
+    <owl:Class rdf:about="&IndoorTracking;Accelerometer">
+        <owl:equivalentClass rdf:resource="&IndoorTracking;SmartRF06"/>
+        <rdfs:subClassOf rdf:resource="&IndoorTracking;MotionSensor"/>
+        <owl:disjointWith rdf:resource="&IndoorTracking;ZigbeeModule"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#AccelerometerReading -->
+
+    <owl:Class rdf:about="&IndoorTracking;AccelerometerReading">
+        <rdfs:subClassOf rdf:resource="&IndoorTracking;Accelerometer"/>
+        <rdfs:subClassOf rdf:resource="&IndoorTracking;Measurement"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#ActiveDeviceCheck -->
+
+    <owl:Class rdf:about="&IndoorTracking;ActiveDeviceCheck">
+        <rdfs:subClassOf rdf:resource="&IndoorTracking;FaultMonitor"/>
+        <owl:disjointWith rdf:resource="&IndoorTracking;TuningFunction"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#Application -->
+
+    <owl:Class rdf:about="&IndoorTracking;Application">
+        <rdfs:subClassOf rdf:resource="&IndoorTracking;Software"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#Attenuation -->
+
+    <owl:Class rdf:about="&IndoorTracking;Attenuation">
+        <rdfs:subClassOf rdf:resource="&IndoorTracking;Precision"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#BetweenSixAndThree -->
+
+    <owl:Class rdf:about="&IndoorTracking;BetweenSixAndThree">
+        <rdfs:subClassOf rdf:resource="&IndoorTracking;GDOPValuePartition"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#BusinessDecisionSupport -->
+
+    <owl:Class rdf:about="&IndoorTracking;BusinessDecisionSupport">
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#CC2538EM -->
+
+    <owl:Class rdf:about="&IndoorTracking;CC2538EM">
+        <rdfs:subClassOf rdf:resource="&IndoorTracking;CommercialDeviceName"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#Cartesian -->
+
+    <owl:Class rdf:about="&IndoorTracking;Cartesian">
+        <rdfs:subClassOf rdf:resource="&IndoorTracking;AccelerometerReading"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#ClientPresentation -->
+
+    <owl:Class rdf:about="&IndoorTracking;ClientPresentation">
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#CommercialDeviceName -->
+
+    <owl:Class rdf:about="&IndoorTracking;CommercialDeviceName">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/ginipease/locationOntology/master/owlrdf/supertaglocation.owl#Supertag"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#ComplimentaryFilter -->
+
+    <owl:Class rdf:about="&IndoorTracking;ComplimentaryFilter">
+        <rdfs:subClassOf rdf:resource="&IndoorTracking;Filters"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#Contiki -->
+
+    <owl:Class rdf:about="&IndoorTracking;Contiki">
+        <rdfs:subClassOf rdf:resource="&IndoorTracking;OS"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#CurrentLocation -->
+
+    <owl:Class rdf:about="&IndoorTracking;CurrentLocation">
+        <rdfs:subClassOf rdf:resource="&IndoorTracking;TrackingService"/>
+        <owl:disjointWith rdf:resource="&IndoorTracking;HistoricLocation"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#DeviceHealthGUI -->
+
+    <owl:Class rdf:about="&IndoorTracking;DeviceHealthGUI">
+        <rdfs:subClassOf rdf:resource="&IndoorTracking;ClientPresentation"/>
+        <owl:disjointWith rdf:resource="&IndoorTracking;LocationGUI"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#DeviceNumber -->
+
+    <owl:Class rdf:about="&IndoorTracking;DeviceNumber">
+        <rdfs:subClassOf rdf:resource="&IndoorTracking;ActiveDeviceCheck"/>
+        <owl:disjointWith rdf:resource="&IndoorTracking;PacketsperSecond"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#Diffraction -->
+
+    <owl:Class rdf:about="&IndoorTracking;Diffraction">
+        <rdfs:subClassOf rdf:resource="&IndoorTracking;Precision"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#DistanceMeasurement -->
+
+    <owl:Class rdf:about="&IndoorTracking;DistanceMeasurement">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/parallels/ontologies/2015/2/tracking-service-arch#SDS-TWR"/>
+        <rdfs:subClassOf rdf:resource="&IndoorTracking;LinearKalmanFilter"/>
+        <rdfs:subClassOf rdf:resource="&IndoorTracking;MovingAverageFilter"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#DropDataSample -->
+
+    <owl:Class rdf:about="&IndoorTracking;DropDataSample">
+        <owl:equivalentClass rdf:resource="&IndoorTracking;IgnoreDataSample"/>
+        <rdfs:subClassOf rdf:resource="&IndoorTracking;PoorReferenceNodeLocation"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#ExtendedKalmanFilter -->
+
+    <owl:Class rdf:about="&IndoorTracking;ExtendedKalmanFilter">
+        <rdfs:subClassOf rdf:resource="&IndoorTracking;Filters"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#FaultMonitor -->
+
+    <owl:Class rdf:about="&IndoorTracking;FaultMonitor">
+        <rdfs:subClassOf rdf:resource="&supertaglocation;MovingTag"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#Filters -->
+
+    <owl:Class rdf:about="&IndoorTracking;Filters">
+        <rdfs:subClassOf rdf:resource="&IndoorTracking;SemanticBusServices"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#GDOP -->
+
+    <owl:Class rdf:about="&IndoorTracking;GDOP">
+        <rdfs:subClassOf rdf:resource="&IndoorTracking;SemanticBusServices"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#GDOPValuePartition -->
+
+    <owl:Class rdf:about="&IndoorTracking;GDOPValuePartition">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&IndoorTracking;BetweenSixAndThree"/>
+                    <rdf:Description rdf:about="&IndoorTracking;LessThanThree"/>
+                    <rdf:Description rdf:about="&IndoorTracking;MoreThanSix"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&IndoorTracking;ValuePartition"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#HistoricLocation -->
+
+    <owl:Class rdf:about="&IndoorTracking;HistoricLocation">
+        <rdfs:subClassOf rdf:resource="&IndoorTracking;TrackingService"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#IgnoreDataSample -->
+
+    <owl:Class rdf:about="&IndoorTracking;IgnoreDataSample">
+        <rdfs:subClassOf rdf:resource="&IndoorTracking;NLOSdata"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#InSystemProgramming -->
+
+    <owl:Class rdf:about="&IndoorTracking;InSystemProgramming">
+        <owl:equivalentClass rdf:resource="&IndoorTracking;ReflashDeviceOS"/>
+        <rdfs:subClassOf rdf:resource="&IndoorTracking;SemanticBusServices"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#IndoorTrackingDevices -->
+
+    <owl:Class rdf:about="&IndoorTracking;IndoorTrackingDevices">
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#Interference -->
+
+    <owl:Class rdf:about="&IndoorTracking;Interference">
+        <rdfs:subClassOf rdf:resource="&IndoorTracking;Precision"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#Inventory -->
+
+    <owl:Class rdf:about="&IndoorTracking;Inventory">
+        <rdfs:subClassOf rdf:resource="&IndoorTracking;ManufacturingApplication"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#LessThanThree -->
+
+    <owl:Class rdf:about="&IndoorTracking;LessThanThree">
+        <rdfs:subClassOf rdf:resource="&IndoorTracking;GDOPValuePartition"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#LinearKalmanFilter -->
+
+    <owl:Class rdf:about="&IndoorTracking;LinearKalmanFilter">
+        <rdfs:subClassOf rdf:resource="&IndoorTracking;OnboardAnalytics"/>
+        <owl:disjointWith rdf:resource="&IndoorTracking;MovingAverageFilter"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#LocationGUI -->
+
+    <owl:Class rdf:about="&IndoorTracking;LocationGUI">
+        <rdfs:subClassOf rdf:resource="&IndoorTracking;ClientPresentation"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#ManufacturingApplication -->
+
+    <owl:Class rdf:about="&IndoorTracking;ManufacturingApplication">
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#Measurement -->
+
+    <owl:Class rdf:about="&IndoorTracking;Measurement">
+        <rdfs:subClassOf rdf:resource="&IndoorTracking;TrackingSystem"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#MeasurementNoise -->
+
+    <owl:Class rdf:about="&IndoorTracking;MeasurementNoise">
+        <rdfs:subClassOf rdf:resource="&IndoorTracking;SystemNoiseVariable"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#Mediation -->
+
+    <owl:Class rdf:about="&IndoorTracking;Mediation">
+        <rdfs:subClassOf rdf:resource="&IndoorTracking;ManufacturingApplication"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#Messaging -->
+
+    <owl:Class rdf:about="&IndoorTracking;Messaging">
+        <rdfs:subClassOf rdf:resource="&IndoorTracking;SemanticBusServices"/>
+        <owl:disjointWith rdf:resource="&IndoorTracking;TrackingAnalytics"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#MoreThanSix -->
+
+    <owl:Class rdf:about="&IndoorTracking;MoreThanSix">
+        <rdfs:subClassOf rdf:resource="&IndoorTracking;GDOPValuePartition"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#MotionSensor -->
+
+    <owl:Class rdf:about="&IndoorTracking;MotionSensor">
+        <rdfs:subClassOf rdf:resource="&supertaglocation;MovingTag"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#MovingAverageFilter -->
+
+    <owl:Class rdf:about="&IndoorTracking;MovingAverageFilter">
+        <rdfs:subClassOf rdf:resource="&IndoorTracking;OnboardAnalytics"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#Multilateration -->
+
+    <owl:Class rdf:about="&IndoorTracking;Multilateration">
+        <rdfs:subClassOf rdf:resource="&IndoorTracking;TrackingAnalytics"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#NLOSdata -->
+
+    <owl:Class rdf:about="&IndoorTracking;NLOSdata">
+        <rdfs:subClassOf rdf:resource="&IndoorTracking;ComplimentaryFilter"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#Noise -->
+
+    <owl:Class rdf:about="&IndoorTracking;Noise">
+        <rdfs:subClassOf rdf:resource="&IndoorTracking;PropagationEnvironment"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#OS -->
+
+    <owl:Class rdf:about="&IndoorTracking;OS">
+        <rdfs:subClassOf rdf:resource="&IndoorTracking;TrackingSystem"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#OWR -->
+
+    <owl:Class rdf:about="&IndoorTracking;OWR">
+        <rdfs:subClassOf rdf:resource="&IndoorTracking;Unicast"/>
+        <owl:disjointWith rdf:resource="&IndoorTracking;SDSTWR"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#OnboardAnalytics -->
+
+    <owl:Class rdf:about="&IndoorTracking;OnboardAnalytics">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/ginipease/locationOntology/master/owlrdf/supertaglocation.owl#Supertag"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#PacketRate -->
+
+    <owl:Class rdf:about="&IndoorTracking;PacketRate">
+        <rdfs:subClassOf rdf:resource="&IndoorTracking;TrackingMaintenance"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#PacketsperSecond -->
+
+    <owl:Class rdf:about="&IndoorTracking;PacketsperSecond">
+        <rdfs:subClassOf rdf:resource="&IndoorTracking;TuningFunction"/>
+        <owl:disjointWith rdf:resource="&IndoorTracking;ReflashDeviceOS"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#ParticleFilter -->
+
+    <owl:Class rdf:about="&IndoorTracking;ParticleFilter">
+        <rdfs:subClassOf rdf:resource="&IndoorTracking;Filters"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#PoorReferenceNodeLocation -->
+
+    <owl:Class rdf:about="&IndoorTracking;PoorReferenceNodeLocation">
+        <rdfs:subClassOf rdf:resource="&IndoorTracking;GDOP"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&IndoorTracking;hasGDOPValue"/>
+                <owl:someValuesFrom rdf:resource="&IndoorTracking;MoreThanSix"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#Portal -->
+
+    <owl:Class rdf:about="&IndoorTracking;Portal">
+        <rdfs:subClassOf rdf:resource="&IndoorTracking;IndoorTrackingDevices"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#Precision -->
+
+    <owl:Class rdf:about="&IndoorTracking;Precision">
+        <rdfs:subClassOf rdf:resource="&IndoorTracking;Requirements"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#PredictedErrorCovariance -->
+
+    <owl:Class rdf:about="&IndoorTracking;PredictedErrorCovariance">
+        <rdfs:subClassOf rdf:resource="&IndoorTracking;LinearKalmanFilter"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#PropagationEnvironment -->
+
+    <owl:Class rdf:about="&IndoorTracking;PropagationEnvironment">
+        <rdfs:subClassOf rdf:resource="&IndoorTracking;IndoorTrackingDevices"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#RSSI -->
+
+    <owl:Class rdf:about="&IndoorTracking;RSSI">
+        <rdfs:subClassOf rdf:resource="&IndoorTracking;Measurement"/>
+        <rdfs:subClassOf rdf:resource="&IndoorTracking;ZigbeePacket"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#ReadRate -->
+
+    <owl:Class rdf:about="&IndoorTracking;ReadRate">
+        <rdfs:subClassOf rdf:resource="&IndoorTracking;Precision"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#ReflashDevice -->
+
+    <owl:Class rdf:about="&IndoorTracking;ReflashDevice">
+        <rdfs:subClassOf rdf:resource="&IndoorTracking;TrackingMaintenance"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#ReflashDeviceOS -->
+
+    <owl:Class rdf:about="&IndoorTracking;ReflashDeviceOS">
+        <rdfs:subClassOf rdf:resource="&IndoorTracking;TuningFunction"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#Reflection -->
+
+    <owl:Class rdf:about="&IndoorTracking;Reflection">
+        <rdfs:subClassOf rdf:resource="&IndoorTracking;Precision"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#Refraction -->
+
+    <owl:Class rdf:about="&IndoorTracking;Refraction">
+        <rdfs:subClassOf rdf:resource="&IndoorTracking;Precision"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#Requirements -->
+
+    <owl:Class rdf:about="&IndoorTracking;Requirements">
+        <rdfs:subClassOf rdf:resource="&IndoorTracking;BusinessDecisionSupport"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#SDSTWR -->
+
+    <owl:Class rdf:about="&IndoorTracking;SDSTWR">
+        <rdfs:subClassOf rdf:resource="&IndoorTracking;Unicast"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#SemanticBusServices -->
+
+    <owl:Class rdf:about="&IndoorTracking;SemanticBusServices">
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#Setup -->
+
+    <owl:Class rdf:about="&IndoorTracking;Setup">
+        <rdfs:subClassOf rdf:resource="&IndoorTracking;TrackingSystem"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#SmartRF06 -->
+
+    <owl:Class rdf:about="&IndoorTracking;SmartRF06">
+        <rdfs:subClassOf rdf:resource="&IndoorTracking;CommercialDeviceName"/>
+        <owl:disjointWith rdf:resource="&IndoorTracking;ZigbeePacket"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#Software -->
+
+    <owl:Class rdf:about="&IndoorTracking;Software">
+        <rdfs:subClassOf rdf:resource="&IndoorTracking;TrackingSystem"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#StateMeasurement -->
+
+    <owl:Class rdf:about="&IndoorTracking;StateMeasurement">
+        <rdfs:subClassOf rdf:resource="&IndoorTracking;SystemStateVariable"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#StateTransition -->
+
+    <owl:Class rdf:about="&IndoorTracking;StateTransition">
+        <rdfs:subClassOf rdf:resource="&IndoorTracking;SystemStateVariable"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#StateTransitionNoise -->
+
+    <owl:Class rdf:about="&IndoorTracking;StateTransitionNoise">
+        <rdfs:subClassOf rdf:resource="&IndoorTracking;SystemNoiseVariable"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#SystemModel -->
+
+    <owl:Class rdf:about="&IndoorTracking;SystemModel">
+        <rdfs:subClassOf rdf:resource="&IndoorTracking;BusinessDecisionSupport"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#SystemNoiseVariable -->
+
+    <owl:Class rdf:about="&IndoorTracking;SystemNoiseVariable">
+        <rdfs:subClassOf rdf:resource="&IndoorTracking;SystemModel"/>
+        <owl:disjointWith rdf:resource="&IndoorTracking;SystemStateVariable"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#SystemStateVariable -->
+
+    <owl:Class rdf:about="&IndoorTracking;SystemStateVariable">
+        <rdfs:subClassOf rdf:resource="&IndoorTracking;SystemModel"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#TimeofFlight -->
+
+    <owl:Class rdf:about="&IndoorTracking;TimeofFlight">
+        <rdfs:subClassOf rdf:resource="&IndoorTracking;Measurement"/>
+        <rdfs:subClassOf rdf:resource="&IndoorTracking;ZigbeePacket"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#TrackingAnalytics -->
+
+    <owl:Class rdf:about="&IndoorTracking;TrackingAnalytics">
+        <rdfs:subClassOf rdf:resource="&IndoorTracking;SemanticBusServices"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#TrackingMaintenance -->
+
+    <owl:Class rdf:about="&IndoorTracking;TrackingMaintenance">
+        <rdfs:subClassOf rdf:resource="&IndoorTracking;ManufacturingApplication"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#TrackingService -->
+
+    <owl:Class rdf:about="&IndoorTracking;TrackingService">
+        <rdfs:subClassOf rdf:resource="&IndoorTracking;ManufacturingApplication"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#TrackingSystem -->
+
+    <owl:Class rdf:about="&IndoorTracking;TrackingSystem">
+        <rdfs:subClassOf rdf:resource="&IndoorTracking;BusinessDecisionSupport"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#Tuning -->
+
+    <owl:Class rdf:about="&IndoorTracking;Tuning">
+        <rdfs:subClassOf rdf:resource="&IndoorTracking;SemanticBusServices"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#TuningFunction -->
+
+    <owl:Class rdf:about="&IndoorTracking;TuningFunction">
+        <rdfs:subClassOf rdf:resource="&IndoorTracking;FaultMonitor"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#Unicast -->
+
+    <owl:Class rdf:about="&IndoorTracking;Unicast">
+        <rdfs:subClassOf rdf:resource="&IndoorTracking;Application"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#ValuePartition -->
+
+    <owl:Class rdf:about="&IndoorTracking;ValuePartition"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#Velocity -->
+
+    <owl:Class rdf:about="&IndoorTracking;Velocity">
+        <rdfs:subClassOf rdf:resource="&IndoorTracking;TrackingAnalytics"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#ZigbeeModule -->
+
+    <owl:Class rdf:about="&IndoorTracking;ZigbeeModule">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/ginipease/locationOntology/master/owlrdf/supertaglocation.owl#Supertag"/>
+        <rdfs:subClassOf rdf:resource="&IndoorTracking;MotionSensor"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#ZigbeePacket -->
+
+    <owl:Class rdf:about="&IndoorTracking;ZigbeePacket">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&IndoorTracking;RSSI"/>
+                    <rdf:Description rdf:about="&IndoorTracking;TimeofFlight"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&IndoorTracking;ZigbeeModule"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/locationOntology/master/owlrdf/supertaglocation#Location1 -->
+
+    <owl:NamedIndividual rdf:about="&supertaglocation;Location1">
+        <rdf:type rdf:resource="&supertaglocation;SupertagLoc"/>
+        <supertaglocation:XValue rdf:datatype="&xsd;float">-1.0</supertaglocation:XValue>
+        <supertaglocation:YValue rdf:datatype="&xsd;float">-1.8</supertaglocation:YValue>
+        <supertaglocation:TimeValue rdf:datatype="&xsd;dateTime">2014-11-06T13:22:06</supertaglocation:TimeValue>
+        <supertaglocation:ZValue rdf:datatype="&xsd;float">4.9</supertaglocation:ZValue>
+        <supertaglocation:isLocof rdf:resource="&supertaglocation;Server1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/locationOntology/master/owlrdf/supertaglocation#Location2 -->
+
+    <owl:NamedIndividual rdf:about="&supertaglocation;Location2">
+        <rdf:type rdf:resource="&supertaglocation;SupertagLoc"/>
+        <supertaglocation:XValue rdf:datatype="&xsd;float">16.5</supertaglocation:XValue>
+        <supertaglocation:YValue rdf:datatype="&xsd;float">20.4</supertaglocation:YValue>
+        <supertaglocation:TimeValue rdf:datatype="&xsd;dateTime">2014-11-06T13:23:33</supertaglocation:TimeValue>
+        <supertaglocation:ZValue rdf:datatype="&xsd;float">6.8</supertaglocation:ZValue>
+        <supertaglocation:isLocof rdf:resource="&supertaglocation;Server1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/locationOntology/master/owlrdf/supertaglocation#Location3 -->
+
+    <owl:NamedIndividual rdf:about="&supertaglocation;Location3">
+        <rdf:type rdf:resource="&supertaglocation;SupertagLoc"/>
+        <supertaglocation:XValue rdf:datatype="&xsd;float">13.0</supertaglocation:XValue>
+        <supertaglocation:YValue rdf:datatype="&xsd;float">13.8</supertaglocation:YValue>
+        <supertaglocation:TimeValue rdf:datatype="&xsd;dateTime">2014-11-06T13:24:59</supertaglocation:TimeValue>
+        <supertaglocation:ZValue rdf:datatype="&xsd;float">7.5</supertaglocation:ZValue>
+        <supertaglocation:isLocof rdf:resource="&supertaglocation;Server1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/locationOntology/master/owlrdf/supertaglocation#Location4 -->
+
+    <owl:NamedIndividual rdf:about="&supertaglocation;Location4">
+        <rdf:type rdf:resource="&supertaglocation;SupertagLoc"/>
+        <supertaglocation:XValue rdf:datatype="&xsd;float">10.3</supertaglocation:XValue>
+        <supertaglocation:ZValue rdf:datatype="&xsd;float">14.6</supertaglocation:ZValue>
+        <supertaglocation:TimeValue rdf:datatype="&xsd;dateTime">2014-11-06T13:27:52</supertaglocation:TimeValue>
+        <supertaglocation:YValue rdf:datatype="&xsd;float">6.8</supertaglocation:YValue>
+        <supertaglocation:isLocof rdf:resource="&supertaglocation;Server1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/locationOntology/master/owlrdf/supertaglocation#Location5 -->
+
+    <owl:NamedIndividual rdf:about="&supertaglocation;Location5">
+        <rdf:type rdf:resource="&supertaglocation;SupertagLoc"/>
+        <supertaglocation:XValue rdf:datatype="&xsd;float">15.9</supertaglocation:XValue>
+        <supertaglocation:TimeValue rdf:datatype="&xsd;dateTime">2014-11-06T13:26:25</supertaglocation:TimeValue>
+        <supertaglocation:YValue rdf:datatype="&xsd;float">21.1</supertaglocation:YValue>
+        <supertaglocation:ZValue rdf:datatype="&xsd;float">6.2</supertaglocation:ZValue>
+        <supertaglocation:isLocof rdf:resource="&supertaglocation;Server1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/locationOntology/master/owlrdf/supertaglocation#Server1 -->
+
+    <owl:NamedIndividual rdf:about="&supertaglocation;Server1">
+        <rdf:type rdf:resource="&supertaglocation;MovingTag"/>
+        <supertaglocation:UIDValue rdf:datatype="&xsd;integer">1</supertaglocation:UIDValue>
+        <supertaglocation:hasLoc rdf:resource="&supertaglocation;Location1"/>
+        <supertaglocation:hasLoc rdf:resource="&supertaglocation;Location2"/>
+        <supertaglocation:hasLoc rdf:resource="&supertaglocation;Location3"/>
+        <supertaglocation:hasLoc rdf:resource="&supertaglocation;Location4"/>
+        <supertaglocation:hasLoc rdf:resource="&supertaglocation;Location5"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/locationOntology/master/owlrdf/supertaglocation#Server2 -->
+
+    <owl:NamedIndividual rdf:about="&supertaglocation;Server2">
+        <rdf:type rdf:resource="&supertaglocation;MovingTag"/>
+        <supertaglocation:UIDValue rdf:datatype="&xsd;integer">2</supertaglocation:UIDValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/locationOntology/master/owlrdf/supertaglocation#Server3 -->
+
+    <owl:NamedIndividual rdf:about="&supertaglocation;Server3">
+        <rdf:type rdf:resource="&supertaglocation;MovingTag"/>
+        <supertaglocation:UIDValue rdf:datatype="&xsd;integer">3</supertaglocation:UIDValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#ExampleMeasurementNoiseVariable -->
+
+    <owl:NamedIndividual rdf:about="&IndoorTracking;ExampleMeasurementNoiseVariable">
+        <rdf:type rdf:resource="&IndoorTracking;MeasurementNoise"/>
+        <IndoorTracking:hasSystemNoiseVariableValue rdf:datatype="&xsd;integer">1</IndoorTracking:hasSystemNoiseVariableValue>
+        <IndoorTracking:hasSystemNoiseVariableValue rdf:datatype="&xsd;integer">2</IndoorTracking:hasSystemNoiseVariableValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#Location1 -->
+
+    <owl:NamedIndividual rdf:about="&IndoorTracking;Location1">
+        <IndoorTracking:isLocof rdf:resource="&IndoorTracking;Server1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#Location2 -->
+
+    <owl:NamedIndividual rdf:about="&IndoorTracking;Location2">
+        <IndoorTracking:isLocof rdf:resource="&IndoorTracking;Server1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#Location3 -->
+
+    <owl:NamedIndividual rdf:about="&IndoorTracking;Location3">
+        <IndoorTracking:isLocof rdf:resource="&IndoorTracking;Server1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#Location4 -->
+
+    <owl:NamedIndividual rdf:about="&IndoorTracking;Location4">
+        <IndoorTracking:isLocof rdf:resource="&IndoorTracking;Server1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#Server1 -->
+
+    <owl:NamedIndividual rdf:about="&IndoorTracking;Server1">
+        <IndoorTracking:hasLoc rdf:resource="&IndoorTracking;Location1"/>
+        <IndoorTracking:hasLoc rdf:resource="&IndoorTracking;Location2"/>
+        <IndoorTracking:hasLoc rdf:resource="&IndoorTracking;Location3"/>
+        <IndoorTracking:hasLoc rdf:resource="&IndoorTracking;Location4"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#Server2 -->
+
+    <owl:NamedIndividual rdf:about="&IndoorTracking;Server2"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/tracking-ontology/master/owlrdf/IndoorTracking#Server3 -->
+
+    <owl:NamedIndividual rdf:about="&IndoorTracking;Server3"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="&IndoorTracking;Acceleration"/>
+            <rdf:Description rdf:about="&IndoorTracking;Multilateration"/>
+            <rdf:Description rdf:about="&IndoorTracking;Velocity"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="&IndoorTracking;DistanceMeasurement"/>
+            <rdf:Description rdf:about="&IndoorTracking;MovingAverageFilter"/>
+            <rdf:Description rdf:about="&IndoorTracking;PredictedErrorCovariance"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="&IndoorTracking;PacketsperSecond"/>
+            <rdf:Description rdf:about="&IndoorTracking;RSSI"/>
+            <rdf:Description rdf:about="&IndoorTracking;TimeofFlight"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="&IndoorTracking;Filters"/>
+            <rdf:Description rdf:about="&IndoorTracking;TrackingAnalytics"/>
+            <rdf:Description rdf:about="&IndoorTracking;Tuning"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="&IndoorTracking;Inventory"/>
+            <rdf:Description rdf:about="&IndoorTracking;Mediation"/>
+            <rdf:Description rdf:about="&IndoorTracking;TrackingMaintenance"/>
+            <rdf:Description rdf:about="&IndoorTracking;TrackingService"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointProperties"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="&IndoorTracking;hasTrackingHardware"/>
+            <rdf:Description rdf:about="&IndoorTracking;hasTrackingMeasurement"/>
+            <rdf:Description rdf:about="&IndoorTracking;hasTrackingOS"/>
+            <rdf:Description rdf:about="&IndoorTracking;hasTrackingSetup"/>
+            <rdf:Description rdf:about="&IndoorTracking;hasTrackingSoftware"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointProperties"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="&IndoorTracking;hasFaultMonitor"/>
+            <rdf:Description rdf:about="&IndoorTracking;hasMotionSensor"/>
+            <rdf:Description rdf:about="&IndoorTracking;hasOnboardAnalytics"/>
+            <rdf:Description rdf:about="&IndoorTracking;hasPropagationEnvironment"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="&IndoorTracking;GDOP"/>
+            <rdf:Description rdf:about="&IndoorTracking;TrackingAnalytics"/>
+            <rdf:Description rdf:about="&IndoorTracking;Tuning"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="&IndoorTracking;BetweenSixAndThree"/>
+            <rdf:Description rdf:about="&IndoorTracking;LessThanThree"/>
+            <rdf:Description rdf:about="&IndoorTracking;MoreThanSix"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="&IndoorTracking;ComplimentaryFilter"/>
+            <rdf:Description rdf:about="&IndoorTracking;ExtendedKalmanFilter"/>
+            <rdf:Description rdf:about="&IndoorTracking;Messaging"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="&IndoorTracking;FaultMonitor"/>
+            <rdf:Description rdf:about="&IndoorTracking;MotionSensor"/>
+            <rdf:Description rdf:about="&IndoorTracking;OnboardAnalytics"/>
+            <rdf:Description rdf:about="&IndoorTracking;PropagationEnvironment"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="&IndoorTracking;Requirements"/>
+            <rdf:Description rdf:about="&IndoorTracking;SystemModel"/>
+            <rdf:Description rdf:about="&IndoorTracking;TrackingSystem"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointProperties"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="&IndoorTracking;isFaultMonitorfor"/>
+            <rdf:Description rdf:about="&IndoorTracking;isMotionSensorfor"/>
+            <rdf:Description rdf:about="&IndoorTracking;isOnboardAnalyticsfor"/>
+            <rdf:Description rdf:about="&IndoorTracking;isPropagationEnvironmentof"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="&IndoorTracking;MeasurementNoise"/>
+            <rdf:Description rdf:about="&IndoorTracking;StateMeasurement"/>
+            <rdf:Description rdf:about="&IndoorTracking;StateTransition"/>
+            <rdf:Description rdf:about="&IndoorTracking;StateTransitionNoise"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointProperties"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="&IndoorTracking;isTrackingHardwareof"/>
+            <rdf:Description rdf:about="&IndoorTracking;isTrackingMeasurementof"/>
+            <rdf:Description rdf:about="&IndoorTracking;isTrackingOSof"/>
+            <rdf:Description rdf:about="&IndoorTracking;isTrackingSetupof"/>
+            <rdf:Description rdf:about="&IndoorTracking;isTrackingSoftwareof"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="&IndoorTracking;AccelerometerReading"/>
+            <rdf:Description rdf:about="&IndoorTracking;RSSI"/>
+            <rdf:Description rdf:about="&IndoorTracking;TimeofFlight"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.5.1) http://owlapi.sourceforge.net -->
+
