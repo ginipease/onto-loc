@@ -8,6 +8,7 @@ Prefix(supertaglocation:=<https://raw.githubusercontent.com/ginipease/onto-loc/m
 
 Ontology(<https://raw.githubusercontent.com/ginipease/onto-loc/master/ontoloc>
 
+Declaration(Class(supertaglocation:Portal))
 Declaration(Class(<https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#Acceleration>))
 Declaration(Class(<https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#Accelerometer>))
 Declaration(Class(<https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#AccelerometerReading>))
@@ -202,6 +203,8 @@ Declaration(NamedIndividual(<https://raw.githubusercontent.com/ginipease/onto-lo
 Declaration(NamedIndividual(<https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#Server1>))
 Declaration(NamedIndividual(<https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#Server2>))
 Declaration(NamedIndividual(<https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#Server3>))
+SubClassOf(supertaglocation:Portal <https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#Device>)
+DisjointClasses(supertaglocation:Portal <https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#Supertag>)
 EquivalentClasses(<https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#Acceleration> <https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#Cartesian>)
 SubClassOf(<https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#Acceleration> <https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#TrackingAnalytics>)
 EquivalentClasses(<https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#Accelerometer> <https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#SmartRF06>)
@@ -265,7 +268,6 @@ SubClassOf(<https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/o
 SubClassOf(<https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#MotionSensor> <https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#MovingTag>)
 SubClassOf(<https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#MovingAverageFilter> <https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#OnboardAnalytics>)
 
-SubClassOf(<https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#MovingTag> <https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#Device>)
 SubClassOf(<https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#MovingTag> <https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#Setup>)
 SubClassOf(<https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#MovingTag> <https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#Supertag>)
 SubClassOf(<https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#Multilateration> <https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#TrackingAnalytics>)
@@ -302,6 +304,7 @@ SubClassOf(<https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/o
 SubClassOf(<https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#StateMeasurement> <https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#SystemStateVariable>)
 SubClassOf(<https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#StateTransition> <https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#SystemStateVariable>)
 SubClassOf(<https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#StateTransitionNoise> <https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#SystemNoiseVariable>)
+SubClassOf(<https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#Supertag> <https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#Device>)
 SubClassOf(<https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#SupertagLoc> <https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#Location>)
 SubClassOf(<https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#SystemModel> <https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#BusinessDecisionSupport>)
 SubClassOf(<https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#SystemNoiseVariable> <https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#SystemModel>)
@@ -730,7 +733,7 @@ ObjectPropertyAssertion(<https://raw.githubusercontent.com/ginipease/onto-loc/ma
 DataPropertyAssertion(<https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#TimeValue> <https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#Location5> "2014-11-06T13:26:25"^^xsd:dateTime)
 DataPropertyAssertion(<https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#XValue> <https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#Location5> "15.9"^^xsd:float)
 DataPropertyAssertion(<https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#YValue> <https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#Location5> "21.1"^^xsd:float)
-DataPropertyAssertion(<https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#ZValue> <https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#Location5> "6.2"^^xsd:float)
+DataPropertyAssertion(<https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#ZValue> <https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#Location5> "6.5"^^xsd:float)
 ClassAssertion(<https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#MovingTag> <https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#Server1>)
 ObjectPropertyAssertion(<https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#hasLoc> <https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#Server1> <https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#Location4>)
 ObjectPropertyAssertion(<https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#hasLoc> <https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#Server1> <https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#Location1>)

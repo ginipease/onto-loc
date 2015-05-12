@@ -2246,6 +2246,15 @@
     
 
 
+    <!-- https://raw.githubusercontent.com/ginipease/onto-loc/master/ontoloc#Portal -->
+
+    <owl:Class rdf:about="&supertaglocation;Portal">
+        <rdfs:subClassOf rdf:resource="&ontoloc;Device"/>
+        <owl:disjointWith rdf:resource="&ontoloc;Supertag"/>
+    </owl:Class>
+    
+
+
     <!-- https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#Acceleration -->
 
     <owl:Class rdf:about="&ontoloc;Acceleration">
@@ -2633,7 +2642,6 @@
     <!-- https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#MovingTag -->
 
     <owl:Class rdf:about="&ontoloc;MovingTag">
-        <rdfs:subClassOf rdf:resource="&ontoloc;Device"/>
         <rdfs:subClassOf rdf:resource="&ontoloc;Setup"/>
         <rdfs:subClassOf rdf:resource="&ontoloc;Supertag"/>
     </owl:Class>
@@ -2884,7 +2892,9 @@
 
     <!-- https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#Supertag -->
 
-    <owl:Class rdf:about="&ontoloc;Supertag"/>
+    <owl:Class rdf:about="&ontoloc;Supertag">
+        <rdfs:subClassOf rdf:resource="&ontoloc;Device"/>
+    </owl:Class>
     
 
 
@@ -3105,7 +3115,7 @@
         <ontoloc:XValue rdf:datatype="&xsd;float">15.9</ontoloc:XValue>
         <ontoloc:TimeValue rdf:datatype="&xsd;dateTime">2014-11-06T13:26:25</ontoloc:TimeValue>
         <ontoloc:YValue rdf:datatype="&xsd;float">21.1</ontoloc:YValue>
-        <ontoloc:ZValue rdf:datatype="&xsd;float">6.2</ontoloc:ZValue>
+        <ontoloc:ZValue rdf:datatype="&xsd;float">6.5</ontoloc:ZValue>
         <ontoloc:isLocof rdf:resource="&ontoloc;Server1"/>
     </owl:NamedIndividual>
     

@@ -23,6 +23,9 @@
     <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
     <Prefix name="supertaglocation" IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/ontoloc#"/>
     <Declaration>
+        <Class IRI="#Portal"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#Acceleration"/>
     </Declaration>
     <Declaration>
@@ -642,6 +645,10 @@
         </ObjectUnionOf>
     </EquivalentClasses>
     <SubClassOf>
+        <Class IRI="#Portal"/>
+        <Class IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#Device"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#Acceleration"/>
         <Class IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#TrackingAnalytics"/>
     </SubClassOf>
@@ -835,10 +842,6 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#MovingTag"/>
-        <Class IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#Device"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#MovingTag"/>
         <Class IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#Setup"/>
     </SubClassOf>
     <SubClassOf>
@@ -973,6 +976,10 @@
         <Class IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#SystemNoiseVariable"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#Supertag"/>
+        <Class IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#Device"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#SupertagLoc"/>
         <Class IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#Location"/>
     </SubClassOf>
@@ -1040,6 +1047,10 @@
         <Class IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#ZigbeePacket"/>
         <Class IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#ZigbeeModule"/>
     </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="#Portal"/>
+        <Class IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#Supertag"/>
+    </DisjointClasses>
     <DisjointClasses>
         <Class IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#Acceleration"/>
         <Class IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#Multilateration"/>
@@ -1350,7 +1361,7 @@
     <DataPropertyAssertion>
         <DataProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#ZValue"/>
         <NamedIndividual IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#Location5"/>
-        <Literal datatypeIRI="&xsd;float">6.2</Literal>
+        <Literal datatypeIRI="&xsd;float">6.5</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#UIDValue"/>
