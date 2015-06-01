@@ -612,9 +612,6 @@
         <DataProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#hasSystemNoiseVariableValue"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#Frequency"/>
-    </Declaration>
-    <Declaration>
         <NamedIndividual IRI="#Location6"/>
     </Declaration>
     <Declaration>
@@ -622,6 +619,9 @@
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#SDSTWRPackets"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#TransmitFrequency"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#ExampleMeasurementNoiseVariable"/>
@@ -1215,10 +1215,6 @@
         <Class IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#SystemStateVariable"/>
     </DisjointClasses>
     <ClassAssertion>
-        <Class IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#TuningFunction"/>
-        <NamedIndividual IRI="#Frequency"/>
-    </ClassAssertion>
-    <ClassAssertion>
         <Class IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#SupertagLoc"/>
         <NamedIndividual IRI="#Location6"/>
     </ClassAssertion>
@@ -1229,6 +1225,10 @@
     <ClassAssertion>
         <Class IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#TuningFunction"/>
         <NamedIndividual IRI="#SDSTWRPackets"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#TuningFunction"/>
+        <NamedIndividual IRI="#TransmitFrequency"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#MeasurementNoise"/>
@@ -1279,13 +1279,23 @@
         <NamedIndividual IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#Server3"/>
     </ClassAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#isFrequencyof"/>
-        <NamedIndividual IRI="#Frequency"/>
+        <ObjectProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#isLocof"/>
+        <NamedIndividual IRI="#Location6"/>
+        <NamedIndividual IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#Server1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#isLocof"/>
+        <NamedIndividual IRI="#Location7"/>
         <NamedIndividual IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#Server1"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#isTotalPacketsSentby"/>
         <NamedIndividual IRI="#SDSTWRPackets"/>
+        <NamedIndividual IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#Server1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isFrequencyof"/>
+        <NamedIndividual IRI="#TransmitFrequency"/>
         <NamedIndividual IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#Server1"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
@@ -1316,7 +1326,7 @@
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#hasFrequency"/>
         <NamedIndividual IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#Server1"/>
-        <NamedIndividual IRI="#Frequency"/>
+        <NamedIndividual IRI="#TransmitFrequency"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#hasTransmissions"/>
@@ -1359,14 +1369,9 @@
         <NamedIndividual IRI="#Location6"/>
     </ObjectPropertyAssertion>
     <DataPropertyAssertion>
-        <DataProperty IRI="#TransmitFrequency"/>
-        <NamedIndividual IRI="#Frequency"/>
-        <Literal datatypeIRI="&xsd;integer">5</Literal>
-    </DataPropertyAssertion>
-    <DataPropertyAssertion>
         <DataProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#TimeValue"/>
         <NamedIndividual IRI="#Location6"/>
-        <Literal datatypeIRI="&rdf;PlainLiteral">2014-11-06T13:33:25</Literal>
+        <Literal datatypeIRI="&xsd;dateTime">2014-11-06T13:33:25</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#XValue"/>
@@ -1386,7 +1391,7 @@
     <DataPropertyAssertion>
         <DataProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#TimeValue"/>
         <NamedIndividual IRI="#Location7"/>
-        <Literal datatypeIRI="&rdf;PlainLiteral">2014-11-06T13:34:43</Literal>
+        <Literal datatypeIRI="&xsd;dateTime">2014-11-06T13:34:43</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#XValue"/>
@@ -1407,6 +1412,11 @@
         <DataProperty IRI="#NumberofPackets"/>
         <NamedIndividual IRI="#SDSTWRPackets"/>
         <Literal datatypeIRI="&xsd;nonNegativeInteger">50</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#TransmitFrequency"/>
+        <NamedIndividual IRI="#TransmitFrequency"/>
+        <Literal datatypeIRI="&xsd;integer">5</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#hasSystemNoiseVariableValue"/>

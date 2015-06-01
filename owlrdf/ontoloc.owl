@@ -3130,24 +3130,15 @@
     
 
 
-    <!-- https://raw.githubusercontent.com/ginipease/onto-loc/master/ontoloc#Frequency -->
-
-    <NamedIndividual rdf:about="&supertaglocation;Frequency">
-        <rdf:type rdf:resource="&ontoloc;TuningFunction"/>
-        <supertaglocation:TransmitFrequency rdf:datatype="&xsd;integer">5</supertaglocation:TransmitFrequency>
-        <supertaglocation:isFrequencyof rdf:resource="&ontoloc;Server1"/>
-    </NamedIndividual>
-    
-
-
     <!-- https://raw.githubusercontent.com/ginipease/onto-loc/master/ontoloc#Location6 -->
 
     <NamedIndividual rdf:about="&supertaglocation;Location6">
         <rdf:type rdf:resource="&ontoloc;SupertagLoc"/>
         <ontoloc:ZValue rdf:datatype="&xsd;float">1.4</ontoloc:ZValue>
+        <ontoloc:TimeValue rdf:datatype="&xsd;dateTime">2014-11-06T13:33:25</ontoloc:TimeValue>
         <ontoloc:XValue rdf:datatype="&xsd;float">22.1</ontoloc:XValue>
         <ontoloc:YValue rdf:datatype="&xsd;float">9.7</ontoloc:YValue>
-        <ontoloc:TimeValue>2014-11-06T13:33:25</ontoloc:TimeValue>
+        <ontoloc:isLocof rdf:resource="&ontoloc;Server1"/>
     </NamedIndividual>
     
 
@@ -3159,7 +3150,8 @@
         <ontoloc:ZValue rdf:datatype="&xsd;float">1.4</ontoloc:ZValue>
         <ontoloc:YValue rdf:datatype="&xsd;float">15.1</ontoloc:YValue>
         <ontoloc:XValue rdf:datatype="&xsd;float">15.2</ontoloc:XValue>
-        <ontoloc:TimeValue>2014-11-06T13:34:43</ontoloc:TimeValue>
+        <ontoloc:TimeValue rdf:datatype="&xsd;dateTime">2014-11-06T13:34:43</ontoloc:TimeValue>
+        <ontoloc:isLocof rdf:resource="&ontoloc;Server1"/>
     </NamedIndividual>
     
 
@@ -3170,6 +3162,16 @@
         <rdf:type rdf:resource="&ontoloc;TuningFunction"/>
         <supertaglocation:NumberofPackets rdf:datatype="&xsd;nonNegativeInteger">50</supertaglocation:NumberofPackets>
         <supertaglocation:isTotalPacketsSentby rdf:resource="&ontoloc;Server1"/>
+    </NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/onto-loc/master/ontoloc#TransmitFrequency -->
+
+    <NamedIndividual rdf:about="&supertaglocation;TransmitFrequency">
+        <rdf:type rdf:resource="&ontoloc;TuningFunction"/>
+        <supertaglocation:TransmitFrequency rdf:datatype="&xsd;integer">5</supertaglocation:TransmitFrequency>
+        <supertaglocation:isFrequencyof rdf:resource="&ontoloc;Server1"/>
     </NamedIndividual>
     
 
@@ -3256,10 +3258,10 @@
         <rdf:type rdf:resource="&ontoloc;MovingTag"/>
         <ontoloc:UIDValue rdf:datatype="&xsd;integer">1</ontoloc:UIDValue>
         <supertaglocation:AnchorNum rdf:datatype="&xsd;nonNegativeInteger">3</supertaglocation:AnchorNum>
-        <supertaglocation:hasFrequency rdf:resource="&supertaglocation;Frequency"/>
         <ontoloc:hasLoc rdf:resource="&supertaglocation;Location6"/>
         <ontoloc:hasLoc rdf:resource="&supertaglocation;Location7"/>
         <supertaglocation:hasTransmissions rdf:resource="&supertaglocation;SDSTWRPackets"/>
+        <supertaglocation:hasFrequency rdf:resource="&supertaglocation;TransmitFrequency"/>
         <ontoloc:hasLoc rdf:resource="&ontoloc;Location1"/>
         <ontoloc:hasLoc rdf:resource="&ontoloc;Location2"/>
         <ontoloc:hasLoc rdf:resource="&ontoloc;Location3"/>
