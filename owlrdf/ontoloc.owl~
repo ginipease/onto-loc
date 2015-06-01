@@ -4,6 +4,7 @@
 <!DOCTYPE rdf:RDF [
     <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
     <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY xml "http://www.w3.org/XML/1998/namespace" >
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
     <!ENTITY supertaglocation "https://raw.githubusercontent.com/ginipease/onto-loc/master/ontoloc#" >
@@ -16,6 +17,7 @@
      xmlns:supertaglocation="https://raw.githubusercontent.com/ginipease/onto-loc/master/ontoloc#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:ontoloc="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
@@ -147,12 +149,6 @@
         <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
         <rdfs:subPropertyOf rdf:resource="&ontoloc;hasTrackingSoftware"/>
         <inverseOf rdf:resource="&ontoloc;isApplicationTypeof"/>
-        <rdfs:range>
-            <Restriction>
-                <onProperty rdf:resource="&ontoloc;hasApplicationType"/>
-                <allValuesFrom rdf:resource="&ontoloc;Unicast"/>
-            </Restriction>
-        </rdfs:range>
         <rdfs:domain>
             <Restriction>
                 <onProperty rdf:resource="&ontoloc;hasApplicationType"/>
@@ -160,6 +156,12 @@
                 <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
             </Restriction>
         </rdfs:domain>
+        <rdfs:range>
+            <Restriction>
+                <onProperty rdf:resource="&ontoloc;hasApplicationType"/>
+                <allValuesFrom rdf:resource="&ontoloc;Unicast"/>
+            </Restriction>
+        </rdfs:range>
     </ObjectProperty>
     
 
@@ -214,13 +216,6 @@
     <ObjectProperty rdf:about="&ontoloc;hasFaultMonitor">
         <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
         <rdfs:subPropertyOf rdf:resource="&ontoloc;hasIndoorTrackingService"/>
-        <rdfs:range>
-            <Restriction>
-                <onProperty rdf:resource="&ontoloc;hasFaultMonitor"/>
-                <onClass rdf:resource="&ontoloc;FaultMonitor"/>
-                <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
-            </Restriction>
-        </rdfs:range>
         <rdfs:domain>
             <Restriction>
                 <onProperty rdf:resource="&ontoloc;hasFaultMonitor"/>
@@ -228,6 +223,13 @@
                 <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
             </Restriction>
         </rdfs:domain>
+        <rdfs:range>
+            <Restriction>
+                <onProperty rdf:resource="&ontoloc;hasFaultMonitor"/>
+                <onClass rdf:resource="&ontoloc;FaultMonitor"/>
+                <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
+            </Restriction>
+        </rdfs:range>
     </ObjectProperty>
     
 
@@ -238,19 +240,6 @@
         <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
         <rdfs:subPropertyOf rdf:resource="&ontoloc;hasFilterService"/>
         <rdfs:subPropertyOf rdf:resource="&ontoloc;hasGDOPService"/>
-        <rdfs:range>
-            <Restriction>
-                <onProperty rdf:resource="&ontoloc;hasFeedback"/>
-                <allValuesFrom>
-                    <Class>
-                        <unionOf rdf:parseType="Collection">
-                            <rdf:Description rdf:about="&ontoloc;NLOSdata"/>
-                            <rdf:Description rdf:about="&ontoloc;PoorReferenceNodeLocation"/>
-                        </unionOf>
-                    </Class>
-                </allValuesFrom>
-            </Restriction>
-        </rdfs:range>
         <rdfs:domain>
             <Restriction>
                 <onProperty rdf:resource="&ontoloc;hasFeedback"/>
@@ -264,6 +253,19 @@
                 </allValuesFrom>
             </Restriction>
         </rdfs:domain>
+        <rdfs:range>
+            <Restriction>
+                <onProperty rdf:resource="&ontoloc;hasFeedback"/>
+                <allValuesFrom>
+                    <Class>
+                        <unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="&ontoloc;NLOSdata"/>
+                            <rdf:Description rdf:about="&ontoloc;PoorReferenceNodeLocation"/>
+                        </unionOf>
+                    </Class>
+                </allValuesFrom>
+            </Restriction>
+        </rdfs:range>
     </ObjectProperty>
     
 
@@ -302,12 +304,6 @@
     <ObjectProperty rdf:about="&ontoloc;hasFilterService">
         <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
         <rdfs:subPropertyOf rdf:resource="&ontoloc;hasSemanticBusService"/>
-        <rdfs:domain>
-            <Restriction>
-                <onProperty rdf:resource="&ontoloc;hasFilterService"/>
-                <allValuesFrom rdf:resource="&ontoloc;Filters"/>
-            </Restriction>
-        </rdfs:domain>
         <rdfs:range>
             <Restriction>
                 <onProperty rdf:resource="&ontoloc;hasFilterService"/>
@@ -322,6 +318,12 @@
                 </allValuesFrom>
             </Restriction>
         </rdfs:range>
+        <rdfs:domain>
+            <Restriction>
+                <onProperty rdf:resource="&ontoloc;hasFilterService"/>
+                <allValuesFrom rdf:resource="&ontoloc;Filters"/>
+            </Restriction>
+        </rdfs:domain>
     </ObjectProperty>
     
 
@@ -332,13 +334,6 @@
         <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
         <rdfs:subPropertyOf rdf:resource="&ontoloc;hasSemanticBusService"/>
         <inverseOf rdf:resource="&ontoloc;isGDOPServicefor"/>
-        <rdfs:range>
-            <Restriction>
-                <onProperty rdf:resource="&ontoloc;hasGDOPService"/>
-                <onClass rdf:resource="&ontoloc;PoorReferenceNodeLocation"/>
-                <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
-            </Restriction>
-        </rdfs:range>
         <rdfs:domain>
             <Restriction>
                 <onProperty rdf:resource="&ontoloc;hasGDOPService"/>
@@ -346,6 +341,13 @@
                 <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
             </Restriction>
         </rdfs:domain>
+        <rdfs:range>
+            <Restriction>
+                <onProperty rdf:resource="&ontoloc;hasGDOPService"/>
+                <onClass rdf:resource="&ontoloc;PoorReferenceNodeLocation"/>
+                <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
+            </Restriction>
+        </rdfs:range>
     </ObjectProperty>
     
 
@@ -395,12 +397,6 @@
         <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
         <rdfs:subPropertyOf rdf:resource="&ontoloc;hasTrackingHardware"/>
         <inverseOf rdf:resource="&ontoloc;isHardwareSourceof"/>
-        <rdfs:domain>
-            <Restriction>
-                <onProperty rdf:resource="&ontoloc;hasHardwareSource"/>
-                <allValuesFrom rdf:resource="&ontoloc;Device"/>
-            </Restriction>
-        </rdfs:domain>
         <rdfs:range>
             <Restriction>
                 <onProperty rdf:resource="&ontoloc;hasHardwareSource"/>
@@ -408,6 +404,12 @@
                 <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
             </Restriction>
         </rdfs:range>
+        <rdfs:domain>
+            <Restriction>
+                <onProperty rdf:resource="&ontoloc;hasHardwareSource"/>
+                <allValuesFrom rdf:resource="&ontoloc;Device"/>
+            </Restriction>
+        </rdfs:domain>
     </ObjectProperty>
     
 
@@ -470,24 +472,6 @@
 
     <ObjectProperty rdf:about="&ontoloc;hasInfluencingPrecisionFactor">
         <rdfs:subPropertyOf rdf:resource="&ontoloc;hasRequirementCapture"/>
-        <rdfs:range>
-            <Restriction>
-                <onProperty rdf:resource="&ontoloc;hasInfluencingPrecisionFactor"/>
-                <someValuesFrom rdf:resource="&ontoloc;Diffraction"/>
-            </Restriction>
-        </rdfs:range>
-        <rdfs:range>
-            <Restriction>
-                <onProperty rdf:resource="&ontoloc;hasInfluencingPrecisionFactor"/>
-                <someValuesFrom rdf:resource="&ontoloc;Refraction"/>
-            </Restriction>
-        </rdfs:range>
-        <rdfs:range>
-            <Restriction>
-                <onProperty rdf:resource="&ontoloc;hasInfluencingPrecisionFactor"/>
-                <someValuesFrom rdf:resource="&ontoloc;Attenuation"/>
-            </Restriction>
-        </rdfs:range>
         <rdfs:domain>
             <Restriction>
                 <onProperty rdf:resource="&ontoloc;hasInfluencingPrecisionFactor"/>
@@ -497,13 +481,31 @@
         <rdfs:range>
             <Restriction>
                 <onProperty rdf:resource="&ontoloc;hasInfluencingPrecisionFactor"/>
-                <someValuesFrom rdf:resource="&ontoloc;Reflection"/>
+                <someValuesFrom rdf:resource="&ontoloc;Refraction"/>
+            </Restriction>
+        </rdfs:range>
+        <rdfs:range>
+            <Restriction>
+                <onProperty rdf:resource="&ontoloc;hasInfluencingPrecisionFactor"/>
+                <someValuesFrom rdf:resource="&ontoloc;Diffraction"/>
             </Restriction>
         </rdfs:range>
         <rdfs:range>
             <Restriction>
                 <onProperty rdf:resource="&ontoloc;hasInfluencingPrecisionFactor"/>
                 <someValuesFrom rdf:resource="&ontoloc;Interference"/>
+            </Restriction>
+        </rdfs:range>
+        <rdfs:range>
+            <Restriction>
+                <onProperty rdf:resource="&ontoloc;hasInfluencingPrecisionFactor"/>
+                <someValuesFrom rdf:resource="&ontoloc;Reflection"/>
+            </Restriction>
+        </rdfs:range>
+        <rdfs:range>
+            <Restriction>
+                <onProperty rdf:resource="&ontoloc;hasInfluencingPrecisionFactor"/>
+                <someValuesFrom rdf:resource="&ontoloc;Attenuation"/>
             </Restriction>
         </rdfs:range>
     </ObjectProperty>
@@ -532,12 +534,6 @@
         <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
         <rdfs:subPropertyOf rdf:resource="&ontoloc;hasFilter"/>
         <inverseOf rdf:resource="&ontoloc;isKalmanInput"/>
-        <rdfs:domain>
-            <Restriction>
-                <onProperty rdf:resource="&ontoloc;hasKalmanInput"/>
-                <allValuesFrom rdf:resource="&ontoloc;LinearKalmanFilter"/>
-            </Restriction>
-        </rdfs:domain>
         <rdfs:range>
             <Restriction>
                 <onProperty rdf:resource="&ontoloc;hasKalmanInput"/>
@@ -545,6 +541,12 @@
                 <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
             </Restriction>
         </rdfs:range>
+        <rdfs:domain>
+            <Restriction>
+                <onProperty rdf:resource="&ontoloc;hasKalmanInput"/>
+                <allValuesFrom rdf:resource="&ontoloc;LinearKalmanFilter"/>
+            </Restriction>
+        </rdfs:domain>
     </ObjectProperty>
     
 
@@ -564,20 +566,6 @@
     <ObjectProperty rdf:about="&ontoloc;hasMaintenanceService">
         <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
         <rdfs:subPropertyOf rdf:resource="&ontoloc;hasManufacturingApplicationService"/>
-        <rdfs:domain>
-            <Restriction>
-                <onProperty rdf:resource="&ontoloc;hasMaintenanceService"/>
-                <onClass rdf:resource="&ontoloc;TrackingMaintenance"/>
-                <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
-            </Restriction>
-        </rdfs:domain>
-        <rdfs:range>
-            <Restriction>
-                <onProperty rdf:resource="&ontoloc;hasMaintenanceService"/>
-                <onClass rdf:resource="&ontoloc;PacketRate"/>
-                <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
-            </Restriction>
-        </rdfs:range>
         <rdfs:range>
             <Restriction>
                 <onProperty rdf:resource="&ontoloc;hasMaintenanceService"/>
@@ -585,6 +573,20 @@
                 <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
             </Restriction>
         </rdfs:range>
+        <rdfs:range>
+            <Restriction>
+                <onProperty rdf:resource="&ontoloc;hasMaintenanceService"/>
+                <onClass rdf:resource="&ontoloc;PacketRate"/>
+                <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
+            </Restriction>
+        </rdfs:range>
+        <rdfs:domain>
+            <Restriction>
+                <onProperty rdf:resource="&ontoloc;hasMaintenanceService"/>
+                <onClass rdf:resource="&ontoloc;TrackingMaintenance"/>
+                <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
+            </Restriction>
+        </rdfs:domain>
     </ObjectProperty>
     
 
@@ -658,12 +660,6 @@
         <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
         <rdfs:subPropertyOf rdf:resource="&ontoloc;hasIndoorTrackingService"/>
         <inverseOf rdf:resource="&ontoloc;isMotionSensorfor"/>
-        <rdfs:range>
-            <Restriction>
-                <onProperty rdf:resource="&ontoloc;hasMotionSensor"/>
-                <allValuesFrom rdf:resource="&ontoloc;MotionSensor"/>
-            </Restriction>
-        </rdfs:range>
         <rdfs:domain>
             <Restriction>
                 <onProperty rdf:resource="&ontoloc;hasMotionSensor"/>
@@ -671,6 +667,12 @@
                 <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
             </Restriction>
         </rdfs:domain>
+        <rdfs:range>
+            <Restriction>
+                <onProperty rdf:resource="&ontoloc;hasMotionSensor"/>
+                <allValuesFrom rdf:resource="&ontoloc;MotionSensor"/>
+            </Restriction>
+        </rdfs:range>
     </ObjectProperty>
     
 
@@ -680,6 +682,12 @@
     <ObjectProperty rdf:about="&ontoloc;hasMotionSensorType">
         <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
         <rdfs:subPropertyOf rdf:resource="&ontoloc;hasMotionSensor"/>
+        <rdfs:domain>
+            <Restriction>
+                <onProperty rdf:resource="&ontoloc;hasMotionSensorType"/>
+                <allValuesFrom rdf:resource="&ontoloc;MotionSensor"/>
+            </Restriction>
+        </rdfs:domain>
         <rdfs:range>
             <Restriction>
                 <onProperty rdf:resource="&ontoloc;hasMotionSensorType"/>
@@ -693,12 +701,6 @@
                 </allValuesFrom>
             </Restriction>
         </rdfs:range>
-        <rdfs:domain>
-            <Restriction>
-                <onProperty rdf:resource="&ontoloc;hasMotionSensorType"/>
-                <allValuesFrom rdf:resource="&ontoloc;MotionSensor"/>
-            </Restriction>
-        </rdfs:domain>
     </ObjectProperty>
     
 
@@ -731,6 +733,12 @@
         <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
         <rdfs:subPropertyOf rdf:resource="&ontoloc;hasIndoorTrackingService"/>
         <inverseOf rdf:resource="&ontoloc;isPropagationEnvironmentof"/>
+        <rdfs:range>
+            <Restriction>
+                <onProperty rdf:resource="&ontoloc;hasPropagationEnvironment"/>
+                <someValuesFrom rdf:resource="&ontoloc;PropagationEnvironment"/>
+            </Restriction>
+        </rdfs:range>
         <rdfs:domain>
             <Restriction>
                 <onProperty rdf:resource="&ontoloc;hasPropagationEnvironment"/>
@@ -738,12 +746,6 @@
                 <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
             </Restriction>
         </rdfs:domain>
-        <rdfs:range>
-            <Restriction>
-                <onProperty rdf:resource="&ontoloc;hasPropagationEnvironment"/>
-                <someValuesFrom rdf:resource="&ontoloc;PropagationEnvironment"/>
-            </Restriction>
-        </rdfs:range>
     </ObjectProperty>
     
 
@@ -754,12 +756,6 @@
         <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
         <rdfs:subPropertyOf rdf:resource="&ontoloc;hasPropagationEnvironment"/>
         <inverseOf rdf:resource="&ontoloc;isPropertyof"/>
-        <rdfs:domain>
-            <Restriction>
-                <onProperty rdf:resource="&ontoloc;hasProperty"/>
-                <someValuesFrom rdf:resource="&ontoloc;PropagationEnvironment"/>
-            </Restriction>
-        </rdfs:domain>
         <rdfs:range>
             <Restriction>
                 <onProperty rdf:resource="&ontoloc;hasProperty"/>
@@ -767,6 +763,12 @@
                 <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
             </Restriction>
         </rdfs:range>
+        <rdfs:domain>
+            <Restriction>
+                <onProperty rdf:resource="&ontoloc;hasProperty"/>
+                <someValuesFrom rdf:resource="&ontoloc;PropagationEnvironment"/>
+            </Restriction>
+        </rdfs:domain>
     </ObjectProperty>
     
 
@@ -950,6 +952,12 @@
     <ObjectProperty rdf:about="&ontoloc;hasTrackingMeasurement">
         <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
         <rdfs:subPropertyOf rdf:resource="&ontoloc;hasTrackingSystemComponent"/>
+        <rdfs:domain>
+            <Restriction>
+                <onProperty rdf:resource="&ontoloc;isTrackingMeasurementof"/>
+                <allValuesFrom rdf:resource="&ontoloc;Measurement"/>
+            </Restriction>
+        </rdfs:domain>
         <rdfs:range>
             <Restriction>
                 <onProperty rdf:resource="&ontoloc;hasTrackingMeasurement"/>
@@ -963,12 +971,6 @@
                 </allValuesFrom>
             </Restriction>
         </rdfs:range>
-        <rdfs:domain>
-            <Restriction>
-                <onProperty rdf:resource="&ontoloc;isTrackingMeasurementof"/>
-                <allValuesFrom rdf:resource="&ontoloc;Measurement"/>
-            </Restriction>
-        </rdfs:domain>
     </ObjectProperty>
     
 
@@ -978,6 +980,12 @@
     <ObjectProperty rdf:about="&ontoloc;hasTrackingOS">
         <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
         <rdfs:subPropertyOf rdf:resource="&ontoloc;hasTrackingSystemComponent"/>
+        <rdfs:range>
+            <Restriction>
+                <onProperty rdf:resource="&ontoloc;hasTrackingOS"/>
+                <allValuesFrom rdf:resource="&ontoloc;Contiki"/>
+            </Restriction>
+        </rdfs:range>
         <rdfs:domain>
             <Restriction>
                 <onProperty rdf:resource="&ontoloc;hasTrackingOS"/>
@@ -985,12 +993,6 @@
                 <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
             </Restriction>
         </rdfs:domain>
-        <rdfs:range>
-            <Restriction>
-                <onProperty rdf:resource="&ontoloc;hasTrackingOS"/>
-                <allValuesFrom rdf:resource="&ontoloc;Contiki"/>
-            </Restriction>
-        </rdfs:range>
     </ObjectProperty>
     
 
@@ -1007,13 +1009,6 @@
                 <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
             </Restriction>
         </rdfs:range>
-        <rdfs:range>
-            <Restriction>
-                <onProperty rdf:resource="&ontoloc;hasTrackingService"/>
-                <onClass rdf:resource="&ontoloc;HistoricLocation"/>
-                <maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">100</maxQualifiedCardinality>
-            </Restriction>
-        </rdfs:range>
         <rdfs:domain>
             <Restriction>
                 <onProperty rdf:resource="&ontoloc;hasTrackingService"/>
@@ -1021,6 +1016,13 @@
                 <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
             </Restriction>
         </rdfs:domain>
+        <rdfs:range>
+            <Restriction>
+                <onProperty rdf:resource="&ontoloc;hasTrackingService"/>
+                <onClass rdf:resource="&ontoloc;HistoricLocation"/>
+                <maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">100</maxQualifiedCardinality>
+            </Restriction>
+        </rdfs:range>
     </ObjectProperty>
     
 
@@ -1030,13 +1032,6 @@
     <ObjectProperty rdf:about="&ontoloc;hasTrackingSetup">
         <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
         <rdfs:subPropertyOf rdf:resource="&ontoloc;hasTrackingSystemComponent"/>
-        <rdfs:domain>
-            <Restriction>
-                <onProperty rdf:resource="&ontoloc;isTrackingSetupof"/>
-                <onClass rdf:resource="&ontoloc;Setup"/>
-                <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
-            </Restriction>
-        </rdfs:domain>
         <rdfs:range>
             <Restriction>
                 <onProperty rdf:resource="&ontoloc;hasTrackingSetup"/>
@@ -1044,6 +1039,13 @@
                 <minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">4</minQualifiedCardinality>
             </Restriction>
         </rdfs:range>
+        <rdfs:domain>
+            <Restriction>
+                <onProperty rdf:resource="&ontoloc;isTrackingSetupof"/>
+                <onClass rdf:resource="&ontoloc;Setup"/>
+                <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
+            </Restriction>
+        </rdfs:domain>
     </ObjectProperty>
     
 
@@ -1054,12 +1056,6 @@
         <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
         <rdfs:subPropertyOf rdf:resource="&ontoloc;hasTrackingSystemComponent"/>
         <inverseOf rdf:resource="&ontoloc;isTrackingSoftwareof"/>
-        <rdfs:range>
-            <Restriction>
-                <onProperty rdf:resource="&ontoloc;hasTrackingSoftware"/>
-                <allValuesFrom rdf:resource="&ontoloc;Application"/>
-            </Restriction>
-        </rdfs:range>
         <rdfs:domain>
             <Restriction>
                 <onProperty rdf:resource="&ontoloc;hasTrackingSoftware"/>
@@ -1067,6 +1063,12 @@
                 <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
             </Restriction>
         </rdfs:domain>
+        <rdfs:range>
+            <Restriction>
+                <onProperty rdf:resource="&ontoloc;hasTrackingSoftware"/>
+                <allValuesFrom rdf:resource="&ontoloc;Application"/>
+            </Restriction>
+        </rdfs:range>
     </ObjectProperty>
     
 
@@ -1076,6 +1078,12 @@
     <ObjectProperty rdf:about="&ontoloc;hasTrackingSystemComponent">
         <rdfs:subPropertyOf rdf:resource="&ontoloc;hasBusinessService"/>
         <inverseOf rdf:resource="&ontoloc;isComponentofTrackingSystem"/>
+        <rdfs:domain>
+            <Restriction>
+                <onProperty rdf:resource="&ontoloc;hasTrackingSystemComponent"/>
+                <allValuesFrom rdf:resource="&ontoloc;TrackingSystem"/>
+            </Restriction>
+        </rdfs:domain>
         <rdfs:range>
             <Restriction>
                 <onProperty rdf:resource="&ontoloc;hasTrackingSystemComponent"/>
@@ -1092,12 +1100,6 @@
                 </allValuesFrom>
             </Restriction>
         </rdfs:range>
-        <rdfs:domain>
-            <Restriction>
-                <onProperty rdf:resource="&ontoloc;hasTrackingSystemComponent"/>
-                <allValuesFrom rdf:resource="&ontoloc;TrackingSystem"/>
-            </Restriction>
-        </rdfs:domain>
     </ObjectProperty>
     
 
@@ -1130,18 +1132,18 @@
         <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
         <rdfs:subPropertyOf rdf:resource="&ontoloc;hasSemanticBusService"/>
         <inverseOf rdf:resource="&ontoloc;isTuningServiceof"/>
-        <rdfs:domain>
-            <Restriction>
-                <onProperty rdf:resource="&ontoloc;isTuningServiceof"/>
-                <allValuesFrom rdf:resource="&ontoloc;Tuning"/>
-            </Restriction>
-        </rdfs:domain>
         <rdfs:range>
             <Restriction>
                 <onProperty rdf:resource="&ontoloc;hasTuningService"/>
                 <allValuesFrom rdf:resource="&ontoloc;IgnoreDataSample"/>
             </Restriction>
         </rdfs:range>
+        <rdfs:domain>
+            <Restriction>
+                <onProperty rdf:resource="&ontoloc;isTuningServiceof"/>
+                <allValuesFrom rdf:resource="&ontoloc;Tuning"/>
+            </Restriction>
+        </rdfs:domain>
     </ObjectProperty>
     
 
@@ -1173,6 +1175,13 @@
     <ObjectProperty rdf:about="&ontoloc;isApplicationFunctionof">
         <inverseOf rdf:resource="&ontoloc;hasApplicationFunction"/>
         <rdfs:subPropertyOf rdf:resource="&ontoloc;isApplicationTypeof"/>
+        <rdfs:range>
+            <Restriction>
+                <onProperty rdf:resource="&ontoloc;isApplicationTypeof"/>
+                <onClass rdf:resource="&ontoloc;Unicast"/>
+                <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
+            </Restriction>
+        </rdfs:range>
         <rdfs:domain>
             <Restriction>
                 <onProperty rdf:resource="&ontoloc;isApplicationFunctionof"/>
@@ -1186,13 +1195,6 @@
                 </allValuesFrom>
             </Restriction>
         </rdfs:domain>
-        <rdfs:range>
-            <Restriction>
-                <onProperty rdf:resource="&ontoloc;isApplicationTypeof"/>
-                <onClass rdf:resource="&ontoloc;Unicast"/>
-                <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
-            </Restriction>
-        </rdfs:range>
     </ObjectProperty>
     
 
@@ -1246,12 +1248,6 @@
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
         <inverseOf rdf:resource="&ontoloc;hasClientPresentationService"/>
-        <rdfs:range>
-            <Restriction>
-                <onProperty rdf:resource="&ontoloc;isClientPresentationServiceof"/>
-                <allValuesFrom rdf:resource="&ontoloc;ClientPresentation"/>
-            </Restriction>
-        </rdfs:range>
         <rdfs:domain>
             <Restriction>
                 <onProperty rdf:resource="&ontoloc;isClientPresentationServiceof"/>
@@ -1265,6 +1261,12 @@
                 </allValuesFrom>
             </Restriction>
         </rdfs:domain>
+        <rdfs:range>
+            <Restriction>
+                <onProperty rdf:resource="&ontoloc;isClientPresentationServiceof"/>
+                <allValuesFrom rdf:resource="&ontoloc;ClientPresentation"/>
+            </Restriction>
+        </rdfs:range>
     </ObjectProperty>
     
 
@@ -1452,12 +1454,6 @@
 
     <ObjectProperty rdf:about="&ontoloc;isHardwareSourceof">
         <rdfs:subPropertyOf rdf:resource="&ontoloc;isTrackingHardwareof"/>
-        <rdfs:domain>
-            <Restriction>
-                <onProperty rdf:resource="&ontoloc;isHardwareSourceof"/>
-                <allValuesFrom rdf:resource="&ontoloc;CommercialDeviceName"/>
-            </Restriction>
-        </rdfs:domain>
         <rdfs:range>
             <Restriction>
                 <onProperty rdf:resource="&ontoloc;isHardwareSourceof"/>
@@ -1465,6 +1461,12 @@
                 <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
             </Restriction>
         </rdfs:range>
+        <rdfs:domain>
+            <Restriction>
+                <onProperty rdf:resource="&ontoloc;isHardwareSourceof"/>
+                <allValuesFrom rdf:resource="&ontoloc;CommercialDeviceName"/>
+            </Restriction>
+        </rdfs:domain>
     </ObjectProperty>
     
 
@@ -1531,7 +1533,25 @@
         <rdfs:domain>
             <Restriction>
                 <onProperty rdf:resource="&ontoloc;isInfluencingPrecisionFactorof"/>
+                <someValuesFrom rdf:resource="&ontoloc;Reflection"/>
+            </Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <Restriction>
+                <onProperty rdf:resource="&ontoloc;isInfluencingPrecisionFactorof"/>
+                <someValuesFrom rdf:resource="&ontoloc;Attenuation"/>
+            </Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <Restriction>
+                <onProperty rdf:resource="&ontoloc;isInfluencingPrecisionFactorof"/>
                 <someValuesFrom rdf:resource="&ontoloc;Interference"/>
+            </Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <Restriction>
+                <onProperty rdf:resource="&ontoloc;isInfluencingPrecisionFactorof"/>
+                <someValuesFrom rdf:resource="&ontoloc;Diffraction"/>
             </Restriction>
         </rdfs:domain>
         <rdfs:domain>
@@ -1539,12 +1559,6 @@
                 <onProperty rdf:resource="&ontoloc;isInfluencingPrecisionFactorof"/>
                 <onClass rdf:resource="&ontoloc;ReadRate"/>
                 <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
-            </Restriction>
-        </rdfs:domain>
-        <rdfs:domain>
-            <Restriction>
-                <onProperty rdf:resource="&ontoloc;isInfluencingPrecisionFactorof"/>
-                <someValuesFrom rdf:resource="&ontoloc;Diffraction"/>
             </Restriction>
         </rdfs:domain>
         <rdfs:range>
@@ -1557,18 +1571,6 @@
             <Restriction>
                 <onProperty rdf:resource="&ontoloc;isInfluencingPrecisionFactorof"/>
                 <someValuesFrom rdf:resource="&ontoloc;Refraction"/>
-            </Restriction>
-        </rdfs:domain>
-        <rdfs:domain>
-            <Restriction>
-                <onProperty rdf:resource="&ontoloc;isInfluencingPrecisionFactorof"/>
-                <someValuesFrom rdf:resource="&ontoloc;Attenuation"/>
-            </Restriction>
-        </rdfs:domain>
-        <rdfs:domain>
-            <Restriction>
-                <onProperty rdf:resource="&ontoloc;isInfluencingPrecisionFactorof"/>
-                <someValuesFrom rdf:resource="&ontoloc;Reflection"/>
             </Restriction>
         </rdfs:domain>
     </ObjectProperty>
@@ -1629,13 +1631,6 @@
     <ObjectProperty rdf:about="&ontoloc;isMaintenanceServiceof">
         <inverseOf rdf:resource="&ontoloc;hasMaintenanceService"/>
         <rdfs:subPropertyOf rdf:resource="&ontoloc;isManufacturingApplicationServiceof"/>
-        <rdfs:domain>
-            <Restriction>
-                <onProperty rdf:resource="&ontoloc;hasMaintenanceService"/>
-                <onClass rdf:resource="&ontoloc;PacketRate"/>
-                <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
-            </Restriction>
-        </rdfs:domain>
         <rdfs:range>
             <Restriction>
                 <onProperty rdf:resource="&ontoloc;hasMaintenanceService"/>
@@ -1643,6 +1638,13 @@
                 <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
             </Restriction>
         </rdfs:range>
+        <rdfs:domain>
+            <Restriction>
+                <onProperty rdf:resource="&ontoloc;hasMaintenanceService"/>
+                <onClass rdf:resource="&ontoloc;PacketRate"/>
+                <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
+            </Restriction>
+        </rdfs:domain>
         <rdfs:domain>
             <Restriction>
                 <onProperty rdf:resource="&ontoloc;hasMaintenanceService"/>
@@ -1724,12 +1726,6 @@
     <ObjectProperty rdf:about="&ontoloc;isMotionSensorTypeof">
         <inverseOf rdf:resource="&ontoloc;hasMotionSensorType"/>
         <rdfs:subPropertyOf rdf:resource="&ontoloc;isMotionSensorfor"/>
-        <rdfs:range>
-            <Restriction>
-                <onProperty rdf:resource="&ontoloc;isMotionSensorTypeof"/>
-                <allValuesFrom rdf:resource="&ontoloc;MotionSensor"/>
-            </Restriction>
-        </rdfs:range>
         <rdfs:domain>
             <Restriction>
                 <onProperty rdf:resource="&ontoloc;isMotionSensorTypeof"/>
@@ -1743,6 +1739,12 @@
                 </allValuesFrom>
             </Restriction>
         </rdfs:domain>
+        <rdfs:range>
+            <Restriction>
+                <onProperty rdf:resource="&ontoloc;isMotionSensorTypeof"/>
+                <allValuesFrom rdf:resource="&ontoloc;MotionSensor"/>
+            </Restriction>
+        </rdfs:range>
     </ObjectProperty>
     
 
@@ -1751,12 +1753,6 @@
 
     <ObjectProperty rdf:about="&ontoloc;isMotionSensorfor">
         <rdfs:subPropertyOf rdf:resource="&ontoloc;isIndoorTrackingServiceof"/>
-        <rdfs:domain>
-            <Restriction>
-                <onProperty rdf:resource="&ontoloc;isMotionSensorfor"/>
-                <allValuesFrom rdf:resource="&ontoloc;MotionSensor"/>
-            </Restriction>
-        </rdfs:domain>
         <rdfs:range>
             <Restriction>
                 <onProperty rdf:resource="&ontoloc;isMotionSensorfor"/>
@@ -1764,6 +1760,12 @@
                 <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
             </Restriction>
         </rdfs:range>
+        <rdfs:domain>
+            <Restriction>
+                <onProperty rdf:resource="&ontoloc;isMotionSensorfor"/>
+                <allValuesFrom rdf:resource="&ontoloc;MotionSensor"/>
+            </Restriction>
+        </rdfs:domain>
     </ObjectProperty>
     
 
@@ -1773,12 +1775,6 @@
     <ObjectProperty rdf:about="&ontoloc;isOnboardAnalyticsfor">
         <inverseOf rdf:resource="&ontoloc;hasOnboardAnalytics"/>
         <rdfs:subPropertyOf rdf:resource="&ontoloc;isIndoorTrackingServiceof"/>
-        <rdfs:domain>
-            <Restriction>
-                <onProperty rdf:resource="&ontoloc;isOnboardAnalyticsfor"/>
-                <allValuesFrom rdf:resource="&ontoloc;OnboardAnalytics"/>
-            </Restriction>
-        </rdfs:domain>
         <rdfs:range>
             <Restriction>
                 <onProperty rdf:resource="&ontoloc;isOnboardAnalyticsfor"/>
@@ -1786,6 +1782,12 @@
                 <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
             </Restriction>
         </rdfs:range>
+        <rdfs:domain>
+            <Restriction>
+                <onProperty rdf:resource="&ontoloc;isOnboardAnalyticsfor"/>
+                <allValuesFrom rdf:resource="&ontoloc;OnboardAnalytics"/>
+            </Restriction>
+        </rdfs:domain>
     </ObjectProperty>
     
 
@@ -1859,18 +1861,18 @@
         <inverseOf rdf:resource="&ontoloc;hasRequirementCapture"/>
         <rdfs:subPropertyOf rdf:resource="&ontoloc;isBusinessServiceof"/>
         <propertyDisjointWith rdf:resource="&ontoloc;isSystemModelof"/>
-        <rdfs:domain>
-            <Restriction>
-                <onProperty rdf:resource="&ontoloc;hasRequirementCapture"/>
-                <someValuesFrom rdf:resource="&ontoloc;Requirements"/>
-            </Restriction>
-        </rdfs:domain>
         <rdfs:range>
             <Restriction>
                 <onProperty rdf:resource="&ontoloc;hasRequirementCapture"/>
                 <someValuesFrom rdf:resource="&ontoloc;Requirements"/>
             </Restriction>
         </rdfs:range>
+        <rdfs:domain>
+            <Restriction>
+                <onProperty rdf:resource="&ontoloc;hasRequirementCapture"/>
+                <someValuesFrom rdf:resource="&ontoloc;Requirements"/>
+            </Restriction>
+        </rdfs:domain>
     </ObjectProperty>
     
 
@@ -1907,18 +1909,18 @@
     <ObjectProperty rdf:about="&ontoloc;isSensorReadingof">
         <rdfs:subPropertyOf rdf:resource="&ontoloc;isMotionSensorTypeof"/>
         <propertyDisjointWith rdf:resource="&ontoloc;isSignalTypeof"/>
-        <rdfs:domain>
-            <Restriction>
-                <onProperty rdf:resource="&ontoloc;isSensorReadingof"/>
-                <allValuesFrom rdf:resource="&ontoloc;AccelerometerReading"/>
-            </Restriction>
-        </rdfs:domain>
         <rdfs:range>
             <Restriction>
                 <onProperty rdf:resource="&ontoloc;isSensorReadingof"/>
                 <allValuesFrom rdf:resource="&ontoloc;Accelerometer"/>
             </Restriction>
         </rdfs:range>
+        <rdfs:domain>
+            <Restriction>
+                <onProperty rdf:resource="&ontoloc;isSensorReadingof"/>
+                <allValuesFrom rdf:resource="&ontoloc;AccelerometerReading"/>
+            </Restriction>
+        </rdfs:domain>
     </ObjectProperty>
     
 
@@ -1927,18 +1929,18 @@
 
     <ObjectProperty rdf:about="&ontoloc;isSignalTypeof">
         <rdfs:subPropertyOf rdf:resource="&ontoloc;isMotionSensorTypeof"/>
-        <rdfs:range>
-            <Restriction>
-                <onProperty rdf:resource="&ontoloc;isSignalTypeof"/>
-                <allValuesFrom rdf:resource="&ontoloc;ZigbeeModule"/>
-            </Restriction>
-        </rdfs:range>
         <rdfs:domain>
             <Restriction>
                 <onProperty rdf:resource="&ontoloc;isSignalTypeof"/>
                 <allValuesFrom rdf:resource="&ontoloc;ZigbeePacket"/>
             </Restriction>
         </rdfs:domain>
+        <rdfs:range>
+            <Restriction>
+                <onProperty rdf:resource="&ontoloc;isSignalTypeof"/>
+                <allValuesFrom rdf:resource="&ontoloc;ZigbeeModule"/>
+            </Restriction>
+        </rdfs:range>
     </ObjectProperty>
     
 
@@ -2005,6 +2007,13 @@
 
     <ObjectProperty rdf:about="&ontoloc;isTrackingHardwareof">
         <rdfs:subPropertyOf rdf:resource="&ontoloc;isComponentofTrackingSystem"/>
+        <rdfs:range>
+            <Restriction>
+                <onProperty rdf:resource="&ontoloc;isTrackingHardwareof"/>
+                <onClass rdf:resource="&ontoloc;Hardware"/>
+                <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
+            </Restriction>
+        </rdfs:range>
         <rdfs:domain>
             <Restriction>
                 <onProperty rdf:resource="&ontoloc;isTrackingHardwareof"/>
@@ -2018,13 +2027,6 @@
                 </allValuesFrom>
             </Restriction>
         </rdfs:domain>
-        <rdfs:range>
-            <Restriction>
-                <onProperty rdf:resource="&ontoloc;isTrackingHardwareof"/>
-                <onClass rdf:resource="&ontoloc;Hardware"/>
-                <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
-            </Restriction>
-        </rdfs:range>
     </ObjectProperty>
     
 
@@ -2092,13 +2094,6 @@
                 <maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">100</maxQualifiedCardinality>
             </Restriction>
         </rdfs:domain>
-        <rdfs:range>
-            <Restriction>
-                <onProperty rdf:resource="&ontoloc;isTrackingServiceof"/>
-                <onClass rdf:resource="&ontoloc;TrackingService"/>
-                <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
-            </Restriction>
-        </rdfs:range>
         <rdfs:domain>
             <Restriction>
                 <onProperty rdf:resource="&ontoloc;isTrackingServiceof"/>
@@ -2106,6 +2101,13 @@
                 <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
             </Restriction>
         </rdfs:domain>
+        <rdfs:range>
+            <Restriction>
+                <onProperty rdf:resource="&ontoloc;isTrackingServiceof"/>
+                <onClass rdf:resource="&ontoloc;TrackingService"/>
+                <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
+            </Restriction>
+        </rdfs:range>
     </ObjectProperty>
     
 
@@ -2137,13 +2139,6 @@
 
     <ObjectProperty rdf:about="&ontoloc;isTrackingSoftwareof">
         <rdfs:subPropertyOf rdf:resource="&ontoloc;isComponentofTrackingSystem"/>
-        <rdfs:domain>
-            <Restriction>
-                <onProperty rdf:resource="&ontoloc;isTrackingSoftwareof"/>
-                <onClass rdf:resource="&ontoloc;Application"/>
-                <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
-            </Restriction>
-        </rdfs:domain>
         <rdfs:range>
             <Restriction>
                 <onProperty rdf:resource="&ontoloc;isTrackingSoftwareof"/>
@@ -2151,6 +2146,13 @@
                 <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
             </Restriction>
         </rdfs:range>
+        <rdfs:domain>
+            <Restriction>
+                <onProperty rdf:resource="&ontoloc;isTrackingSoftwareof"/>
+                <onClass rdf:resource="&ontoloc;Application"/>
+                <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
+            </Restriction>
+        </rdfs:domain>
     </ObjectProperty>
     
 
@@ -2160,6 +2162,12 @@
     <ObjectProperty rdf:about="&ontoloc;isTuningFunctionof">
         <inverseOf rdf:resource="&ontoloc;hasTuningFunction"/>
         <rdfs:subPropertyOf rdf:resource="&ontoloc;isFaultMonitorfor"/>
+        <rdfs:domain>
+            <Restriction>
+                <onProperty rdf:resource="&ontoloc;hasTuningFunction"/>
+                <someValuesFrom rdf:resource="&ontoloc;TuningFunction"/>
+            </Restriction>
+        </rdfs:domain>
         <rdfs:range>
             <Restriction>
                 <onProperty rdf:resource="&ontoloc;isTuningFunctionof"/>
@@ -2167,12 +2175,6 @@
                 <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
             </Restriction>
         </rdfs:range>
-        <rdfs:domain>
-            <Restriction>
-                <onProperty rdf:resource="&ontoloc;hasTuningFunction"/>
-                <someValuesFrom rdf:resource="&ontoloc;TuningFunction"/>
-            </Restriction>
-        </rdfs:domain>
     </ObjectProperty>
     
 
@@ -2182,18 +2184,18 @@
     <ObjectProperty rdf:about="&ontoloc;isTuningServiceof">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <rdfs:subPropertyOf rdf:resource="&ontoloc;isSemanticBusService"/>
-        <rdfs:domain>
-            <Restriction>
-                <onProperty rdf:resource="&ontoloc;hasTuningService"/>
-                <allValuesFrom rdf:resource="&ontoloc;IgnoreDataSample"/>
-            </Restriction>
-        </rdfs:domain>
         <rdfs:range>
             <Restriction>
                 <onProperty rdf:resource="&ontoloc;isTuningServiceof"/>
                 <allValuesFrom rdf:resource="&ontoloc;Tuning"/>
             </Restriction>
         </rdfs:range>
+        <rdfs:domain>
+            <Restriction>
+                <onProperty rdf:resource="&ontoloc;hasTuningService"/>
+                <allValuesFrom rdf:resource="&ontoloc;IgnoreDataSample"/>
+            </Restriction>
+        </rdfs:domain>
     </ObjectProperty>
     
 
@@ -2206,14 +2208,14 @@
         <rdfs:domain>
             <Restriction>
                 <onProperty rdf:resource="&ontoloc;isTypeofHardware"/>
-                <allValuesFrom rdf:resource="&ontoloc;CC2538EM"/>
+                <onClass rdf:resource="&ontoloc;SmartRF06"/>
+                <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
             </Restriction>
         </rdfs:domain>
         <rdfs:domain>
             <Restriction>
                 <onProperty rdf:resource="&ontoloc;isTypeofHardware"/>
-                <onClass rdf:resource="&ontoloc;SmartRF06"/>
-                <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
+                <allValuesFrom rdf:resource="&ontoloc;CC2538EM"/>
             </Restriction>
         </rdfs:domain>
         <rdfs:range>
@@ -3128,6 +3130,32 @@
     
 
 
+    <!-- https://raw.githubusercontent.com/ginipease/onto-loc/master/ontoloc#Location6 -->
+
+    <NamedIndividual rdf:about="&supertaglocation;Location6">
+        <rdf:type rdf:resource="&ontoloc;SupertagLoc"/>
+        <ontoloc:ZValue rdf:datatype="&xsd;float">1.4</ontoloc:ZValue>
+        <ontoloc:TimeValue rdf:datatype="&xsd;dateTime">2014-11-06T13:33:25</ontoloc:TimeValue>
+        <ontoloc:XValue rdf:datatype="&xsd;float">22.1</ontoloc:XValue>
+        <ontoloc:YValue rdf:datatype="&xsd;float">9.7</ontoloc:YValue>
+        <ontoloc:isLocof rdf:resource="&ontoloc;Server1"/>
+    </NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/onto-loc/master/ontoloc#Location7 -->
+
+    <NamedIndividual rdf:about="&supertaglocation;Location7">
+        <rdf:type rdf:resource="&ontoloc;SupertagLoc"/>
+        <ontoloc:ZValue rdf:datatype="&xsd;float">1.4</ontoloc:ZValue>
+        <ontoloc:YValue rdf:datatype="&xsd;float">15.1</ontoloc:YValue>
+        <ontoloc:XValue rdf:datatype="&xsd;float">15.2</ontoloc:XValue>
+        <ontoloc:TimeValue rdf:datatype="&xsd;dateTime">2014-11-06T13:34:43</ontoloc:TimeValue>
+        <ontoloc:isLocof rdf:resource="&ontoloc;Server1"/>
+    </NamedIndividual>
+    
+
+
     <!-- https://raw.githubusercontent.com/ginipease/onto-loc/master/ontoloc#SDSTWRPackets -->
 
     <NamedIndividual rdf:about="&supertaglocation;SDSTWRPackets">
@@ -3223,32 +3251,6 @@
     
 
 
-    <!-- https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#Location6 -->
-
-    <NamedIndividual rdf:about="&ontoloc;Location6">
-        <rdf:type rdf:resource="&ontoloc;SupertagLoc"/>
-        <ontoloc:ZValue rdf:datatype="&xsd;float">1.4</ontoloc:ZValue>
-        <ontoloc:TimeValue rdf:datatype="&xsd;dateTime">2014-11-06T13:33:25</ontoloc:TimeValue>
-        <ontoloc:XValue rdf:datatype="&xsd;float">22.1</ontoloc:XValue>
-        <ontoloc:YValue rdf:datatype="&xsd;float">9.7</ontoloc:YValue>
-        <ontoloc:isLocof rdf:resource="&ontoloc;Server1"/>
-    </NamedIndividual>
-    
-
-
-    <!-- https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#Location7 -->
-
-    <NamedIndividual rdf:about="&ontoloc;Location7">
-        <rdf:type rdf:resource="&ontoloc;SupertagLoc"/>
-        <ontoloc:ZValue rdf:datatype="&xsd;float">1.4</ontoloc:ZValue>
-        <ontoloc:YValue rdf:datatype="&xsd;float">15.1</ontoloc:YValue>
-        <ontoloc:XValue rdf:datatype="&xsd;float">15.2</ontoloc:XValue>
-        <ontoloc:TimeValue rdf:datatype="&xsd;dateTime">2014-11-06T13:34:43</ontoloc:TimeValue>
-        <ontoloc:isLocof rdf:resource="&ontoloc;Server1"/>
-    </NamedIndividual>
-    
-
-
     <!-- https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#Server1 -->
 
     <NamedIndividual rdf:about="&ontoloc;Server1">
@@ -3298,21 +3300,77 @@
      -->
 
     <rdf:Description>
-        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
-        <members rdf:parseType="Collection">
-            <rdf:Description rdf:about="&ontoloc;FaultMonitor"/>
-            <rdf:Description rdf:about="&ontoloc;MotionSensor"/>
-            <rdf:Description rdf:about="&ontoloc;OnboardAnalytics"/>
-            <rdf:Description rdf:about="&ontoloc;PropagationEnvironment"/>
-        </members>
-    </rdf:Description>
-    <rdf:Description>
         <rdf:type rdf:resource="&owl;AllDisjointProperties"/>
         <members rdf:parseType="Collection">
             <rdf:Description rdf:about="&ontoloc;hasFaultMonitor"/>
             <rdf:Description rdf:about="&ontoloc;hasMotionSensor"/>
             <rdf:Description rdf:about="&ontoloc;hasOnboardAnalytics"/>
             <rdf:Description rdf:about="&ontoloc;hasPropagationEnvironment"/>
+        </members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <members rdf:parseType="Collection">
+            <rdf:Description rdf:about="&ontoloc;MeasurementNoise"/>
+            <rdf:Description rdf:about="&ontoloc;StateMeasurement"/>
+            <rdf:Description rdf:about="&ontoloc;StateTransition"/>
+            <rdf:Description rdf:about="&ontoloc;StateTransitionNoise"/>
+        </members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <members rdf:parseType="Collection">
+            <rdf:Description rdf:about="&ontoloc;Requirements"/>
+            <rdf:Description rdf:about="&ontoloc;SystemModel"/>
+            <rdf:Description rdf:about="&ontoloc;TrackingSystem"/>
+        </members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <members rdf:parseType="Collection">
+            <rdf:Description rdf:about="&ontoloc;GDOP"/>
+            <rdf:Description rdf:about="&ontoloc;TrackingAnalytics"/>
+            <rdf:Description rdf:about="&ontoloc;Tuning"/>
+        </members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <members rdf:parseType="Collection">
+            <rdf:Description rdf:about="&ontoloc;Acceleration"/>
+            <rdf:Description rdf:about="&ontoloc;Multilateration"/>
+            <rdf:Description rdf:about="&ontoloc;Velocity"/>
+        </members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <members rdf:parseType="Collection">
+            <rdf:Description rdf:about="&ontoloc;Filters"/>
+            <rdf:Description rdf:about="&ontoloc;TrackingAnalytics"/>
+            <rdf:Description rdf:about="&ontoloc;Tuning"/>
+        </members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <members rdf:parseType="Collection">
+            <rdf:Description rdf:about="&ontoloc;ComplimentaryFilter"/>
+            <rdf:Description rdf:about="&ontoloc;ExtendedKalmanFilter"/>
+            <rdf:Description rdf:about="&ontoloc;Messaging"/>
+        </members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <members rdf:parseType="Collection">
+            <rdf:Description rdf:about="&ontoloc;RSSI"/>
+            <rdf:Description rdf:about="&ontoloc;TimeofFlight"/>
+            <rdf:Description rdf:about="&ontoloc;TransmitFrequency"/>
+        </members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <members rdf:parseType="Collection">
+            <rdf:Description rdf:about="&ontoloc;DistanceMeasurement"/>
+            <rdf:Description rdf:about="&ontoloc;MovingAverageFilter"/>
+            <rdf:Description rdf:about="&ontoloc;PredictedErrorCovariance"/>
         </members>
     </rdf:Description>
     <rdf:Description>
@@ -3327,9 +3385,18 @@
     <rdf:Description>
         <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
         <members rdf:parseType="Collection">
-            <rdf:Description rdf:about="&ontoloc;AccelerometerReading"/>
-            <rdf:Description rdf:about="&ontoloc;RSSI"/>
-            <rdf:Description rdf:about="&ontoloc;TimeofFlight"/>
+            <rdf:Description rdf:about="&ontoloc;BetweenSixAndThree"/>
+            <rdf:Description rdf:about="&ontoloc;LessThanThree"/>
+            <rdf:Description rdf:about="&ontoloc;MoreThanSix"/>
+        </members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <members rdf:parseType="Collection">
+            <rdf:Description rdf:about="&ontoloc;FaultMonitor"/>
+            <rdf:Description rdf:about="&ontoloc;MotionSensor"/>
+            <rdf:Description rdf:about="&ontoloc;OnboardAnalytics"/>
+            <rdf:Description rdf:about="&ontoloc;PropagationEnvironment"/>
         </members>
     </rdf:Description>
     <rdf:Description>
@@ -3352,6 +3419,14 @@
         </members>
     </rdf:Description>
     <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <members rdf:parseType="Collection">
+            <rdf:Description rdf:about="&ontoloc;Hardware"/>
+            <rdf:Description rdf:about="&ontoloc;OS"/>
+            <rdf:Description rdf:about="&ontoloc;Software"/>
+        </members>
+    </rdf:Description>
+    <rdf:Description>
         <rdf:type rdf:resource="&owl;AllDisjointProperties"/>
         <members rdf:parseType="Collection">
             <rdf:Description rdf:about="&ontoloc;hasTrackingHardware"/>
@@ -3364,82 +3439,9 @@
     <rdf:Description>
         <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
         <members rdf:parseType="Collection">
-            <rdf:Description rdf:about="&ontoloc;Requirements"/>
-            <rdf:Description rdf:about="&ontoloc;SystemModel"/>
-            <rdf:Description rdf:about="&ontoloc;TrackingSystem"/>
-        </members>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
-        <members rdf:parseType="Collection">
-            <rdf:Description rdf:about="&ontoloc;Acceleration"/>
-            <rdf:Description rdf:about="&ontoloc;Multilateration"/>
-            <rdf:Description rdf:about="&ontoloc;Velocity"/>
-        </members>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
-        <members rdf:parseType="Collection">
-            <rdf:Description rdf:about="&ontoloc;MeasurementNoise"/>
-            <rdf:Description rdf:about="&ontoloc;StateMeasurement"/>
-            <rdf:Description rdf:about="&ontoloc;StateTransition"/>
-            <rdf:Description rdf:about="&ontoloc;StateTransitionNoise"/>
-        </members>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
-        <members rdf:parseType="Collection">
-            <rdf:Description rdf:about="&ontoloc;ComplimentaryFilter"/>
-            <rdf:Description rdf:about="&ontoloc;ExtendedKalmanFilter"/>
-            <rdf:Description rdf:about="&ontoloc;Messaging"/>
-        </members>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
-        <members rdf:parseType="Collection">
-            <rdf:Description rdf:about="&ontoloc;DistanceMeasurement"/>
-            <rdf:Description rdf:about="&ontoloc;MovingAverageFilter"/>
-            <rdf:Description rdf:about="&ontoloc;PredictedErrorCovariance"/>
-        </members>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
-        <members rdf:parseType="Collection">
-            <rdf:Description rdf:about="&ontoloc;Hardware"/>
-            <rdf:Description rdf:about="&ontoloc;OS"/>
-            <rdf:Description rdf:about="&ontoloc;Software"/>
-        </members>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
-        <members rdf:parseType="Collection">
+            <rdf:Description rdf:about="&ontoloc;AccelerometerReading"/>
             <rdf:Description rdf:about="&ontoloc;RSSI"/>
             <rdf:Description rdf:about="&ontoloc;TimeofFlight"/>
-            <rdf:Description rdf:about="&ontoloc;TransmitFrequency"/>
-        </members>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
-        <members rdf:parseType="Collection">
-            <rdf:Description rdf:about="&ontoloc;BetweenSixAndThree"/>
-            <rdf:Description rdf:about="&ontoloc;LessThanThree"/>
-            <rdf:Description rdf:about="&ontoloc;MoreThanSix"/>
-        </members>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
-        <members rdf:parseType="Collection">
-            <rdf:Description rdf:about="&ontoloc;GDOP"/>
-            <rdf:Description rdf:about="&ontoloc;TrackingAnalytics"/>
-            <rdf:Description rdf:about="&ontoloc;Tuning"/>
-        </members>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
-        <members rdf:parseType="Collection">
-            <rdf:Description rdf:about="&ontoloc;Filters"/>
-            <rdf:Description rdf:about="&ontoloc;TrackingAnalytics"/>
-            <rdf:Description rdf:about="&ontoloc;Tuning"/>
         </members>
     </rdf:Description>
 </rdf:RDF>
