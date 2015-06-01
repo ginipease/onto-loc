@@ -16,6 +16,7 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      ontologyIRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/ontoloc">
+    <Prefix name="" IRI="http://www.w3.org/2002/07/owl#"/>
     <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
     <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
     <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
@@ -24,6 +25,9 @@
     <Prefix name="supertaglocation" IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/ontoloc#"/>
     <Declaration>
         <Class IRI="#Portal"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TotalPackets"/>
     </Declaration>
     <Declaration>
         <Class IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#Acceleration"/>
@@ -185,9 +189,6 @@
         <Class IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#PacketRate"/>
     </Declaration>
     <Declaration>
-        <Class IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#PacketsperSecond"/>
-    </Declaration>
-    <Declaration>
         <Class IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#ParticleFilter"/>
     </Declaration>
     <Declaration>
@@ -281,6 +282,9 @@
         <Class IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#TrackingSystem"/>
     </Declaration>
     <Declaration>
+        <Class IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#TransmitFrequency"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#Tuning"/>
     </Declaration>
     <Declaration>
@@ -300,6 +304,24 @@
     </Declaration>
     <Declaration>
         <Class IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#ZigbeePacket"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasActiveAnchors"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasFrequency"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasTransmissions"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isFrequencyof"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isNumberofAnchorsto"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isTotalPacketsSentby"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#hasAdjustablePrecisionFactor"/>
@@ -563,6 +585,15 @@
         <ObjectProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#isTypeofHardware"/>
     </Declaration>
     <Declaration>
+        <DataProperty IRI="#AnchorNum"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#NumberofPackets"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#TransmitFrequency"/>
+    </Declaration>
+    <Declaration>
         <DataProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#TimeValue"/>
     </Declaration>
     <Declaration>
@@ -579,6 +610,18 @@
     </Declaration>
     <Declaration>
         <DataProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#hasSystemNoiseVariableValue"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Frequency"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Location6"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Location7"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SDSTWRPackets"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#ExampleMeasurementNoiseVariable"/>
@@ -647,6 +690,10 @@
     <SubClassOf>
         <Class IRI="#Portal"/>
         <Class IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#Device"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TotalPackets"/>
+        <Class IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#TuningFunction"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#Acceleration"/>
@@ -875,10 +922,6 @@
     <SubClassOf>
         <Class IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#PacketRate"/>
         <Class IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#TrackingMaintenance"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#PacketsperSecond"/>
-        <Class IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#TuningFunction"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#ParticleFilter"/>
@@ -1020,6 +1063,10 @@
         <Class IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#BusinessDecisionSupport"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#TransmitFrequency"/>
+        <Class IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#TuningFunction"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#Tuning"/>
         <Class IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#SemanticBusServices"/>
     </SubClassOf>
@@ -1093,7 +1140,7 @@
     </DisjointClasses>
     <DisjointClasses>
         <Class IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#DeviceNumber"/>
-        <Class IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#PacketsperSecond"/>
+        <Class IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#TransmitFrequency"/>
     </DisjointClasses>
     <DisjointClasses>
         <Class IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#DistanceMeasurement"/>
@@ -1146,13 +1193,13 @@
         <Class IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#SDSTWR"/>
     </DisjointClasses>
     <DisjointClasses>
-        <Class IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#PacketsperSecond"/>
         <Class IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#RSSI"/>
         <Class IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#TimeofFlight"/>
+        <Class IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#TransmitFrequency"/>
     </DisjointClasses>
     <DisjointClasses>
-        <Class IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#PacketsperSecond"/>
         <Class IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#ReflashDeviceOS"/>
+        <Class IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#TransmitFrequency"/>
     </DisjointClasses>
     <DisjointClasses>
         <Class IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#Requirements"/>
@@ -1167,6 +1214,22 @@
         <Class IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#SystemNoiseVariable"/>
         <Class IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#SystemStateVariable"/>
     </DisjointClasses>
+    <ClassAssertion>
+        <Class IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#TuningFunction"/>
+        <NamedIndividual IRI="#Frequency"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#SupertagLoc"/>
+        <NamedIndividual IRI="#Location6"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#SupertagLoc"/>
+        <NamedIndividual IRI="#Location7"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#TuningFunction"/>
+        <NamedIndividual IRI="#SDSTWRPackets"/>
+    </ClassAssertion>
     <ClassAssertion>
         <Class IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#MeasurementNoise"/>
         <NamedIndividual IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#ExampleMeasurementNoiseVariable"/>
@@ -1192,18 +1255,40 @@
         <NamedIndividual IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#Location5"/>
     </ClassAssertion>
     <ClassAssertion>
+        <Class IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#DeviceNumber"/>
+        <NamedIndividual IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#Server1"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#MovingTag"/>
         <NamedIndividual IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#Server1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#DeviceNumber"/>
+        <NamedIndividual IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#Server2"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#MovingTag"/>
         <NamedIndividual IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#Server2"/>
     </ClassAssertion>
     <ClassAssertion>
+        <Class IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#DeviceNumber"/>
+        <NamedIndividual IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#Server3"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#MovingTag"/>
         <NamedIndividual IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#Server3"/>
     </ClassAssertion>
     <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isFrequencyof"/>
+        <NamedIndividual IRI="#Frequency"/>
+        <NamedIndividual IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#Server1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isTotalPacketsSentby"/>
+        <NamedIndividual IRI="#SDSTWRPackets"/>
+        <NamedIndividual IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#Server1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
         <ObjectProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#isLocof"/>
         <NamedIndividual IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#Location1"/>
         <NamedIndividual IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#Server1"/>
@@ -1229,6 +1314,16 @@
         <NamedIndividual IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#Server1"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasFrequency"/>
+        <NamedIndividual IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#Server1"/>
+        <NamedIndividual IRI="#Frequency"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTransmissions"/>
+        <NamedIndividual IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#Server1"/>
+        <NamedIndividual IRI="#SDSTWRPackets"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
         <ObjectProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#hasLoc"/>
         <NamedIndividual IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#Server1"/>
         <NamedIndividual IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#Location4"/>
@@ -1253,6 +1348,66 @@
         <NamedIndividual IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#Server1"/>
         <NamedIndividual IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#Location3"/>
     </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#hasLoc"/>
+        <NamedIndividual IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#Server1"/>
+        <NamedIndividual IRI="#Location7"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#hasLoc"/>
+        <NamedIndividual IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#Server1"/>
+        <NamedIndividual IRI="#Location6"/>
+    </ObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#TransmitFrequency"/>
+        <NamedIndividual IRI="#Frequency"/>
+        <Literal datatypeIRI="&xsd;integer">5</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#TimeValue"/>
+        <NamedIndividual IRI="#Location6"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">2014-11-06T13:33:25</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#XValue"/>
+        <NamedIndividual IRI="#Location6"/>
+        <Literal datatypeIRI="&xsd;float">22.1</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#YValue"/>
+        <NamedIndividual IRI="#Location6"/>
+        <Literal datatypeIRI="&xsd;float">9.7</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#ZValue"/>
+        <NamedIndividual IRI="#Location6"/>
+        <Literal datatypeIRI="&xsd;float">1.4</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#TimeValue"/>
+        <NamedIndividual IRI="#Location7"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">2014-11-06T13:34:43</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#XValue"/>
+        <NamedIndividual IRI="#Location7"/>
+        <Literal datatypeIRI="&xsd;float">15.2</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#YValue"/>
+        <NamedIndividual IRI="#Location7"/>
+        <Literal datatypeIRI="&xsd;float">15.1</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#ZValue"/>
+        <NamedIndividual IRI="#Location7"/>
+        <Literal datatypeIRI="&xsd;float">1.4</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#NumberofPackets"/>
+        <NamedIndividual IRI="#SDSTWRPackets"/>
+        <Literal datatypeIRI="&xsd;nonNegativeInteger">50</Literal>
+    </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#hasSystemNoiseVariableValue"/>
         <NamedIndividual IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#ExampleMeasurementNoiseVariable"/>
@@ -1271,17 +1426,17 @@
     <DataPropertyAssertion>
         <DataProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#XValue"/>
         <NamedIndividual IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#Location1"/>
-        <Literal datatypeIRI="&xsd;float">-1.0</Literal>
+        <Literal datatypeIRI="&xsd;float">0.8</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#YValue"/>
         <NamedIndividual IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#Location1"/>
-        <Literal datatypeIRI="&xsd;float">-1.8</Literal>
+        <Literal datatypeIRI="&xsd;float">1.2</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#ZValue"/>
         <NamedIndividual IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#Location1"/>
-        <Literal datatypeIRI="&xsd;float">4.9</Literal>
+        <Literal datatypeIRI="&xsd;float">1.4</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#TimeValue"/>
@@ -1291,17 +1446,17 @@
     <DataPropertyAssertion>
         <DataProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#XValue"/>
         <NamedIndividual IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#Location2"/>
-        <Literal datatypeIRI="&xsd;float">16.5</Literal>
+        <Literal datatypeIRI="&xsd;float">3.4</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#YValue"/>
         <NamedIndividual IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#Location2"/>
-        <Literal datatypeIRI="&xsd;float">20.4</Literal>
+        <Literal datatypeIRI="&xsd;float">10.1</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#ZValue"/>
         <NamedIndividual IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#Location2"/>
-        <Literal datatypeIRI="&xsd;float">6.8</Literal>
+        <Literal datatypeIRI="&xsd;float">1.4</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#TimeValue"/>
@@ -1311,17 +1466,17 @@
     <DataPropertyAssertion>
         <DataProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#XValue"/>
         <NamedIndividual IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#Location3"/>
-        <Literal datatypeIRI="&xsd;float">13.0</Literal>
+        <Literal datatypeIRI="&xsd;float">2.4</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#YValue"/>
         <NamedIndividual IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#Location3"/>
-        <Literal datatypeIRI="&xsd;float">13.8</Literal>
+        <Literal datatypeIRI="&xsd;float">18.1</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#ZValue"/>
         <NamedIndividual IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#Location3"/>
-        <Literal datatypeIRI="&xsd;float">7.5</Literal>
+        <Literal datatypeIRI="&xsd;float">1.4</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#TimeValue"/>
@@ -1331,37 +1486,42 @@
     <DataPropertyAssertion>
         <DataProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#XValue"/>
         <NamedIndividual IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#Location4"/>
-        <Literal datatypeIRI="&xsd;float">10.3</Literal>
+        <Literal datatypeIRI="&xsd;float">9.9</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#YValue"/>
         <NamedIndividual IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#Location4"/>
-        <Literal datatypeIRI="&xsd;float">6.8</Literal>
+        <Literal datatypeIRI="&xsd;float">19.9</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#ZValue"/>
         <NamedIndividual IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#Location4"/>
-        <Literal datatypeIRI="&xsd;float">14.6</Literal>
+        <Literal datatypeIRI="&xsd;float">1.4</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#TimeValue"/>
         <NamedIndividual IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#Location5"/>
-        <Literal datatypeIRI="&xsd;dateTime">2014-11-06T13:26:25</Literal>
+        <Literal datatypeIRI="&xsd;dateTime">2014-11-06T13:28:55</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#XValue"/>
         <NamedIndividual IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#Location5"/>
-        <Literal datatypeIRI="&xsd;float">15.9</Literal>
+        <Literal datatypeIRI="&xsd;float">9.8</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#YValue"/>
         <NamedIndividual IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#Location5"/>
-        <Literal datatypeIRI="&xsd;float">21.1</Literal>
+        <Literal datatypeIRI="&xsd;float">9.9</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#ZValue"/>
         <NamedIndividual IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#Location5"/>
-        <Literal datatypeIRI="&xsd;float">6.5</Literal>
+        <Literal datatypeIRI="&xsd;float">1.4</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#AnchorNum"/>
+        <NamedIndividual IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#Server1"/>
+        <Literal datatypeIRI="&xsd;nonNegativeInteger">3</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#UIDValue"/>
@@ -1379,6 +1539,30 @@
         <Literal datatypeIRI="&xsd;integer">3</Literal>
     </DataPropertyAssertion>
     <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasActiveAnchors"/>
+        <ObjectProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#hasMonitoringFunction"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasFrequency"/>
+        <ObjectProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#hasTuningFunction"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasTransmissions"/>
+        <ObjectProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#hasTuningFunction"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isFrequencyof"/>
+        <ObjectProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#isTuningFunctionof"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isNumberofAnchorsto"/>
+        <ObjectProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#isMonitoringFunctionof"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isTotalPacketsSentby"/>
+        <ObjectProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#isTuningFunctionof"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
         <ObjectProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#hasAdjustablePrecisionFactor"/>
         <ObjectProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#hasRequirementCapture"/>
     </SubObjectPropertyOf>
@@ -1751,40 +1935,40 @@
         <ObjectProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#isBusinessServiceof"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
-        <ObjectProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#hasClientPresentationService"/>
         <ObjectProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#isClientPresentationServiceof"/>
+        <ObjectProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#hasClientPresentationService"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
-        <ObjectProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#hasFaultMonitor"/>
         <ObjectProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#isFaultMonitorfor"/>
+        <ObjectProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#hasFaultMonitor"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
-        <ObjectProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#hasFeedback"/>
         <ObjectProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#isFeedbackfor"/>
+        <ObjectProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#hasFeedback"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
-        <ObjectProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#isFilterfor"/>
         <ObjectProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#hasFilter"/>
+        <ObjectProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#isFilterfor"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
         <ObjectProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#isFilterServicefor"/>
         <ObjectProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#hasFilterService"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
-        <ObjectProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#isGDOPServicefor"/>
         <ObjectProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#hasGDOPService"/>
+        <ObjectProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#isGDOPServicefor"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
         <ObjectProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#isTypeofHardware"/>
         <ObjectProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#hasHardwareName"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
-        <ObjectProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#isHardwareSourceof"/>
         <ObjectProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#hasHardwareSource"/>
+        <ObjectProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#isHardwareSourceof"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
-        <ObjectProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#hasIgnoreDataFunction"/>
         <ObjectProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#isIgnoreDataFunctionfor"/>
+        <ObjectProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#hasIgnoreDataFunction"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
         <ObjectProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#isIndoorTrackingServiceof"/>
@@ -1795,32 +1979,32 @@
         <ObjectProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#hasInfluencingPrecisionFactor"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
-        <ObjectProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#hasInventoryService"/>
         <ObjectProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#isInventoryServiceof"/>
+        <ObjectProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#hasInventoryService"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
-        <ObjectProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#isKalmanInput"/>
         <ObjectProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#hasKalmanInput"/>
+        <ObjectProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#isKalmanInput"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
         <ObjectProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#isLocof"/>
         <ObjectProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#hasLoc"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
-        <ObjectProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#hasMaintenanceService"/>
         <ObjectProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#isMaintenanceServiceof"/>
+        <ObjectProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#hasMaintenanceService"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
         <ObjectProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#isManufacturingApplicationServiceof"/>
         <ObjectProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#hasManufacturingApplicationService"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
-        <ObjectProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#hasMediationService"/>
         <ObjectProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#isMediationServiceof"/>
+        <ObjectProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#hasMediationService"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
-        <ObjectProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#hasMonitoringFunction"/>
         <ObjectProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#isMonitoringFunctionof"/>
+        <ObjectProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#hasMonitoringFunction"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
         <ObjectProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#hasMotionSensor"/>
@@ -1831,20 +2015,20 @@
         <ObjectProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#hasMotionSensorType"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
-        <ObjectProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#hasOnboardAnalytics"/>
         <ObjectProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#isOnboardAnalyticsfor"/>
+        <ObjectProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#hasOnboardAnalytics"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
         <ObjectProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#hasPropagationEnvironment"/>
         <ObjectProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#isPropagationEnvironmentof"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
-        <ObjectProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#isPropertyof"/>
         <ObjectProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#hasProperty"/>
+        <ObjectProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#isPropertyof"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
-        <ObjectProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#hasRequirementCapture"/>
         <ObjectProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#isRequirementCaptureof"/>
+        <ObjectProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#hasRequirementCapture"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
         <ObjectProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#isSemanticBusService"/>
@@ -1855,8 +2039,8 @@
         <ObjectProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#isSensorReadingof"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
-        <ObjectProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#isSignalTypeof"/>
         <ObjectProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#hasSignalType"/>
+        <ObjectProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#isSignalTypeof"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
         <ObjectProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#hasSystemModel"/>
@@ -1875,16 +2059,16 @@
         <ObjectProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#hasTrackingMeasurement"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
-        <ObjectProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#hasTrackingOS"/>
         <ObjectProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#isTrackingOSof"/>
+        <ObjectProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#hasTrackingOS"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
-        <ObjectProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#hasTrackingService"/>
         <ObjectProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#isTrackingServiceof"/>
+        <ObjectProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#hasTrackingService"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
-        <ObjectProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#hasTrackingSetup"/>
         <ObjectProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#isTrackingSetupof"/>
+        <ObjectProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#hasTrackingSetup"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
         <ObjectProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#hasTrackingSoftware"/>
@@ -1895,12 +2079,12 @@
         <ObjectProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#isComponentofTrackingSystem"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
-        <ObjectProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#hasTuningFunction"/>
         <ObjectProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#isTuningFunctionof"/>
+        <ObjectProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#hasTuningFunction"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
-        <ObjectProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#isTuningServiceof"/>
         <ObjectProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#hasTuningService"/>
+        <ObjectProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#isTuningServiceof"/>
     </InverseObjectProperties>
     <FunctionalObjectProperty>
         <ObjectProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#hasGDOPValue"/>
@@ -2049,6 +2233,13 @@
     <AsymmetricObjectProperty>
         <ObjectProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#isTrackingMeasurementof"/>
     </AsymmetricObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasActiveAnchors"/>
+        <DataMinCardinality cardinality="3">
+            <DataProperty IRI="#AnchorNum"/>
+            <Datatype abbreviatedIRI="xsd:nonNegativeInteger"/>
+        </DataMinCardinality>
+    </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#hasAdjustablePrecisionFactor"/>
         <ObjectAllValuesFrom>
@@ -3439,6 +3630,10 @@
         <ObjectProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#isTrackingSoftwareof"/>
     </DisjointObjectProperties>
     <DataPropertyDomain>
+        <DataProperty IRI="#AnchorNum"/>
+        <Class IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#Supertag"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
         <DataProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#TimeValue"/>
         <Class IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#SupertagLoc"/>
     </DataPropertyDomain>
@@ -3458,6 +3653,10 @@
         <DataProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#ZValue"/>
         <Class IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#SupertagLoc"/>
     </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#AnchorNum"/>
+        <Datatype abbreviatedIRI="xsd:nonNegativeInteger"/>
+    </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#TimeValue"/>
         <Datatype abbreviatedIRI="xsd:dateTime"/>
