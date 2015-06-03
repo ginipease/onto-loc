@@ -186,10 +186,10 @@
         <Class abbreviatedIRI="ontoloc:OnboardAnalytics"/>
     </Declaration>
     <Declaration>
-        <Class abbreviatedIRI="ontoloc:PacketRate"/>
+        <Class abbreviatedIRI="ontoloc:PacketFrequency"/>
     </Declaration>
     <Declaration>
-        <Class abbreviatedIRI="ontoloc:PacketsPerSecond"/>
+        <Class abbreviatedIRI="ontoloc:PacketRate"/>
     </Declaration>
     <Declaration>
         <Class abbreviatedIRI="ontoloc:ParticleFilter"/>
@@ -306,6 +306,12 @@
         <Class abbreviatedIRI="ontoloc:ZigbeePacket"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#hasAnchor"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isAnchorto"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty abbreviatedIRI="ontoloc:hasAdjustablePrecisionFactor"/>
     </Declaration>
     <Declaration>
@@ -381,9 +387,6 @@
         <ObjectProperty abbreviatedIRI="ontoloc:hasMonitoringFunction"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty abbreviatedIRI="ontoloc:hasMotionSensor"/>
-    </Declaration>
-    <Declaration>
         <ObjectProperty abbreviatedIRI="ontoloc:hasMotionSensorType"/>
     </Declaration>
     <Declaration>
@@ -403,6 +406,9 @@
     </Declaration>
     <Declaration>
         <ObjectProperty abbreviatedIRI="ontoloc:hasSemanticBusService"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="ontoloc:hasSensor"/>
     </Declaration>
     <Declaration>
         <ObjectProperty abbreviatedIRI="ontoloc:hasSensorReading"/>
@@ -519,9 +525,6 @@
         <ObjectProperty abbreviatedIRI="ontoloc:isMotionSensorTypeof"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty abbreviatedIRI="ontoloc:isMotionSensorfor"/>
-    </Declaration>
-    <Declaration>
         <ObjectProperty abbreviatedIRI="ontoloc:isOnboardAnalyticsfor"/>
     </Declaration>
     <Declaration>
@@ -541,6 +544,9 @@
     </Declaration>
     <Declaration>
         <ObjectProperty abbreviatedIRI="ontoloc:isSensorReadingof"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="ontoloc:isSensorfor"/>
     </Declaration>
     <Declaration>
         <ObjectProperty abbreviatedIRI="ontoloc:isSignalTypeof"/>
@@ -579,9 +585,6 @@
         <ObjectProperty abbreviatedIRI="ontoloc:isTypeofHardware"/>
     </Declaration>
     <Declaration>
-        <DataProperty abbreviatedIRI="ontoloc:AnchorNumValue"/>
-    </Declaration>
-    <Declaration>
         <DataProperty abbreviatedIRI="ontoloc:PacketTotalValue"/>
     </Declaration>
     <Declaration>
@@ -606,7 +609,7 @@
         <DataProperty abbreviatedIRI="ontoloc:hasSystemNoiseVariableValue"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#PacketsPerSecondValue"/>
+        <NamedIndividual IRI="#PacketsPerSecond"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#SendPacketTotal"/>
@@ -921,12 +924,12 @@
         <Class abbreviatedIRI="ontoloc:IndoorTrackingDevices"/>
     </SubClassOf>
     <SubClassOf>
-        <Class abbreviatedIRI="ontoloc:PacketRate"/>
-        <Class abbreviatedIRI="ontoloc:TrackingMaintenance"/>
+        <Class abbreviatedIRI="ontoloc:PacketFrequency"/>
+        <Class abbreviatedIRI="ontoloc:Configuration"/>
     </SubClassOf>
     <SubClassOf>
-        <Class abbreviatedIRI="ontoloc:PacketsPerSecond"/>
-        <Class abbreviatedIRI="ontoloc:Configuration"/>
+        <Class abbreviatedIRI="ontoloc:PacketRate"/>
+        <Class abbreviatedIRI="ontoloc:TrackingMaintenance"/>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ontoloc:ParticleFilter"/>
@@ -1133,7 +1136,7 @@
     </DisjointClasses>
     <DisjointClasses>
         <Class abbreviatedIRI="ontoloc:DeviceNumber"/>
-        <Class abbreviatedIRI="ontoloc:PacketsPerSecond"/>
+        <Class abbreviatedIRI="ontoloc:PacketFrequency"/>
     </DisjointClasses>
     <DisjointClasses>
         <Class abbreviatedIRI="ontoloc:FaultMonitor"/>
@@ -1181,7 +1184,7 @@
         <Class abbreviatedIRI="ontoloc:SDSTWR"/>
     </DisjointClasses>
     <DisjointClasses>
-        <Class abbreviatedIRI="ontoloc:PacketsPerSecond"/>
+        <Class abbreviatedIRI="ontoloc:PacketFrequency"/>
         <Class abbreviatedIRI="ontoloc:ReflashDeviceOS"/>
     </DisjointClasses>
     <DisjointClasses>
@@ -1199,10 +1202,18 @@
     </DisjointClasses>
     <ClassAssertion>
         <Class abbreviatedIRI="ontoloc:Configuration"/>
-        <NamedIndividual IRI="#PacketsPerSecondValue"/>
+        <NamedIndividual IRI="#PacketsPerSecond"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="ontoloc:PacketFrequency"/>
+        <NamedIndividual IRI="#PacketsPerSecond"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class abbreviatedIRI="ontoloc:Configuration"/>
+        <NamedIndividual IRI="#SendPacketTotal"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="ontoloc:TotalPackets"/>
         <NamedIndividual IRI="#SendPacketTotal"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -1287,12 +1298,27 @@
     </ClassAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty abbreviatedIRI="ontoloc:isFrequencyof"/>
-        <NamedIndividual IRI="#PacketsPerSecondValue"/>
+        <NamedIndividual IRI="#PacketsPerSecond"/>
         <NamedIndividual abbreviatedIRI="ontoloc:Server1"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty abbreviatedIRI="ontoloc:isTotalPacketsSentby"/>
         <NamedIndividual IRI="#SendPacketTotal"/>
+        <NamedIndividual abbreviatedIRI="ontoloc:Server1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isAnchorto"/>
+        <NamedIndividual IRI="#Server4"/>
+        <NamedIndividual abbreviatedIRI="ontoloc:Server1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isAnchorto"/>
+        <NamedIndividual IRI="#Server5"/>
+        <NamedIndividual abbreviatedIRI="ontoloc:Server1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isAnchorto"/>
+        <NamedIndividual IRI="#Server6"/>
         <NamedIndividual abbreviatedIRI="ontoloc:Server1"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
@@ -1331,9 +1357,24 @@
         <NamedIndividual abbreviatedIRI="ontoloc:Server1"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasAnchor"/>
+        <NamedIndividual abbreviatedIRI="ontoloc:Server1"/>
+        <NamedIndividual IRI="#Server4"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasAnchor"/>
+        <NamedIndividual abbreviatedIRI="ontoloc:Server1"/>
+        <NamedIndividual IRI="#Server5"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasAnchor"/>
+        <NamedIndividual abbreviatedIRI="ontoloc:Server1"/>
+        <NamedIndividual IRI="#Server6"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
         <ObjectProperty abbreviatedIRI="ontoloc:hasFrequency"/>
         <NamedIndividual abbreviatedIRI="ontoloc:Server1"/>
-        <NamedIndividual IRI="#PacketsPerSecondValue"/>
+        <NamedIndividual IRI="#PacketsPerSecond"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty abbreviatedIRI="ontoloc:hasLoc"/>
@@ -1377,7 +1418,7 @@
     </ObjectPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty abbreviatedIRI="ontoloc:PacketsPerSecondValue"/>
-        <NamedIndividual IRI="#PacketsPerSecondValue"/>
+        <NamedIndividual IRI="#PacketsPerSecond"/>
         <Literal datatypeIRI="&xsd;integer">5</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
@@ -1551,11 +1592,6 @@
         <Literal datatypeIRI="&xsd;float">1.4</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
-        <DataProperty abbreviatedIRI="ontoloc:AnchorNumValue"/>
-        <NamedIndividual abbreviatedIRI="ontoloc:Server1"/>
-        <Literal datatypeIRI="&xsd;nonNegativeInteger">3</Literal>
-    </DataPropertyAssertion>
-    <DataPropertyAssertion>
         <DataProperty abbreviatedIRI="ontoloc:UIDValue"/>
         <NamedIndividual abbreviatedIRI="ontoloc:Server1"/>
         <Literal datatypeIRI="&xsd;integer">1</Literal>
@@ -1570,6 +1606,14 @@
         <NamedIndividual abbreviatedIRI="ontoloc:Server3"/>
         <Literal datatypeIRI="&xsd;integer">3</Literal>
     </DataPropertyAssertion>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasAnchor"/>
+        <ObjectProperty abbreviatedIRI="ontoloc:hasIndoorTrackingService"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isAnchorto"/>
+        <ObjectProperty abbreviatedIRI="ontoloc:isIndoorTrackingServiceof"/>
+    </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty abbreviatedIRI="ontoloc:hasAdjustablePrecisionFactor"/>
         <ObjectProperty abbreviatedIRI="ontoloc:hasRequirementCapture"/>
@@ -1675,12 +1719,8 @@
         <ObjectProperty abbreviatedIRI="ontoloc:hasFaultMonitor"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty abbreviatedIRI="ontoloc:hasMotionSensor"/>
-        <ObjectProperty abbreviatedIRI="ontoloc:hasIndoorTrackingService"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
         <ObjectProperty abbreviatedIRI="ontoloc:hasMotionSensorType"/>
-        <ObjectProperty abbreviatedIRI="ontoloc:hasMotionSensor"/>
+        <ObjectProperty abbreviatedIRI="ontoloc:hasSensor"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty abbreviatedIRI="ontoloc:hasOnboardAnalytics"/>
@@ -1705,6 +1745,10 @@
     <SubObjectPropertyOf>
         <ObjectProperty abbreviatedIRI="ontoloc:hasSemanticBusService"/>
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="ontoloc:hasSensor"/>
+        <ObjectProperty abbreviatedIRI="ontoloc:hasIndoorTrackingService"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty abbreviatedIRI="ontoloc:hasSensorReading"/>
@@ -1860,11 +1904,7 @@
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty abbreviatedIRI="ontoloc:isMotionSensorTypeof"/>
-        <ObjectProperty abbreviatedIRI="ontoloc:isMotionSensorfor"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty abbreviatedIRI="ontoloc:isMotionSensorfor"/>
-        <ObjectProperty abbreviatedIRI="ontoloc:isIndoorTrackingServiceof"/>
+        <ObjectProperty abbreviatedIRI="ontoloc:isSensorfor"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty abbreviatedIRI="ontoloc:isOnboardAnalyticsfor"/>
@@ -1893,6 +1933,10 @@
     <SubObjectPropertyOf>
         <ObjectProperty abbreviatedIRI="ontoloc:isSensorReadingof"/>
         <ObjectProperty abbreviatedIRI="ontoloc:isMotionSensorTypeof"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="ontoloc:isSensorfor"/>
+        <ObjectProperty abbreviatedIRI="ontoloc:isIndoorTrackingServiceof"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty abbreviatedIRI="ontoloc:isSignalTypeof"/>
@@ -2035,10 +2079,6 @@
         <ObjectProperty abbreviatedIRI="ontoloc:hasMonitoringFunction"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
-        <ObjectProperty abbreviatedIRI="ontoloc:hasMotionSensor"/>
-        <ObjectProperty abbreviatedIRI="ontoloc:isMotionSensorfor"/>
-    </InverseObjectProperties>
-    <InverseObjectProperties>
         <ObjectProperty abbreviatedIRI="ontoloc:isMotionSensorTypeof"/>
         <ObjectProperty abbreviatedIRI="ontoloc:hasMotionSensorType"/>
     </InverseObjectProperties>
@@ -2061,6 +2101,10 @@
     <InverseObjectProperties>
         <ObjectProperty abbreviatedIRI="ontoloc:isSemanticBusService"/>
         <ObjectProperty abbreviatedIRI="ontoloc:hasSemanticBusService"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty abbreviatedIRI="ontoloc:hasSensor"/>
+        <ObjectProperty abbreviatedIRI="ontoloc:isSensorfor"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
         <ObjectProperty abbreviatedIRI="ontoloc:hasSensorReading"/>
@@ -2204,9 +2248,6 @@
         <ObjectProperty abbreviatedIRI="ontoloc:hasMonitoringFunction"/>
     </AsymmetricObjectProperty>
     <AsymmetricObjectProperty>
-        <ObjectProperty abbreviatedIRI="ontoloc:hasMotionSensor"/>
-    </AsymmetricObjectProperty>
-    <AsymmetricObjectProperty>
         <ObjectProperty abbreviatedIRI="ontoloc:hasMotionSensorType"/>
     </AsymmetricObjectProperty>
     <AsymmetricObjectProperty>
@@ -2217,6 +2258,9 @@
     </AsymmetricObjectProperty>
     <AsymmetricObjectProperty>
         <ObjectProperty abbreviatedIRI="ontoloc:hasProperty"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty abbreviatedIRI="ontoloc:hasSensor"/>
     </AsymmetricObjectProperty>
     <AsymmetricObjectProperty>
         <ObjectProperty abbreviatedIRI="ontoloc:hasSensorReading"/>
@@ -2395,13 +2439,6 @@
         </ObjectExactCardinality>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty abbreviatedIRI="ontoloc:hasMotionSensor"/>
-        <ObjectExactCardinality cardinality="1">
-            <ObjectProperty abbreviatedIRI="ontoloc:hasMotionSensor"/>
-            <Class abbreviatedIRI="ontoloc:IndoorTrackingDevices"/>
-        </ObjectExactCardinality>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI="ontoloc:hasMotionSensorType"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ontoloc:hasMotionSensorType"/>
@@ -2439,6 +2476,13 @@
             <ObjectProperty abbreviatedIRI="ontoloc:hasRequirementCapture"/>
             <Class abbreviatedIRI="ontoloc:Requirements"/>
         </ObjectAllValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="ontoloc:hasSensor"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty abbreviatedIRI="ontoloc:hasSensor"/>
+            <Class abbreviatedIRI="ontoloc:IndoorTrackingDevices"/>
+        </ObjectExactCardinality>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI="ontoloc:hasSensorReading"/>
@@ -2624,7 +2668,7 @@
         <ObjectProperty abbreviatedIRI="ontoloc:isFrequencyof"/>
         <ObjectMaxCardinality cardinality="200">
             <ObjectProperty abbreviatedIRI="ontoloc:isFrequencyof"/>
-            <Class abbreviatedIRI="ontoloc:PacketsPerSecond"/>
+            <Class abbreviatedIRI="ontoloc:PacketFrequency"/>
         </ObjectMaxCardinality>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
@@ -2769,13 +2813,6 @@
         </ObjectAllValuesFrom>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty abbreviatedIRI="ontoloc:isMotionSensorfor"/>
-        <ObjectAllValuesFrom>
-            <ObjectProperty abbreviatedIRI="ontoloc:isMotionSensorfor"/>
-            <Class abbreviatedIRI="ontoloc:MotionSensor"/>
-        </ObjectAllValuesFrom>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI="ontoloc:isOnboardAnalyticsfor"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ontoloc:isOnboardAnalyticsfor"/>
@@ -2829,6 +2866,13 @@
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ontoloc:isSensorReadingof"/>
             <Class abbreviatedIRI="ontoloc:AccelerometerReading"/>
+        </ObjectAllValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="ontoloc:isSensorfor"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="ontoloc:isSensorfor"/>
+            <Class abbreviatedIRI="ontoloc:MotionSensor"/>
         </ObjectAllValuesFrom>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
@@ -3036,7 +3080,7 @@
         <ObjectProperty abbreviatedIRI="ontoloc:hasFrequency"/>
         <ObjectMaxCardinality cardinality="200">
             <ObjectProperty abbreviatedIRI="ontoloc:hasFrequency"/>
-            <Class abbreviatedIRI="ontoloc:PacketsPerSecond"/>
+            <Class abbreviatedIRI="ontoloc:PacketFrequency"/>
         </ObjectMaxCardinality>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
@@ -3178,13 +3222,6 @@
         </ObjectExactCardinality>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI="ontoloc:hasMotionSensor"/>
-        <ObjectAllValuesFrom>
-            <ObjectProperty abbreviatedIRI="ontoloc:hasMotionSensor"/>
-            <Class abbreviatedIRI="ontoloc:MotionSensor"/>
-        </ObjectAllValuesFrom>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI="ontoloc:hasMotionSensorType"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ontoloc:hasMotionSensorType"/>
@@ -3241,6 +3278,13 @@
                 <Class abbreviatedIRI="ontoloc:TrackingAnalytics"/>
                 <Class abbreviatedIRI="ontoloc:Tuning"/>
             </ObjectUnionOf>
+        </ObjectAllValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="ontoloc:hasSensor"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="ontoloc:hasSensor"/>
+            <Class abbreviatedIRI="ontoloc:MotionSensor"/>
         </ObjectAllValuesFrom>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
@@ -3505,13 +3549,6 @@
         </ObjectAllValuesFrom>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI="ontoloc:isMotionSensorfor"/>
-        <ObjectExactCardinality cardinality="1">
-            <ObjectProperty abbreviatedIRI="ontoloc:isMotionSensorfor"/>
-            <Class abbreviatedIRI="ontoloc:IndoorTrackingDevices"/>
-        </ObjectExactCardinality>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI="ontoloc:isOnboardAnalyticsfor"/>
         <ObjectExactCardinality cardinality="1">
             <ObjectProperty abbreviatedIRI="ontoloc:isOnboardAnalyticsfor"/>
@@ -3552,6 +3589,13 @@
             <ObjectProperty abbreviatedIRI="ontoloc:isSensorReadingof"/>
             <Class abbreviatedIRI="ontoloc:Accelerometer"/>
         </ObjectAllValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="ontoloc:isSensorfor"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty abbreviatedIRI="ontoloc:isSensorfor"/>
+            <Class abbreviatedIRI="ontoloc:IndoorTrackingDevices"/>
+        </ObjectExactCardinality>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI="ontoloc:isSignalTypeof"/>
@@ -3640,9 +3684,9 @@
     </DisjointObjectProperties>
     <DisjointObjectProperties>
         <ObjectProperty abbreviatedIRI="ontoloc:hasFaultMonitor"/>
-        <ObjectProperty abbreviatedIRI="ontoloc:hasMotionSensor"/>
         <ObjectProperty abbreviatedIRI="ontoloc:hasOnboardAnalytics"/>
         <ObjectProperty abbreviatedIRI="ontoloc:hasPropagationEnvironment"/>
+        <ObjectProperty abbreviatedIRI="ontoloc:hasSensor"/>
     </DisjointObjectProperties>
     <DisjointObjectProperties>
         <ObjectProperty abbreviatedIRI="ontoloc:hasRequirementCapture"/>
@@ -3669,9 +3713,9 @@
     </DisjointObjectProperties>
     <DisjointObjectProperties>
         <ObjectProperty abbreviatedIRI="ontoloc:isFaultMonitorfor"/>
-        <ObjectProperty abbreviatedIRI="ontoloc:isMotionSensorfor"/>
         <ObjectProperty abbreviatedIRI="ontoloc:isOnboardAnalyticsfor"/>
         <ObjectProperty abbreviatedIRI="ontoloc:isPropagationEnvironmentof"/>
+        <ObjectProperty abbreviatedIRI="ontoloc:isSensorfor"/>
     </DisjointObjectProperties>
     <DisjointObjectProperties>
         <ObjectProperty abbreviatedIRI="ontoloc:isRequirementCaptureof"/>
@@ -3693,16 +3737,12 @@
         <ObjectProperty abbreviatedIRI="ontoloc:isTrackingSoftwareof"/>
     </DisjointObjectProperties>
     <DataPropertyDomain>
-        <DataProperty abbreviatedIRI="ontoloc:AnchorNumValue"/>
-        <Class abbreviatedIRI="ontoloc:RTLS"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
         <DataProperty abbreviatedIRI="ontoloc:PacketTotalValue"/>
         <Class abbreviatedIRI="ontoloc:TotalPackets"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty abbreviatedIRI="ontoloc:PacketsPerSecondValue"/>
-        <Class abbreviatedIRI="ontoloc:PacketsPerSecond"/>
+        <Class abbreviatedIRI="ontoloc:PacketFrequency"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty abbreviatedIRI="ontoloc:TimeValue"/>
@@ -3724,10 +3764,6 @@
         <DataProperty abbreviatedIRI="ontoloc:ZValue"/>
         <Class abbreviatedIRI="ontoloc:SupertagLoc"/>
     </DataPropertyDomain>
-    <DataPropertyRange>
-        <DataProperty abbreviatedIRI="ontoloc:AnchorNumValue"/>
-        <Datatype abbreviatedIRI="xsd:nonNegativeInteger"/>
-    </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty abbreviatedIRI="ontoloc:TimeValue"/>
         <Datatype abbreviatedIRI="xsd:dateTime"/>

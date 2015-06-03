@@ -34,6 +34,22 @@
     
 
 
+    <!-- https://raw.githubusercontent.com/ginipease/onto-loc/master/ontoloc#hasAnchor -->
+
+    <ObjectProperty rdf:about="&assettracking;hasAnchor">
+        <rdfs:subPropertyOf rdf:resource="&ontoloc;hasIndoorTrackingService"/>
+    </ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/onto-loc/master/ontoloc#isAnchorto -->
+
+    <ObjectProperty rdf:about="&assettracking;isAnchorto">
+        <rdfs:subPropertyOf rdf:resource="&ontoloc;isIndoorTrackingServiceof"/>
+    </ObjectProperty>
+    
+
+
     <!-- https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#hasAdjustablePrecisionFactor -->
 
     <ObjectProperty rdf:about="&ontoloc;hasAdjustablePrecisionFactor">
@@ -295,7 +311,7 @@
         <rdfs:range>
             <Restriction>
                 <onProperty rdf:resource="&ontoloc;hasFrequency"/>
-                <onClass rdf:resource="&ontoloc;PacketsPerSecond"/>
+                <onClass rdf:resource="&ontoloc;PacketFrequency"/>
                 <maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">200</maxQualifiedCardinality>
             </Restriction>
         </rdfs:range>
@@ -635,34 +651,11 @@
     
 
 
-    <!-- https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#hasMotionSensor -->
-
-    <ObjectProperty rdf:about="&ontoloc;hasMotionSensor">
-        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
-        <rdfs:subPropertyOf rdf:resource="&ontoloc;hasIndoorTrackingService"/>
-        <inverseOf rdf:resource="&ontoloc;isMotionSensorfor"/>
-        <rdfs:domain>
-            <Restriction>
-                <onProperty rdf:resource="&ontoloc;hasMotionSensor"/>
-                <onClass rdf:resource="&ontoloc;IndoorTrackingDevices"/>
-                <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
-            </Restriction>
-        </rdfs:domain>
-        <rdfs:range>
-            <Restriction>
-                <onProperty rdf:resource="&ontoloc;hasMotionSensor"/>
-                <allValuesFrom rdf:resource="&ontoloc;MotionSensor"/>
-            </Restriction>
-        </rdfs:range>
-    </ObjectProperty>
-    
-
-
     <!-- https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#hasMotionSensorType -->
 
     <ObjectProperty rdf:about="&ontoloc;hasMotionSensorType">
         <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
-        <rdfs:subPropertyOf rdf:resource="&ontoloc;hasMotionSensor"/>
+        <rdfs:subPropertyOf rdf:resource="&ontoloc;hasSensor"/>
         <rdfs:range>
             <Restriction>
                 <onProperty rdf:resource="&ontoloc;hasMotionSensorType"/>
@@ -811,6 +804,29 @@
                         </unionOf>
                     </Class>
                 </allValuesFrom>
+            </Restriction>
+        </rdfs:range>
+    </ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#hasSensor -->
+
+    <ObjectProperty rdf:about="&ontoloc;hasSensor">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&ontoloc;hasIndoorTrackingService"/>
+        <inverseOf rdf:resource="&ontoloc;isSensorfor"/>
+        <rdfs:domain>
+            <Restriction>
+                <onProperty rdf:resource="&ontoloc;hasSensor"/>
+                <onClass rdf:resource="&ontoloc;IndoorTrackingDevices"/>
+                <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
+            </Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <Restriction>
+                <onProperty rdf:resource="&ontoloc;hasSensor"/>
+                <allValuesFrom rdf:resource="&ontoloc;MotionSensor"/>
             </Restriction>
         </rdfs:range>
     </ObjectProperty>
@@ -1416,7 +1432,7 @@
         <rdfs:domain>
             <Restriction>
                 <onProperty rdf:resource="&ontoloc;isFrequencyof"/>
-                <onClass rdf:resource="&ontoloc;PacketsPerSecond"/>
+                <onClass rdf:resource="&ontoloc;PacketFrequency"/>
                 <maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">200</maxQualifiedCardinality>
             </Restriction>
         </rdfs:domain>
@@ -1738,7 +1754,7 @@
 
     <ObjectProperty rdf:about="&ontoloc;isMotionSensorTypeof">
         <inverseOf rdf:resource="&ontoloc;hasMotionSensorType"/>
-        <rdfs:subPropertyOf rdf:resource="&ontoloc;isMotionSensorfor"/>
+        <rdfs:subPropertyOf rdf:resource="&ontoloc;isSensorfor"/>
         <rdfs:domain>
             <Restriction>
                 <onProperty rdf:resource="&ontoloc;isMotionSensorTypeof"/>
@@ -1756,27 +1772,6 @@
             <Restriction>
                 <onProperty rdf:resource="&ontoloc;isMotionSensorTypeof"/>
                 <allValuesFrom rdf:resource="&ontoloc;MotionSensor"/>
-            </Restriction>
-        </rdfs:range>
-    </ObjectProperty>
-    
-
-
-    <!-- https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#isMotionSensorfor -->
-
-    <ObjectProperty rdf:about="&ontoloc;isMotionSensorfor">
-        <rdfs:subPropertyOf rdf:resource="&ontoloc;isIndoorTrackingServiceof"/>
-        <rdfs:domain>
-            <Restriction>
-                <onProperty rdf:resource="&ontoloc;isMotionSensorfor"/>
-                <allValuesFrom rdf:resource="&ontoloc;MotionSensor"/>
-            </Restriction>
-        </rdfs:domain>
-        <rdfs:range>
-            <Restriction>
-                <onProperty rdf:resource="&ontoloc;isMotionSensorfor"/>
-                <onClass rdf:resource="&ontoloc;IndoorTrackingDevices"/>
-                <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
             </Restriction>
         </rdfs:range>
     </ObjectProperty>
@@ -1934,6 +1929,27 @@
                 <allValuesFrom rdf:resource="&ontoloc;AccelerometerReading"/>
             </Restriction>
         </rdfs:domain>
+    </ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#isSensorfor -->
+
+    <ObjectProperty rdf:about="&ontoloc;isSensorfor">
+        <rdfs:subPropertyOf rdf:resource="&ontoloc;isIndoorTrackingServiceof"/>
+        <rdfs:domain>
+            <Restriction>
+                <onProperty rdf:resource="&ontoloc;isSensorfor"/>
+                <allValuesFrom rdf:resource="&ontoloc;MotionSensor"/>
+            </Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <Restriction>
+                <onProperty rdf:resource="&ontoloc;isSensorfor"/>
+                <onClass rdf:resource="&ontoloc;IndoorTrackingDevices"/>
+                <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
+            </Restriction>
+        </rdfs:range>
     </ObjectProperty>
     
 
@@ -2246,15 +2262,6 @@
     
 
 
-    <!-- https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#AnchorNumValue -->
-
-    <DatatypeProperty rdf:about="&ontoloc;AnchorNumValue">
-        <rdfs:range rdf:resource="&xsd;nonNegativeInteger"/>
-        <rdfs:domain rdf:resource="&ontoloc;RTLS"/>
-    </DatatypeProperty>
-    
-
-
     <!-- https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#PacketTotalValue -->
 
     <DatatypeProperty rdf:about="&ontoloc;PacketTotalValue">
@@ -2266,7 +2273,7 @@
     <!-- https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#PacketsPerSecondValue -->
 
     <DatatypeProperty rdf:about="&ontoloc;PacketsPerSecondValue">
-        <rdfs:domain rdf:resource="&ontoloc;PacketsPerSecond"/>
+        <rdfs:domain rdf:resource="&ontoloc;PacketFrequency"/>
     </DatatypeProperty>
     
 
@@ -2497,7 +2504,7 @@
 
     <Class rdf:about="&ontoloc;DeviceNumber">
         <rdfs:subClassOf rdf:resource="&ontoloc;ActiveDevices"/>
-        <disjointWith rdf:resource="&ontoloc;PacketsPerSecond"/>
+        <disjointWith rdf:resource="&ontoloc;PacketFrequency"/>
     </Class>
     
 
@@ -2790,19 +2797,19 @@
     
 
 
-    <!-- https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#PacketRate -->
+    <!-- https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#PacketFrequency -->
 
-    <Class rdf:about="&ontoloc;PacketRate">
-        <rdfs:subClassOf rdf:resource="&ontoloc;TrackingMaintenance"/>
+    <Class rdf:about="&ontoloc;PacketFrequency">
+        <rdfs:subClassOf rdf:resource="&ontoloc;Configuration"/>
+        <disjointWith rdf:resource="&ontoloc;ReflashDeviceOS"/>
     </Class>
     
 
 
-    <!-- https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#PacketsPerSecond -->
+    <!-- https://raw.githubusercontent.com/ginipease/onto-loc/master/owlrdf/ontoloc#PacketRate -->
 
-    <Class rdf:about="&ontoloc;PacketsPerSecond">
-        <rdfs:subClassOf rdf:resource="&ontoloc;Configuration"/>
-        <disjointWith rdf:resource="&ontoloc;ReflashDeviceOS"/>
+    <Class rdf:about="&ontoloc;PacketRate">
+        <rdfs:subClassOf rdf:resource="&ontoloc;TrackingMaintenance"/>
     </Class>
     
 
@@ -3140,10 +3147,11 @@
     
 
 
-    <!-- https://raw.githubusercontent.com/ginipease/onto-loc/master/ontoloc#PacketsPerSecondValue -->
+    <!-- https://raw.githubusercontent.com/ginipease/onto-loc/master/ontoloc#PacketsPerSecond -->
 
-    <NamedIndividual rdf:about="&assettracking;PacketsPerSecondValue">
+    <NamedIndividual rdf:about="&assettracking;PacketsPerSecond">
         <rdf:type rdf:resource="&ontoloc;Configuration"/>
+        <rdf:type rdf:resource="&ontoloc;PacketFrequency"/>
         <ontoloc:PacketsPerSecondValue rdf:datatype="&xsd;integer">5</ontoloc:PacketsPerSecondValue>
         <ontoloc:isFrequencyof rdf:resource="&ontoloc;Server1"/>
     </NamedIndividual>
@@ -3154,6 +3162,7 @@
 
     <NamedIndividual rdf:about="&assettracking;SendPacketTotal">
         <rdf:type rdf:resource="&ontoloc;Configuration"/>
+        <rdf:type rdf:resource="&ontoloc;TotalPackets"/>
         <ontoloc:PacketTotalValue rdf:datatype="&xsd;nonNegativeInteger">50</ontoloc:PacketTotalValue>
         <ontoloc:isTotalPacketsSentby rdf:resource="&ontoloc;Server1"/>
     </NamedIndividual>
@@ -3166,6 +3175,7 @@
         <rdf:type rdf:resource="&ontoloc;AnchoredTag"/>
         <rdf:type rdf:resource="&ontoloc;DeviceNumber"/>
         <ontoloc:UIDValue rdf:datatype="&xsd;integer">4</ontoloc:UIDValue>
+        <assettracking:isAnchorto rdf:resource="&ontoloc;Server1"/>
     </NamedIndividual>
     
 
@@ -3176,6 +3186,7 @@
         <rdf:type rdf:resource="&ontoloc;AnchoredTag"/>
         <rdf:type rdf:resource="&ontoloc;DeviceNumber"/>
         <ontoloc:UIDValue rdf:datatype="&xsd;integer">5</ontoloc:UIDValue>
+        <assettracking:isAnchorto rdf:resource="&ontoloc;Server1"/>
     </NamedIndividual>
     
 
@@ -3186,6 +3197,7 @@
         <rdf:type rdf:resource="&ontoloc;AnchoredTag"/>
         <rdf:type rdf:resource="&ontoloc;DeviceNumber"/>
         <ontoloc:UIDValue rdf:datatype="&xsd;integer">6</ontoloc:UIDValue>
+        <assettracking:isAnchorto rdf:resource="&ontoloc;Server1"/>
     </NamedIndividual>
     
 
@@ -3297,9 +3309,11 @@
         <rdf:type rdf:resource="&ontoloc;DeviceNumber"/>
         <rdf:type rdf:resource="&ontoloc;MovingTag"/>
         <ontoloc:UIDValue rdf:datatype="&xsd;integer">1</ontoloc:UIDValue>
-        <ontoloc:AnchorNumValue rdf:datatype="&xsd;nonNegativeInteger">3</ontoloc:AnchorNumValue>
-        <ontoloc:hasFrequency rdf:resource="&assettracking;PacketsPerSecondValue"/>
+        <ontoloc:hasFrequency rdf:resource="&assettracking;PacketsPerSecond"/>
         <ontoloc:hasPacketTotal rdf:resource="&assettracking;SendPacketTotal"/>
+        <assettracking:hasAnchor rdf:resource="&assettracking;Server4"/>
+        <assettracking:hasAnchor rdf:resource="&assettracking;Server5"/>
+        <assettracking:hasAnchor rdf:resource="&assettracking;Server6"/>
         <ontoloc:hasLoc rdf:resource="&ontoloc;Location1"/>
         <ontoloc:hasLoc rdf:resource="&ontoloc;Location2"/>
         <ontoloc:hasLoc rdf:resource="&ontoloc;Location3"/>
@@ -3358,20 +3372,20 @@
         </members>
     </rdf:Description>
     <rdf:Description>
-        <rdf:type rdf:resource="&owl;AllDisjointProperties"/>
-        <members rdf:parseType="Collection">
-            <rdf:Description rdf:about="&ontoloc;hasFaultMonitor"/>
-            <rdf:Description rdf:about="&ontoloc;hasMotionSensor"/>
-            <rdf:Description rdf:about="&ontoloc;hasOnboardAnalytics"/>
-            <rdf:Description rdf:about="&ontoloc;hasPropagationEnvironment"/>
-        </members>
-    </rdf:Description>
-    <rdf:Description>
         <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
         <members rdf:parseType="Collection">
             <rdf:Description rdf:about="&ontoloc;GDOP"/>
             <rdf:Description rdf:about="&ontoloc;TrackingAnalytics"/>
             <rdf:Description rdf:about="&ontoloc;Tuning"/>
+        </members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointProperties"/>
+        <members rdf:parseType="Collection">
+            <rdf:Description rdf:about="&ontoloc;isFaultMonitorfor"/>
+            <rdf:Description rdf:about="&ontoloc;isOnboardAnalyticsfor"/>
+            <rdf:Description rdf:about="&ontoloc;isPropagationEnvironmentof"/>
+            <rdf:Description rdf:about="&ontoloc;isSensorfor"/>
         </members>
     </rdf:Description>
     <rdf:Description>
@@ -3436,10 +3450,10 @@
     <rdf:Description>
         <rdf:type rdf:resource="&owl;AllDisjointProperties"/>
         <members rdf:parseType="Collection">
-            <rdf:Description rdf:about="&ontoloc;isFaultMonitorfor"/>
-            <rdf:Description rdf:about="&ontoloc;isMotionSensorfor"/>
-            <rdf:Description rdf:about="&ontoloc;isOnboardAnalyticsfor"/>
-            <rdf:Description rdf:about="&ontoloc;isPropagationEnvironmentof"/>
+            <rdf:Description rdf:about="&ontoloc;hasFaultMonitor"/>
+            <rdf:Description rdf:about="&ontoloc;hasOnboardAnalytics"/>
+            <rdf:Description rdf:about="&ontoloc;hasPropagationEnvironment"/>
+            <rdf:Description rdf:about="&ontoloc;hasSensor"/>
         </members>
     </rdf:Description>
     <rdf:Description>
