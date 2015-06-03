@@ -306,13 +306,10 @@
         <Class abbreviatedIRI="ontoloc:ZigbeePacket"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#hasAnchor"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#isAnchorto"/>
-    </Declaration>
-    <Declaration>
         <ObjectProperty abbreviatedIRI="ontoloc:hasAdjustablePrecisionFactor"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="ontoloc:hasAnchor"/>
     </Declaration>
     <Declaration>
         <ObjectProperty abbreviatedIRI="ontoloc:hasApplicationFunction"/>
@@ -448,6 +445,9 @@
     </Declaration>
     <Declaration>
         <ObjectProperty abbreviatedIRI="ontoloc:isAdjustablePrecisionFactorof"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="ontoloc:isAnchorto"/>
     </Declaration>
     <Declaration>
         <ObjectProperty abbreviatedIRI="ontoloc:isApplicationFunctionof"/>
@@ -609,21 +609,6 @@
         <DataProperty abbreviatedIRI="ontoloc:hasSystemNoiseVariableValue"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#PacketsPerSecond"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#SendPacketTotal"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#Server4"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#Server5"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#Server6"/>
-    </Declaration>
-    <Declaration>
         <NamedIndividual abbreviatedIRI="ontoloc:ExampleMeasurementNoiseVariable"/>
     </Declaration>
     <Declaration>
@@ -648,6 +633,12 @@
         <NamedIndividual abbreviatedIRI="ontoloc:Location7"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual abbreviatedIRI="ontoloc:PacketsPerSecond"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="ontoloc:SendPacketTotal"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual abbreviatedIRI="ontoloc:Server1"/>
     </Declaration>
     <Declaration>
@@ -655,6 +646,15 @@
     </Declaration>
     <Declaration>
         <NamedIndividual abbreviatedIRI="ontoloc:Server3"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="ontoloc:Server4"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="ontoloc:Server5"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="ontoloc:Server6"/>
     </Declaration>
     <EquivalentClasses>
         <Class abbreviatedIRI="ontoloc:Acceleration"/>
@@ -1201,46 +1201,6 @@
         <Class abbreviatedIRI="ontoloc:SystemStateVariable"/>
     </DisjointClasses>
     <ClassAssertion>
-        <Class abbreviatedIRI="ontoloc:Configuration"/>
-        <NamedIndividual IRI="#PacketsPerSecond"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class abbreviatedIRI="ontoloc:PacketFrequency"/>
-        <NamedIndividual IRI="#PacketsPerSecond"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class abbreviatedIRI="ontoloc:Configuration"/>
-        <NamedIndividual IRI="#SendPacketTotal"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class abbreviatedIRI="ontoloc:TotalPackets"/>
-        <NamedIndividual IRI="#SendPacketTotal"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class abbreviatedIRI="ontoloc:AnchoredTag"/>
-        <NamedIndividual IRI="#Server4"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class abbreviatedIRI="ontoloc:DeviceNumber"/>
-        <NamedIndividual IRI="#Server4"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class abbreviatedIRI="ontoloc:AnchoredTag"/>
-        <NamedIndividual IRI="#Server5"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class abbreviatedIRI="ontoloc:DeviceNumber"/>
-        <NamedIndividual IRI="#Server5"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class abbreviatedIRI="ontoloc:AnchoredTag"/>
-        <NamedIndividual IRI="#Server6"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class abbreviatedIRI="ontoloc:DeviceNumber"/>
-        <NamedIndividual IRI="#Server6"/>
-    </ClassAssertion>
-    <ClassAssertion>
         <Class abbreviatedIRI="ontoloc:MeasurementNoise"/>
         <NamedIndividual abbreviatedIRI="ontoloc:ExampleMeasurementNoiseVariable"/>
     </ClassAssertion>
@@ -1273,6 +1233,22 @@
         <NamedIndividual abbreviatedIRI="ontoloc:Location7"/>
     </ClassAssertion>
     <ClassAssertion>
+        <Class abbreviatedIRI="ontoloc:Configuration"/>
+        <NamedIndividual abbreviatedIRI="ontoloc:PacketsPerSecond"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="ontoloc:PacketFrequency"/>
+        <NamedIndividual abbreviatedIRI="ontoloc:PacketsPerSecond"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="ontoloc:Configuration"/>
+        <NamedIndividual abbreviatedIRI="ontoloc:SendPacketTotal"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="ontoloc:TotalPackets"/>
+        <NamedIndividual abbreviatedIRI="ontoloc:SendPacketTotal"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class abbreviatedIRI="ontoloc:DeviceNumber"/>
         <NamedIndividual abbreviatedIRI="ontoloc:Server1"/>
     </ClassAssertion>
@@ -1296,31 +1272,30 @@
         <Class abbreviatedIRI="ontoloc:MovingTag"/>
         <NamedIndividual abbreviatedIRI="ontoloc:Server3"/>
     </ClassAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI="ontoloc:isFrequencyof"/>
-        <NamedIndividual IRI="#PacketsPerSecond"/>
-        <NamedIndividual abbreviatedIRI="ontoloc:Server1"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI="ontoloc:isTotalPacketsSentby"/>
-        <NamedIndividual IRI="#SendPacketTotal"/>
-        <NamedIndividual abbreviatedIRI="ontoloc:Server1"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#isAnchorto"/>
-        <NamedIndividual IRI="#Server4"/>
-        <NamedIndividual abbreviatedIRI="ontoloc:Server1"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#isAnchorto"/>
-        <NamedIndividual IRI="#Server5"/>
-        <NamedIndividual abbreviatedIRI="ontoloc:Server1"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#isAnchorto"/>
-        <NamedIndividual IRI="#Server6"/>
-        <NamedIndividual abbreviatedIRI="ontoloc:Server1"/>
-    </ObjectPropertyAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="ontoloc:AnchoredTag"/>
+        <NamedIndividual abbreviatedIRI="ontoloc:Server4"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="ontoloc:DeviceNumber"/>
+        <NamedIndividual abbreviatedIRI="ontoloc:Server4"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="ontoloc:AnchoredTag"/>
+        <NamedIndividual abbreviatedIRI="ontoloc:Server5"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="ontoloc:DeviceNumber"/>
+        <NamedIndividual abbreviatedIRI="ontoloc:Server5"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="ontoloc:AnchoredTag"/>
+        <NamedIndividual abbreviatedIRI="ontoloc:Server6"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="ontoloc:DeviceNumber"/>
+        <NamedIndividual abbreviatedIRI="ontoloc:Server6"/>
+    </ClassAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty abbreviatedIRI="ontoloc:isLocof"/>
         <NamedIndividual abbreviatedIRI="ontoloc:Location1"/>
@@ -1357,24 +1332,34 @@
         <NamedIndividual abbreviatedIRI="ontoloc:Server1"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#hasAnchor"/>
+        <ObjectProperty abbreviatedIRI="ontoloc:isFrequencyof"/>
+        <NamedIndividual abbreviatedIRI="ontoloc:PacketsPerSecond"/>
         <NamedIndividual abbreviatedIRI="ontoloc:Server1"/>
-        <NamedIndividual IRI="#Server4"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#hasAnchor"/>
+        <ObjectProperty abbreviatedIRI="ontoloc:isTotalPacketsSentby"/>
+        <NamedIndividual abbreviatedIRI="ontoloc:SendPacketTotal"/>
         <NamedIndividual abbreviatedIRI="ontoloc:Server1"/>
-        <NamedIndividual IRI="#Server5"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#hasAnchor"/>
+        <ObjectProperty abbreviatedIRI="ontoloc:hasAnchor"/>
         <NamedIndividual abbreviatedIRI="ontoloc:Server1"/>
-        <NamedIndividual IRI="#Server6"/>
+        <NamedIndividual abbreviatedIRI="ontoloc:Server5"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="ontoloc:hasAnchor"/>
+        <NamedIndividual abbreviatedIRI="ontoloc:Server1"/>
+        <NamedIndividual abbreviatedIRI="ontoloc:Server6"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="ontoloc:hasAnchor"/>
+        <NamedIndividual abbreviatedIRI="ontoloc:Server1"/>
+        <NamedIndividual abbreviatedIRI="ontoloc:Server4"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty abbreviatedIRI="ontoloc:hasFrequency"/>
         <NamedIndividual abbreviatedIRI="ontoloc:Server1"/>
-        <NamedIndividual IRI="#PacketsPerSecond"/>
+        <NamedIndividual abbreviatedIRI="ontoloc:PacketsPerSecond"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty abbreviatedIRI="ontoloc:hasLoc"/>
@@ -1414,33 +1399,23 @@
     <ObjectPropertyAssertion>
         <ObjectProperty abbreviatedIRI="ontoloc:hasPacketTotal"/>
         <NamedIndividual abbreviatedIRI="ontoloc:Server1"/>
-        <NamedIndividual IRI="#SendPacketTotal"/>
+        <NamedIndividual abbreviatedIRI="ontoloc:SendPacketTotal"/>
     </ObjectPropertyAssertion>
-    <DataPropertyAssertion>
-        <DataProperty abbreviatedIRI="ontoloc:PacketsPerSecondValue"/>
-        <NamedIndividual IRI="#PacketsPerSecond"/>
-        <Literal datatypeIRI="&xsd;integer">5</Literal>
-    </DataPropertyAssertion>
-    <DataPropertyAssertion>
-        <DataProperty abbreviatedIRI="ontoloc:PacketTotalValue"/>
-        <NamedIndividual IRI="#SendPacketTotal"/>
-        <Literal datatypeIRI="&xsd;nonNegativeInteger">50</Literal>
-    </DataPropertyAssertion>
-    <DataPropertyAssertion>
-        <DataProperty abbreviatedIRI="ontoloc:UIDValue"/>
-        <NamedIndividual IRI="#Server4"/>
-        <Literal datatypeIRI="&xsd;integer">4</Literal>
-    </DataPropertyAssertion>
-    <DataPropertyAssertion>
-        <DataProperty abbreviatedIRI="ontoloc:UIDValue"/>
-        <NamedIndividual IRI="#Server5"/>
-        <Literal datatypeIRI="&xsd;integer">5</Literal>
-    </DataPropertyAssertion>
-    <DataPropertyAssertion>
-        <DataProperty abbreviatedIRI="ontoloc:UIDValue"/>
-        <NamedIndividual IRI="#Server6"/>
-        <Literal datatypeIRI="&xsd;integer">6</Literal>
-    </DataPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="ontoloc:isAnchorto"/>
+        <NamedIndividual abbreviatedIRI="ontoloc:Server4"/>
+        <NamedIndividual abbreviatedIRI="ontoloc:Server1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="ontoloc:isAnchorto"/>
+        <NamedIndividual abbreviatedIRI="ontoloc:Server5"/>
+        <NamedIndividual abbreviatedIRI="ontoloc:Server1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="ontoloc:isAnchorto"/>
+        <NamedIndividual abbreviatedIRI="ontoloc:Server6"/>
+        <NamedIndividual abbreviatedIRI="ontoloc:Server1"/>
+    </ObjectPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty abbreviatedIRI="ontoloc:hasSystemNoiseVariableValue"/>
         <NamedIndividual abbreviatedIRI="ontoloc:ExampleMeasurementNoiseVariable"/>
@@ -1592,6 +1567,16 @@
         <Literal datatypeIRI="&xsd;float">1.4</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
+        <DataProperty abbreviatedIRI="ontoloc:PacketsPerSecondValue"/>
+        <NamedIndividual abbreviatedIRI="ontoloc:PacketsPerSecond"/>
+        <Literal datatypeIRI="&xsd;integer">5</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty abbreviatedIRI="ontoloc:PacketTotalValue"/>
+        <NamedIndividual abbreviatedIRI="ontoloc:SendPacketTotal"/>
+        <Literal datatypeIRI="&xsd;nonNegativeInteger">50</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
         <DataProperty abbreviatedIRI="ontoloc:UIDValue"/>
         <NamedIndividual abbreviatedIRI="ontoloc:Server1"/>
         <Literal datatypeIRI="&xsd;integer">1</Literal>
@@ -1606,17 +1591,28 @@
         <NamedIndividual abbreviatedIRI="ontoloc:Server3"/>
         <Literal datatypeIRI="&xsd;integer">3</Literal>
     </DataPropertyAssertion>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#hasAnchor"/>
-        <ObjectProperty abbreviatedIRI="ontoloc:hasIndoorTrackingService"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#isAnchorto"/>
-        <ObjectProperty abbreviatedIRI="ontoloc:isIndoorTrackingServiceof"/>
-    </SubObjectPropertyOf>
+    <DataPropertyAssertion>
+        <DataProperty abbreviatedIRI="ontoloc:UIDValue"/>
+        <NamedIndividual abbreviatedIRI="ontoloc:Server4"/>
+        <Literal datatypeIRI="&xsd;integer">4</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty abbreviatedIRI="ontoloc:UIDValue"/>
+        <NamedIndividual abbreviatedIRI="ontoloc:Server5"/>
+        <Literal datatypeIRI="&xsd;integer">5</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty abbreviatedIRI="ontoloc:UIDValue"/>
+        <NamedIndividual abbreviatedIRI="ontoloc:Server6"/>
+        <Literal datatypeIRI="&xsd;integer">6</Literal>
+    </DataPropertyAssertion>
     <SubObjectPropertyOf>
         <ObjectProperty abbreviatedIRI="ontoloc:hasAdjustablePrecisionFactor"/>
         <ObjectProperty abbreviatedIRI="ontoloc:hasRequirementCapture"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="ontoloc:hasAnchor"/>
+        <ObjectProperty abbreviatedIRI="ontoloc:hasIndoorTrackingService"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty abbreviatedIRI="ontoloc:hasApplicationFunction"/>
@@ -1801,6 +1797,10 @@
     <SubObjectPropertyOf>
         <ObjectProperty abbreviatedIRI="ontoloc:isAdjustablePrecisionFactorof"/>
         <ObjectProperty abbreviatedIRI="ontoloc:isPrecisionRequirementof"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="ontoloc:isAnchorto"/>
+        <ObjectProperty abbreviatedIRI="ontoloc:isIndoorTrackingServiceof"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty abbreviatedIRI="ontoloc:isApplicationFunctionof"/>
@@ -2103,8 +2103,8 @@
         <ObjectProperty abbreviatedIRI="ontoloc:hasSemanticBusService"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
-        <ObjectProperty abbreviatedIRI="ontoloc:hasSensor"/>
         <ObjectProperty abbreviatedIRI="ontoloc:isSensorfor"/>
+        <ObjectProperty abbreviatedIRI="ontoloc:hasSensor"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
         <ObjectProperty abbreviatedIRI="ontoloc:hasSensorReading"/>
