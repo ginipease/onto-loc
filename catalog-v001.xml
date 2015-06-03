@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
     <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
-        <uri id="Automatically generated entry, Timestamp=1431436261856" name="http://www.semanticweb.org/parallels/ontologies/2015/2/largescalelocationtracking" uri="owlrdf/ontoloc.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1431436261856" name="http://www.semanticweb.org/parallels/ontologies/2015/2/tracking-service-arch" uri="owlxml/ontoloc.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1433325026691" name="http://www.w3.org/2002/07/owl" uri="owlrdf/ontoloc.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1433325026691" name="https://raw.githubusercontent.com/ginipease/onto-loc/master/ontoloc" uri="owlxml/ontoloc.owl"/>
     </group>
 </catalog>
